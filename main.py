@@ -15,22 +15,31 @@ carpeta = './Archivos-TP/'
 censo2010 = pd.read_excel(carpeta + 'censo2010.xlsX') 
 censo2022 = pd.read_excel(carpeta + 'censo2022.xlsX')
 defunciones = pd.read_csv(carpeta + 'defunciones.csv')
-#%%
+#%% CENSOS
+def obtener_index_provincias(anio=0):
+    celdas = ([],[])
+    
+    for (index_celdas, censo) in enumerate([censo2010, censo2022]):
+        
+        cosas_de_interes = censo.iloc[:, 1]
+        
+        for (index, celda) in enumerate(cosas_de_interes):
+            if "AREA #" in str(celda):
+                celdas[index_celdas].append(index)
+    
+    if (anio==2010): return celdas[0]
+    if (anio==2022): return celdas[1]
+
+    return celdas
+
 def recolectar_datos(censo, anio):
     if(anio == 2010):
-        provincias_filas = [14, 674, 1341, 1961, 2608, 3237, 3851,
-                            4459, 5084, 5689, 6305, 6910, 7512, 8144,
-                            8777, 9402, 10023, 10653, 11267, 11878,
-                            12471, 13123, 13764, 14399]
-
         cobertura_filas = [17, 130, 239, 349, 453]
     else:
-        provincias_filas = [14, 461, 913, 1343, 1791, 2240, 2685,
-                            3107, 3550, 3984, 4424, 4851, 5288, 5727,
-                            6172, 6605, 7047, 7494, 7928, 8359,
-                            8779, 9230, 9676, 10122]
-
         cobertura_filas = [17, 130, 238]
+    
+    provincias_filas = obtener_index_provincias(anio)
+    
     datos = {
         'anio': [],
         'provincia': [],
@@ -55,16 +64,16 @@ def recolectar_datos(censo, anio):
     for i in cobertura_filas:
         coberturas.append(censo.iloc[i, 1])
 
-    # --- datos principales ---
-    df = censo.iloc[:, 2:5].copy()
+    # --- cosas de interes ---
+    df = censo.iloc[18:, 2:5].copy()
     df.columns = ['edad', 'varon', 'mujer']
 
-    ix = 18
+    ix = 0
     provincia_idx = 0
     cobertura_idx = 0
     i = 0
 
-    while ix < len(df):
+    while True:
 
         fila = df.iloc[ix]
 
@@ -115,5 +124,23 @@ df2010 = recolectar_datos(censo2010, 2010)
 df2022 = recolectar_datos(censo2022, 2022)
 
 df_final = pd.concat([df2010, df2022], ignore_index=True)
-df_final
 
+# Reemplazar las posibles coberturas medicas con los otros.
+
+df_final['cobertura_medica'] = df_final['cobertura_medica'].replace(
+   {'Obra social (incluye PAMI)': 'Obra social o prepaga (incluye PAMI)', 
+    'Prepaga a través de obra social': 'Obra social o prepaga (incluye PAMI)', 
+    'Prepaga sólo por contratación voluntaria': 'Obra social o prepaga (incluye PAMI)'}
+)
+consulta = """
+        SELECT anio, provincia, sexo, edad, cobertura_medica, sum(cantidad) as cantidad
+        FROM df_final
+        GROUP BY anio, provincia, sexo, edad, cobertura_medica
+"""
+
+df_final = dd.query(consulta).df()
+
+
+
+
+#%%
