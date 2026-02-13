@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+[#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Sun Feb  8 07:40:51 2026
@@ -15,6 +15,7 @@ carpeta = './Archivos-TP/'
 censo2010 = pd.read_excel(carpeta + 'censo2010.xlsX') 
 censo2022 = pd.read_excel(carpeta + 'censo2022.xlsX')
 defunciones = pd.read_csv(carpeta + 'defunciones.csv')
+establecimientos = pd.read_excel(carpeta + 'instituciones_de_salud.xlsx')
 #%% CENSOS
 def obtener_index_provincias(anio=0):
     celdas = ([],[])
@@ -159,4 +160,54 @@ resultado.to_csv('Archivos_Propios/censo2010-2022.csv', index=False, encoding='u
 
 df_provincias = obtener_dataFrameProvincias(censo2010)
 df_provincias.to_csv('Archivos_Propios/provincias.csv', index=False, encoding='utf-8')
-#%%
+
+# %% LIMPIEZA DEL DATAFRAME 'ESTABLECIMIENTOS'
+
+def limpieza_establecimientos():
+
+    # ver que hacer con 'obra social' y 'otros'
+    origenes_publicos = ['FFAA/Seguridad','Mixta','Municipal',
+                         'Servicio Penitenciario Federal',
+                         'Servicio Penitenciario Provincia',
+                         'Universitario público']
+    
+    tienen_terapia_intensiva = ['Alto riesgo con terapia intensiva',
+                                'Alto riesgo con terapia intensiva especializada']
+    
+    establecimientos_datos = {
+                        'id': [],
+                        'nombre': [],
+                        'id_departamento': [],
+                        'es_publico': [],
+                        'terapia_intensiva': []
+                        }
+    
+    ids_establecimientos = establecimientos['establecimiento_id'].tolist()
+    nombres = establecimientos['establecimiento_nombre'].tolist()
+    ids_departamentos = establecimientos['departamento_id'].tolist()
+    
+    establecimientos_datos['id'].extend(ids_establecimientos)
+    establecimientos_datos['nombre'].extend(nombres)
+    establecimientos_datos['id_departamento'].extend(ids_departamentos)
+    
+    i = 0
+    while i < len(esablecimientos):
+        
+        # veo si tiene origen público
+        if establecimientos.loc[i, 'origen_financiamiento'] in origenes_publicos:
+            establecimientos_datos['es_publico'].append('SI')
+        else:
+            establecimientos_datos['es_publico'].append('NO')
+        
+        # veo si tiene terapia intensiva
+        if establecimientos.loc[i, 'tipologia_nombre'] in 'tienen_erapia_intensiva':
+            establecimientos_datos['terapia_intensiva'].append('SI')
+        else:
+            establecimientos_datos['terapia_intensiva'].append('NO')
+            
+        i += 1
+    
+    return pd.DataFrame(establecimientos_datos)
+
+df_establecimientos = limpiar_establecimientos()
+    
