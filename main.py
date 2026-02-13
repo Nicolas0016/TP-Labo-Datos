@@ -32,6 +32,22 @@ def obtener_index_provincias(anio=0):
 
     return celdas
 
+def obtener_dataFrameProvincias(censo):
+    provincias_filas = obtener_index_provincias(2010)
+    provincias = []
+    for i in provincias_filas:
+        id_provincia = int(censo.iloc[i, 1].split()[2])
+        nombre_provincia = censo.iloc[i, 2]
+        
+        if(nombre_provincia == 'Caba'): 
+            provincias.append((id_provincia,'Ciudad Autónoma de Buenos Aires'))
+        else:
+            provincias.append((id_provincia,nombre_provincia))
+    
+    df_provincias = pd.DataFrame(data=provincias, columns=['id', 'nombre'])  # CORREGIDO
+    return df_provincias
+
+    
 def recolectar_datos(censo, anio):
     if(anio == 2010):
         cobertura_filas = [17, 130, 239, 349, 453]
@@ -52,11 +68,8 @@ def recolectar_datos(censo, anio):
     # --- provincias ---
     provincias = []
     for i in provincias_filas:
-        nombre_provincia = censo.iloc[i, 2]
-        if(nombre_provincia == 'Caba'): 
-            provincias.append('Ciudad Autónoma de Buenos Aires')
-        else:
-            provincias.append(nombre_provincia)
+        id_provincia = int(censo.iloc[i, 1].split()[2])
+        provincias.append(id_provincia)
 
 
     # --- coberturas ---
@@ -101,14 +114,16 @@ def recolectar_datos(censo, anio):
         edad = fila['edad']
         varon = 0 if fila['varon'] == '-' else fila['varon']
         mujer = 0 if fila['mujer'] == '-' else fila['mujer']
-
+        
+        # Hombres GOD
         datos['anio'].append(anio)
         datos['provincia'].append(provincia)
         datos['sexo'].append("Varón")
         datos['edad'].append(edad)
         datos['cobertura_medica'].append(cobertura)
         datos['cantidad'].append(varon)
-
+        
+        # Muejeres ZZZ
         datos['anio'].append(anio)
         datos['provincia'].append(provincia)
         datos['sexo'].append("Mujer")
@@ -136,11 +151,12 @@ consulta = """
         SELECT anio, provincia, sexo, edad, cobertura_medica, sum(cantidad) as cantidad
         FROM df_final
         GROUP BY anio, provincia, sexo, edad, cobertura_medica
+        ORDER BY anio, provincia, edad, cobertura_medica
 """
 
-df_final = dd.query(consulta).df()
+resultado = dd.query(consulta).df()
+resultado.to_csv('Archivos_Propios/censo2010-2022.csv', index=False, encoding='utf-8')
 
-
-
-
+df_provincias = obtener_dataFrameProvincias(censo2010)
+df_provincias.to_csv('Archivos_Propios/provincias.csv', index=False, encoding='utf-8')
 #%%
