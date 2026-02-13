@@ -216,8 +216,8 @@ df_establecimientos = limpieza_establecimientos()
 
 def crear_departamento():
     consultaSQL = """
-            SELECT DISTINCT departamento_id AS id, departamento_nombre AS nombre,
-            provincia_id
+            SELECT DISTINCT departamento_id AS id, provincia_id, departamento_nombre AS nombre
+            
             FROM establecimientos
             GROUP BY id, nombre, provincia_id
             ORDER BY provincia_id, id;
