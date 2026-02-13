@@ -212,4 +212,17 @@ def limpieza_establecimientos():
 df_establecimientos = limpieza_establecimientos()
     
 
-# %% 
+# %% CREACIÓN DEL DATAFRAME 'DEPARTAMENTOS'
+
+def crear_departamento():
+    consultaSQL = """
+            SELECT DISTINCT departamento_id AS id, departamento_nombre AS nombre,
+            provincia_id
+            FROM establecimientos
+            GROUP BY id, nombre, provincia_id
+            ORDER BY provincia_id, id;
+            """
+    return dd.query(consultaSQL).df()
+    
+df_departamentos = crear_departamento()
+
