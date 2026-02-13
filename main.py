@@ -31,8 +31,6 @@ def obtener_index_provincias(anio=0):
     if (anio==2010): return celdas[0]
     if (anio==2022): return celdas[1]
 
-    return celdas
-
 def obtener_dataFrameProvincias(censo):
     provincias_filas = obtener_index_provincias(2010)
     provincias = []
@@ -195,15 +193,15 @@ def limpieza_establecimientos():
         
         # veo si tiene origen público
         if establecimientos.loc[i, 'origen_financiamiento'] in origenes_publicos:
-            establecimientos_datos['es_publico'].append('SI')
+            establecimientos_datos['es_publico'].append(True)
         else:
-            establecimientos_datos['es_publico'].append('NO')
+            establecimientos_datos['es_publico'].append(False)
         
         # veo si tiene terapia intensiva
         if establecimientos.loc[i, 'tipologia_nombre'] in 'tienen_terapia_intensiva':
-            establecimientos_datos['terapia_intensiva'].append('SI')
+            establecimientos_datos['terapia_intensiva'].append(True)
         else:
-            establecimientos_datos['terapia_intensiva'].append('NO')
+            establecimientos_datos['terapia_intensiva'].append(False)
             
         i += 1
     
