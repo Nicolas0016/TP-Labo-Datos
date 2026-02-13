@@ -1,4 +1,4 @@
-[#!/usr/bin/env python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Sun Feb  8 07:40:51 2026
@@ -191,7 +191,7 @@ def limpieza_establecimientos():
     establecimientos_datos['id_departamento'].extend(ids_departamentos)
     
     i = 0
-    while i < len(esablecimientos):
+    while i < len(establecimientos):
         
         # veo si tiene origen público
         if establecimientos.loc[i, 'origen_financiamiento'] in origenes_publicos:
@@ -200,7 +200,7 @@ def limpieza_establecimientos():
             establecimientos_datos['es_publico'].append('NO')
         
         # veo si tiene terapia intensiva
-        if establecimientos.loc[i, 'tipologia_nombre'] in 'tienen_erapia_intensiva':
+        if establecimientos.loc[i, 'tipologia_nombre'] in 'tienen_terapia_intensiva':
             establecimientos_datos['terapia_intensiva'].append('SI')
         else:
             establecimientos_datos['terapia_intensiva'].append('NO')
@@ -209,5 +209,7 @@ def limpieza_establecimientos():
     
     return pd.DataFrame(establecimientos_datos)
 
-df_establecimientos = limpiar_establecimientos()
+df_establecimientos = limpieza_establecimientos()
     
+
+# %% 
