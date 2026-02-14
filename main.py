@@ -198,7 +198,7 @@ def limpieza_establecimientos():
             establecimientos_datos['es_publico'].append(False)
         
         # veo si tiene terapia intensiva
-        if establecimientos.loc[i, 'tipologia_nombre'] in 'tienen_terapia_intensiva':
+        if establecimientos.loc[i, 'tipologia_nombre'] in tienen_terapia_intensiva:
             establecimientos_datos['terapia_intensiva'].append(True)
         else:
             establecimientos_datos['terapia_intensiva'].append(False)
@@ -264,4 +264,18 @@ defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, enco
 clasificacion_de_defunciones.to_csv('Archivos_Propios/clasificacion_de_defunciones.csv', index=False, encoding='utf-8')
 
 provincias_defunciones.to_csv('Archivos_Propios/provincias.csv', index=False, encoding='utf-8')
-# %%
+# %% PUNTO 2:
+estableciientos_con_terapia_intensiva = dd.query(
+    """
+        SELECT 
+            departamentos.provincia_id, 
+            IF(es_publico, 'estatal', 'privado') AS financiamiento,
+            count(*) as cantidad,
+        FROM establecimientos
+        INNER JOIN departamentos 
+        ON departamentos.id = establecimientos.id_departamento
+        
+        WHERE terapia_intensiva
+        GROUP BY provincia_id, es_publico
+        ORDER BY provincia_id, financiamiento
+    """).df()
