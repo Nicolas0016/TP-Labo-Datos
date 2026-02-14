@@ -232,7 +232,8 @@ consulta = """
         SELECT 
             anio, 
             CASE 
-                WHEN jurisdiccion_de_residencia_id = 98 THEN 99
+                WHEN jurisdiccion_de_residencia_id = 98 
+                THEN 99
                 ELSE jurisdiccion_de_residencia_id
                 END as provincia_id,
             cie10_causa_id AS codigo_defuncion, 
@@ -246,11 +247,35 @@ defunciones_tuneado = dd.query(consulta).df()
 
 
 #Creacion del Dataframe 'clasificacion_de_defunciones'
+
 consulta = """
-        SELECT DISTINCT cie10_causa_id AS codigo_defuncion, cie10_clasificacion AS clasificacion_defuncion
+        SELECT DISTINCT cie10_causa_id AS codigo, cie10_clasificacion AS clasificacion
         FROM defunciones
+        WHERE clasificacion IS NOT NULL
 """
 clasificacion_de_defunciones = dd.query(consulta).df()
+
+#Ahora voy a renombrar los nulls de defunciones por 'sin informacion' y su codigo por A00
+#obtengo los codigos cuya clasificacion es null
+consulta = """
+        SELECT DISTINCT cie10_causa_id AS codigo
+        FROM defunciones
+        WHERE cie10_clasificacion IS NULL
+"""
+codigos_null = (dd.query(consulta).df())["codigo"]
+dicc_nulls = {}
+
+#creo el diccionario que se va a usar para reemplazar los codigos por A00
+for codigo in codigos_null:
+    dicc_nulls[codigo] = "A00"
+    
+defunciones_tuneado['codigo_defuncion'].replace(dicc_nulls,inplace=True)
+
+
+#defunciones_tuneado.loc[defunciones_tuneado['codigo_defuncion'] == "A00",'clasificacion'] = "Sin Información"
+nueva_fila = pd.DataFrame({'codigo':'A00','clasificacion':["Sin Información"]})
+clasificacion_de_defunciones = pd.concat([clasificacion_de_defunciones,nueva_fila],ignore_index=True)
+
 
 #Creacion del DataFrame 'provincias_defunciones'
 #Ignoro el id 98 porque es null
@@ -275,8 +300,7 @@ def quitar_comillas(lista):
     return res
 
 provincias_defunciones["nombre"] = quitar_comillas(provincias_defunciones["nombre"])
-#clasificacion_de_defunciones["clasificacion_defuncion"] = quitar_comillas(clasificacion_de_defunciones['clasificacion_defuncion'])
-
+clasificacion_de_defunciones["clasificacion"] = quitar_comillas(clasificacion_de_defunciones['clasificacion'])
 
 
 
