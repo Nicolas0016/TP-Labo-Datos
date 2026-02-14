@@ -263,7 +263,6 @@ consulta = """
 provincias_defunciones = dd.query(consulta).df()
 
 #dejo los datos un poco mas lindos
-
 def quitar_comillas(lista):
     res = lista.copy()
 
@@ -275,8 +274,8 @@ def quitar_comillas(lista):
 
     return res
 
-provincias_defunciones["provincia_nombre"] = quitar_comillas(provincias_defunciones["provincia_nombre"])
-
+provincias_defunciones["nombre"] = quitar_comillas(provincias_defunciones["nombre"])
+#clasificacion_de_defunciones["clasificacion_defuncion"] = quitar_comillas(clasificacion_de_defunciones['clasificacion_defuncion'])
 
 
 
@@ -287,6 +286,8 @@ defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, enco
 clasificacion_de_defunciones.to_csv('Archivos_Propios/clasificacion_de_defunciones.csv', index=False, encoding='utf-8')
 
 provincias_defunciones.to_csv('Archivos_Propios/provincias.csv', index=False, encoding='utf-8')
+
+
 # %% INICIALIZACION DE DATAFRAMES:
 nuestra_carpeta = 'Archivos_Propios/'
 censos = pd.read_csv(nuestra_carpeta + 'censo2010-2022.csv')
