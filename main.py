@@ -182,7 +182,8 @@ def limpieza_establecimientos():
     
     ids_establecimientos = establecimientos['establecimiento_id'].tolist()
     nombres = establecimientos['establecimiento_nombre'].tolist()
-    ids_departamentos = establecimientos['departamento_id'].tolist()
+    ids_departamentos = (establecimientos['provincia_id'].astype(str) + '_' + 
+                        establecimientos['departamento_id'].astype(str)).tolist()
     
     establecimientos_datos['id'].extend(ids_establecimientos)
     establecimientos_datos['nombre'].extend(nombres)
@@ -214,7 +215,11 @@ df_establecimientos.to_csv('Archivos_Propios/establecimiento.csv', index= False,
 
 def crear_departamento():
     consultaSQL = """
-            SELECT DISTINCT departamento_id AS id, provincia_id, departamento_nombre AS nombre
+            SELECT DISTINCT 
+                
+                CONCAT(provincia_id, '_' , departamento_id) AS id, 
+                provincia_id,
+                departamento_nombre AS nombre
             
             FROM establecimientos
             GROUP BY id, nombre, provincia_id
@@ -283,7 +288,7 @@ provincias = pd.read_csv(nuestra_carpeta + 'provincias.csv')
 establecientos_con_terapia_intensiva = dd.query(
     """
         SELECT 
-            provincias.nombre AS nombre, 
+            provincias.nombre AS provincia, 
             IF(es_publico, 'estatal', 'privado') AS financiamiento,
             count(*) as cantidad,
         FROM establecimientos
@@ -295,29 +300,43 @@ establecientos_con_terapia_intensiva = dd.query(
         GROUP BY provincias.nombre, establecimientos.es_publico
         ORDER BY provincias.nombre, financiamiento
     """).df()
+
+res = dd.query("""
+        SELECT *
+        FROM establecientos_con_terapia_intensiva
+        WHERE provincia = 'Buenos Aires' OR provincia = 'Ciudad Autónoma de Buenos Aires' OR provincia = 'Santa Fe' 
+        ORDER BY provincia 
+
+""").df()
     
 # %% PUNTO 5: Cambios en las causas de defunción
-causas_defuncion = dd.query(
+cantidad_defunciones_2010_2022 = dd.query(
     """
         SELECT 
             clasificacion_de_defunciones.clasificacion_defuncion,
             SUM(CASE 
                 WHEN anio = 2010 THEN cantidad 
                 ELSE 0 END
-                ) 
-            AS def_2010,
-            
+                ) AS def_2010,
             SUM(
                 CASE WHEN anio = 2022 THEN cantidad 
-                ELSE 0 END) 
-            AS def_2022,
-            
-            def_2010 - def_2022 AS diferencia
+                ELSE 0 END
+                ) AS def_2022
         FROM defunciones
         INNER JOIN clasificacion_de_defunciones
             ON defunciones.codigo_defuncion = clasificacion_de_defunciones.codigo
         WHERE anio = 2010 OR anio = 2022
-        GROUP BY defunciones.anio, clasificacion_de_defunciones.clasificacion_defuncion
-        ORDER BY diferencia DESC
+        GROUP BY clasificacion_de_defunciones.clasificacion_defuncion
     """).df()
 
+
+diferencia_entre_2010_2022 = dd.query(
+    """
+        SELECT 
+            clasificacion_defuncion,
+            def_2010,
+            def_2022,
+            def_2022 - def_2010 AS diferencia
+        FROM cantidad_defunciones_2010_2022
+        ORDER BY diferencia DESC
+    """).df()
