@@ -224,3 +224,33 @@ def crear_departamento():
     
 df_departamentos = crear_departamento()
 
+
+#%% DEFUNCIONES
+#Creacion del DataFrame principal de 'defunciones'
+consulta = """
+        SELECT anio, jurisdiccion_de_residencia_id AS provincia_id, cie10_causa_id AS codigo_defuncion, Sexo AS sexo, grupo_edad, cantidad
+        FROM defunciones
+            """
+defunciones_tuneado = dd.query(consulta).df()
+
+#Creacion del Dataframe 'clasificacion_de_defunciones'
+consulta = """
+        SELECT DISTINCT cie10_causa_id AS codigo_defuncion, cie10_clasificacion AS clasificacion_defuncion
+        FROM defunciones
+"""
+clasificacion_de_defunciones = dd.query(consulta).df()
+
+#Creacion del DataFrame 'provincias'
+consulta = """
+        SELECT DISTINCT jurisdiccion_de_residencia_id AS provincia_id, jurisdicion_residencia_nombre AS provincia_nombre
+        FROM defunciones
+"""
+provincias = dd.query(consulta).df()
+
+#ARCHIVOS
+defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, encoding='utf-8')
+
+clasificacion_de_defunciones.to_csv('Archivos_Propios/clasificacion_de_defunciones.csv', index=False, encoding='utf-8')
+
+provincias.to_csv('Archivos_Propios/provincias.csv', index=False, encoding='utf-8')
+# %%
