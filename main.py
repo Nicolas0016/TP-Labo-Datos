@@ -229,11 +229,17 @@ df_departamentos.to_csv('Archivos_Propios/departamentos.csv', index= False, enco
 #Creacion del DataFrame principal de 'defunciones'
 #
 consulta = """
-        SELECT anio, jurisdiccion_de_residencia_id AS provincia_id, cie10_causa_id AS codigo_defuncion, Sexo AS sexo, grupo_edad, cantidad,
-            CASE WHEN provincia_id = 98
-            THEN 99
-            ELSE provincia_id
-            END
+        SELECT 
+            anio, 
+            CASE 
+                WHEN jurisdiccion_de_residencia_id = 98 THEN 99
+                ELSE jurisdiccion_de_residencia_id
+                END as provincia_id,
+            cie10_causa_id AS codigo_defuncion, 
+            Sexo AS sexo, 
+            grupo_edad, 
+            cantidad,
+            
         FROM defunciones
             """
 defunciones_tuneado = dd.query(consulta).df()
@@ -272,7 +278,7 @@ clasificacion_de_defunciones = pd.read_csv(nuestra_carpeta + 'clasificacion_de_d
 departamentos = pd.read_csv(nuestra_carpeta + 'departamentos.csv')
 establecimientos = pd.read_csv(nuestra_carpeta + 'establecimiento.csv')
 provincias = pd.read_csv(nuestra_carpeta + 'provincias.csv')
-# %% PUNTO 2:
+# %% PUNTO 2: Establecimientos de salud con terapia intensiva
 
 establecientos_con_terapia_intensiva = dd.query(
     """
@@ -289,3 +295,13 @@ establecientos_con_terapia_intensiva = dd.query(
         GROUP BY provincias.nombre, establecimientos.es_publico
         ORDER BY provincias.nombre, financiamiento
     """).df()
+    
+# %% PUNTO 5: Cambios en las causas de defunción
+causas_defuncion = dd.query(
+    """
+        SELECT *
+        FROM defunciones
+        WHERE anio >= 2010 AND anio <= 2022
+        ORDER BY anio ASC
+    """).df()
+
