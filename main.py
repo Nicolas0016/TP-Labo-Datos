@@ -10,7 +10,7 @@ Created on Sun Feb  8 07:40:51 2026
 
 import pandas as pd
 import duckdb as dd
-
+#%%
 carpeta = './Archivos-TP/' 
 censo2010 = pd.read_excel(carpeta + 'censo2010.xlsX') 
 censo2022 = pd.read_excel(carpeta + 'censo2022.xlsX')
@@ -198,7 +198,7 @@ def limpieza_establecimientos():
             establecimientos_datos['es_publico'].append(False)
         
         # veo si tiene terapia intensiva
-        if establecimientos.loc[i, 'tipologia_nombre'] in 'tienen_terapia_intensiva':
+        if establecimientos.loc[i, 'tipologia_nombre'] in tienen_terapia_intensiva:
             establecimientos_datos['terapia_intensiva'].append(True)
         else:
             establecimientos_datos['terapia_intensiva'].append(False)
@@ -208,7 +208,7 @@ def limpieza_establecimientos():
     return pd.DataFrame(establecimientos_datos)
 
 df_establecimientos = limpieza_establecimientos()
-    
+df_establecimientos.to_csv('Archivos_Propios/establecimiento.csv', index= False, encoding='utf-8')
 
 # %% CREACIÓN DEL DATAFRAME 'DEPARTAMENTOS'
 
@@ -223,17 +223,23 @@ def crear_departamento():
     return dd.query(consultaSQL).df()
     
 df_departamentos = crear_departamento()
-
+df_departamentos.to_csv('Archivos_Propios/departamentos.csv', index= False, encoding='utf-8')
 
 #%% DEFUNCIONES
 #Creacion del DataFrame principal de 'defunciones'
 #cambio los id de 98 a 99 (de null a 'Sin Informacion')
 consulta = """
-        SELECT anio, jurisdiccion_de_residencia_id AS provincia_id, cie10_causa_id AS codigo_defuncion, Sexo AS sexo, grupo_edad, cantidad,
-            CASE WHEN provincia_id = 98
-            THEN 99
-            ELSE provincia_id
-            END
+        SELECT 
+            anio, 
+            CASE 
+                WHEN jurisdiccion_de_residencia_id = 98 THEN 99
+                ELSE jurisdiccion_de_residencia_id
+                END as provincia_id,
+            cie10_causa_id AS codigo_defuncion, 
+            Sexo AS sexo, 
+            grupo_edad, 
+            cantidad,
+            
         FROM defunciones
             """
 defunciones_tuneado = dd.query(consulta).df()
@@ -249,10 +255,10 @@ clasificacion_de_defunciones = dd.query(consulta).df()
 #Creacion del DataFrame 'provincias_defunciones'
 #Ignoro el id 98 porque es null
 consulta = """
-        SELECT DISTINCT jurisdiccion_de_residencia_id AS provincia_id, jurisdicion_residencia_nombre AS provincia_nombre
+        SELECT DISTINCT jurisdiccion_de_residencia_id AS id, jurisdicion_residencia_nombre AS nombre
         FROM defunciones
-        WHERE provincia_id != 98
-        ORDER BY provincia_id
+        WHERE id != 98
+        ORDER BY id
 """
 provincias_defunciones = dd.query(consulta).df()
 
@@ -280,5 +286,55 @@ defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, enco
 
 clasificacion_de_defunciones.to_csv('Archivos_Propios/clasificacion_de_defunciones.csv', index=False, encoding='utf-8')
 
-provincias_defunciones.to_csv('Archivos_Propios/provincias_defunciones.csv', index=False, encoding='utf-8')
-# %%
+provincias_defunciones.to_csv('Archivos_Propios/provincias.csv', index=False, encoding='utf-8')
+# %% INICIALIZACION DE DATAFRAMES:
+nuestra_carpeta = 'Archivos_Propios/'
+censos = pd.read_csv(nuestra_carpeta + 'censo2010-2022.csv')
+defunciones = pd.read_csv(nuestra_carpeta + 'defunciones.csv')
+clasificacion_de_defunciones = pd.read_csv(nuestra_carpeta + 'clasificacion_de_defunciones.csv')
+departamentos = pd.read_csv(nuestra_carpeta + 'departamentos.csv')
+establecimientos = pd.read_csv(nuestra_carpeta + 'establecimiento.csv')
+provincias = pd.read_csv(nuestra_carpeta + 'provincias.csv')
+# %% PUNTO 2: Establecimientos de salud con terapia intensiva
+
+establecientos_con_terapia_intensiva = dd.query(
+    """
+        SELECT 
+            provincias.nombre AS nombre, 
+            IF(es_publico, 'estatal', 'privado') AS financiamiento,
+            count(*) as cantidad,
+        FROM establecimientos
+        INNER JOIN departamentos 
+            ON departamentos.id = establecimientos.id_departamento
+        INNER JOIN provincias
+            ON provincias.id = departamentos.provincia_id
+        WHERE terapia_intensiva
+        GROUP BY provincias.nombre, establecimientos.es_publico
+        ORDER BY provincias.nombre, financiamiento
+    """).df()
+    
+# %% PUNTO 5: Cambios en las causas de defunción
+causas_defuncion = dd.query(
+    """
+        SELECT 
+            clasificacion_de_defunciones.clasificacion_defuncion,
+            SUM(CASE 
+                WHEN anio = 2010 THEN cantidad 
+                ELSE 0 END
+                ) 
+            AS def_2010,
+            
+            SUM(
+                CASE WHEN anio = 2022 THEN cantidad 
+                ELSE 0 END) 
+            AS def_2022,
+            
+            def_2010 - def_2022 AS diferencia
+        FROM defunciones
+        INNER JOIN clasificacion_de_defunciones
+            ON defunciones.codigo_defuncion = clasificacion_de_defunciones.codigo
+        WHERE anio = 2010 OR anio = 2022
+        GROUP BY defunciones.anio, clasificacion_de_defunciones.clasificacion_defuncion
+        ORDER BY diferencia DESC
+    """).df()
+
