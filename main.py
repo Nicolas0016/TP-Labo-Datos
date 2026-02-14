@@ -306,10 +306,12 @@ causas_defuncion = dd.query(
                 ELSE 0 END
                 ) 
             AS def_2010,
+            
             SUM(
                 CASE WHEN anio = 2022 THEN cantidad 
                 ELSE 0 END) 
             AS def_2022,
+            
             def_2010 - def_2022 AS diferencia
         FROM defunciones
         INNER JOIN clasificacion_de_defunciones
