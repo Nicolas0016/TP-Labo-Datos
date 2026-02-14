@@ -245,12 +245,12 @@ consulta = """
         SELECT DISTINCT jurisdiccion_de_residencia_id AS provincia_id, jurisdicion_residencia_nombre AS provincia_nombre
         FROM defunciones
 """
-provincias = dd.query(consulta).df()
+provincias_defunciones = dd.query(consulta).df()
 
 #ARCHIVOS
 defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, encoding='utf-8')
 
 clasificacion_de_defunciones.to_csv('Archivos_Propios/clasificacion_de_defunciones.csv', index=False, encoding='utf-8')
 
-provincias.to_csv('Archivos_Propios/provincias.csv', index=False, encoding='utf-8')
+provincias_defunciones.to_csv('Archivos_Propios/provincias_defunciones.csv', index=False, encoding='utf-8')
 # %%
