@@ -8,6 +8,7 @@ Created on Sun Feb  8 07:40:51 2026
 
 # %%
 
+import numpy as np
 import pandas as pd
 import duckdb as dd
 import matplotlib.pyplot as plt
@@ -443,10 +444,25 @@ habitantes_por_provincia = dd.query(
         INNER JOIN provincias AS p
             ON c.provincia = p.id
         GROUP BY c.anio, p.nombre
-        ORDER BY p.nombre, c.anio
+        ORDER BY cantidad_habitantes, p.nombre, c.anio
     """).df()
+
+habitantes_por_provincia = habitantes_por_provincia.pivot(index='nombre', columns='anio', values='cantidad_habitantes')
 
 fig, ax = plt.subplots()
 
-x = habitantes_por_provincia['provincia']
-datos_2010 = habitantes_por_provincia['anio'] == 2010
+x = np.arange(len(habitantes_por_provincia.index))
+habitantes_2010 = habitantes_por_provincia[2010]
+habitantes_2022 = habitantes_por_provincia[2022]
+
+width = 0.4
+
+ax.bar(x - width/2, habitantes_2010, width=width, label='Habitantes 2010')
+ax.bar(x + width/2, habitantes_2022, width=width, label='Habitantes 2022')
+
+ax.set_title('Población Argentina por provincia 2010 vs 2022')
+ax.set_xlabel('Provincias')
+ax.set_xticks(x, labels=habitantes_por_provincia.index, rotation=45, ha='right')
+ax.legend()
+
+plt.show()
