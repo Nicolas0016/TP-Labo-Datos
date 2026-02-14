@@ -227,11 +227,17 @@ df_departamentos = crear_departamento()
 
 #%% DEFUNCIONES
 #Creacion del DataFrame principal de 'defunciones'
+#
 consulta = """
-        SELECT anio, jurisdiccion_de_residencia_id AS provincia_id, cie10_causa_id AS codigo_defuncion, Sexo AS sexo, grupo_edad, cantidad
+        SELECT anio, jurisdiccion_de_residencia_id AS provincia_id, cie10_causa_id AS codigo_defuncion, Sexo AS sexo, grupo_edad, cantidad,
+            CASE WHEN provincia_id = 98
+            THEN 99
+            ELSE provincia_id
+            END
         FROM defunciones
             """
 defunciones_tuneado = dd.query(consulta).df()
+
 
 #Creacion del Dataframe 'clasificacion_de_defunciones'
 consulta = """
@@ -240,12 +246,17 @@ consulta = """
 """
 clasificacion_de_defunciones = dd.query(consulta).df()
 
-#Creacion del DataFrame 'provincias'
+#Creacion del DataFrame 'provincias_defunciones'
 consulta = """
         SELECT DISTINCT jurisdiccion_de_residencia_id AS provincia_id, jurisdicion_residencia_nombre AS provincia_nombre
         FROM defunciones
+        WHERE provincia_id != 98
+        ORDER BY provincia_id
 """
 provincias_defunciones = dd.query(consulta).df()
+
+
+
 
 #ARCHIVOS
 defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, encoding='utf-8')
