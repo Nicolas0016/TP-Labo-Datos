@@ -299,9 +299,23 @@ establecientos_con_terapia_intensiva = dd.query(
 # %% PUNTO 5: Cambios en las causas de defunción
 causas_defuncion = dd.query(
     """
-        SELECT *
+        SELECT 
+            clasificacion_de_defunciones.clasificacion_defuncion,
+            SUM(CASE 
+                WHEN anio = 2010 THEN cantidad 
+                ELSE 0 END
+                ) 
+            AS def_2010,
+            SUM(
+                CASE WHEN anio = 2022 THEN cantidad 
+                ELSE 0 END) 
+            AS def_2022,
+            def_2010 - def_2022 AS diferencia
         FROM defunciones
-        WHERE anio >= 2010 AND anio <= 2022
-        ORDER BY anio ASC
+        INNER JOIN clasificacion_de_defunciones
+            ON defunciones.codigo_defuncion = clasificacion_de_defunciones.codigo
+        WHERE anio = 2010 OR anio = 2022
+        GROUP BY defunciones.anio, clasificacion_de_defunciones.clasificacion_defuncion
+        ORDER BY diferencia DESC
     """).df()
 
