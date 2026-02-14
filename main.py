@@ -10,6 +10,9 @@ Created on Sun Feb  8 07:40:51 2026
 
 import pandas as pd
 import duckdb as dd
+import matplotlib.pyplot as plt
+from matplotlib import ticker
+import seaborn as sns
 #%%
 carpeta = './Archivos-TP/' 
 censo2010 = pd.read_excel(carpeta + 'censo2010.xlsX') 
@@ -369,7 +372,7 @@ cobertura_de_salud = dd.query(
     
     FROM tabla_intermedia
     GROUP BY Provincia, Rango_etario
-    ORDER BY Provincia, Rango_etario;
+    ORDER BY Provincia, Rango_etario
     """).df()
 
 
@@ -430,3 +433,20 @@ diferencia_entre_2010_2022 = dd.query(
         FROM cantidad_defunciones_2010_2022
         ORDER BY diferencia DESC
     """).df()
+
+# %% VISUALIZACIÓN PUNTO 1: Cantidad de habitantes por provincia
+
+habitantes_por_provincia = dd.query(
+    """
+        SELECT c.anio, p.nombre, SUM(c.cantidad) AS cantidad_habitantes
+        FROM censos AS c
+        INNER JOIN provincias AS p
+            ON c.provincia = p.id
+        GROUP BY c.anio, p.nombre
+        ORDER BY p.nombre, c.anio
+    """).df()
+
+fig, ax = plt.subplots()
+
+x = habitantes_por_provincia['provincia']
+datos_2010 = habitantes_por_provincia['anio'] == 2010
