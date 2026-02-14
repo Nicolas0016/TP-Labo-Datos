@@ -208,7 +208,7 @@ def limpieza_establecimientos():
     return pd.DataFrame(establecimientos_datos)
 
 df_establecimientos = limpieza_establecimientos()
-    
+df_establecimientos.to_csv('Archivos_Propios/establecimiento.csv', index= False, encoding='utf-8')
 
 # %% CREACIÓN DEL DATAFRAME 'DEPARTAMENTOS'
 
@@ -223,7 +223,7 @@ def crear_departamento():
     return dd.query(consultaSQL).df()
     
 df_departamentos = crear_departamento()
-
+df_departamentos.to_csv('Archivos_Propios/departamentos.csv', index= False, encoding='utf-8')
 
 #%% DEFUNCIONES
 #Creacion del DataFrame principal de 'defunciones'
