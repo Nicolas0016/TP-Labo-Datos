@@ -227,7 +227,7 @@ df_departamentos = crear_departamento()
 
 #%% DEFUNCIONES
 #Creacion del DataFrame principal de 'defunciones'
-#
+#cambio los id de 98 a 99 (de null a 'Sin Informacion')
 consulta = """
         SELECT anio, jurisdiccion_de_residencia_id AS provincia_id, cie10_causa_id AS codigo_defuncion, Sexo AS sexo, grupo_edad, cantidad,
             CASE WHEN provincia_id = 98
@@ -247,6 +247,7 @@ consulta = """
 clasificacion_de_defunciones = dd.query(consulta).df()
 
 #Creacion del DataFrame 'provincias_defunciones'
+#Ignoro el id 98 porque es null
 consulta = """
         SELECT DISTINCT jurisdiccion_de_residencia_id AS provincia_id, jurisdicion_residencia_nombre AS provincia_nombre
         FROM defunciones
@@ -254,6 +255,22 @@ consulta = """
         ORDER BY provincia_id
 """
 provincias_defunciones = dd.query(consulta).df()
+
+#dejo los datos un poco mas lindos
+
+def quitar_comillas(lista):
+    res = lista.copy()
+
+    for i in range(len(lista)):
+        elem = lista[i]
+        if elem[0] == '"' and elem[len(elem)] == '"':
+            reemplazo = elem[1:len(elem)-1]
+            res[i] = reemplazo
+
+    return res
+
+provincias_defunciones["provincia_nombre"] = quitar_comillas(provincias_defunciones["provincia_nombre"])
+
 
 
 
