@@ -325,6 +325,54 @@ clasificacion_de_defunciones = pd.read_csv(nuestra_carpeta + 'clasificacion_de_d
 departamentos = pd.read_csv(nuestra_carpeta + 'departamentos.csv')
 establecimientos = pd.read_csv(nuestra_carpeta + 'establecimiento.csv')
 provincias = pd.read_csv(nuestra_carpeta + 'provincias.csv')
+
+# %% PUNTO 1: Cobertura de salud
+
+obras_sociales = ('Obra social o prepaga (incluye PAMI)', 
+                 'Programas o planes estatales de salud')
+
+cobertura_de_salud = dd.query(
+        f"""
+    WITH tabla_intermedia AS (
+        SELECT p.nombre AS Provincia,
+        CASE WHEN c.edad < 15 THEN '0 a 14'
+             WHEN c.edad < 35 THEN '15 a 34'
+             WHEN c.edad < 55 THEN '35 a 54'
+             WHEN c.edad < 75 THEN '55 a 74'
+             WHEN c.edad > 74 THEN '75 o más'
+        END AS Rango_etario,
+        c.anio AS Año,
+        c.cantidad AS Cantidad,
+        CASE WHEN c.cobertura_medica IN {obras_sociales} THEN 1
+            ELSE 0 
+        END AS Tiene_cobertura
+        
+        FROM censos AS c
+        INNER JOIN provincias AS p
+            ON c.provincia = p.id
+    )
+    
+    SELECT Provincia,
+    Rango_etario,
+    SUM(CASE WHEN
+        Año = 2010 AND tiene_cobertura = 1 THEN cantidad ELSE 0 END)
+        AS Habitantes_con_cobertura_en_2010,
+    SUM(CASE WHEN
+        Año = 2010 AND tiene_cobertura = 0 THEN cantidad ELSE 0 END)
+        AS Habitantes_sin_cobertura_en_2010,  
+    SUM(CASE WHEN
+        Año = 2022 AND tiene_cobertura = 1 THEN cantidad ELSE 0 END)
+        AS Habitantes_con_cobertura_en_2022,
+    SUM(CASE WHEN
+        Año = 2022 AND tiene_cobertura = 0 THEN cantidad ELSE 0 END)
+        AS Habitantes_sin_cobertura_en_2022
+    
+    FROM tabla_intermedia
+    GROUP BY Provincia, Rango_etario
+    ORDER BY Provincia, Rango_etario;
+    """).df()
+
+
 # %% PUNTO 2: Establecimientos de salud con terapia intensiva
 
 establecientos_con_terapia_intensiva = dd.query(
@@ -366,7 +414,7 @@ cantidad_defunciones_2010_2022 = dd.query(
                 ) AS def_2022
         FROM defunciones
         INNER JOIN clasificacion_de_defunciones
-            ON defunciones.codigo_defuncion = clasificacion_de_defunciones.codigo
+            ON defunciones.codigo_defuncion = clasificacion_de_defunciones.codigo_defuncion
         WHERE anio = 2010 OR anio = 2022
         GROUP BY clasificacion_de_defunciones.clasificacion_defuncion
     """).df()
