@@ -232,12 +232,13 @@ df_departamentos.to_csv('Archivos_Propios/departamentos.csv', index= False, enco
 
 #%% DEFUNCIONES
 #Creacion del DataFrame principal de 'defunciones'
-#
+#cambio los id de 98 a 99 (de null a 'Sin Informacion')
 consulta = """
         SELECT 
             anio, 
             CASE 
-                WHEN jurisdiccion_de_residencia_id = 98 THEN 99
+                WHEN jurisdiccion_de_residencia_id = 98 
+                THEN 99
                 ELSE jurisdiccion_de_residencia_id
                 END as provincia_id,
             cie10_causa_id AS codigo_defuncion, 
@@ -251,13 +252,38 @@ defunciones_tuneado = dd.query(consulta).df()
 
 
 #Creacion del Dataframe 'clasificacion_de_defunciones'
+
 consulta = """
-        SELECT DISTINCT cie10_causa_id AS codigo_defuncion, cie10_clasificacion AS clasificacion_defuncion
+        SELECT DISTINCT cie10_causa_id AS codigo, cie10_clasificacion AS clasificacion
         FROM defunciones
+        WHERE clasificacion IS NOT NULL
 """
 clasificacion_de_defunciones = dd.query(consulta).df()
 
+#Ahora voy a renombrar los nulls de defunciones por 'sin informacion' y su codigo por A00
+#obtengo los codigos cuya clasificacion es null
+consulta = """
+        SELECT DISTINCT cie10_causa_id AS codigo
+        FROM defunciones
+        WHERE cie10_clasificacion IS NULL
+"""
+codigos_null = (dd.query(consulta).df())["codigo"]
+dicc_nulls = {}
+
+#creo el diccionario que se va a usar para reemplazar los codigos por A00
+for codigo in codigos_null:
+    dicc_nulls[codigo] = "A00"
+    
+defunciones_tuneado['codigo_defuncion'].replace(dicc_nulls,inplace=True)
+
+
+#defunciones_tuneado.loc[defunciones_tuneado['codigo_defuncion'] == "A00",'clasificacion'] = "Sin Información"
+nueva_fila = pd.DataFrame({'codigo':'A00','clasificacion':["Sin Información"]})
+clasificacion_de_defunciones = pd.concat([clasificacion_de_defunciones,nueva_fila],ignore_index=True)
+
+
 #Creacion del DataFrame 'provincias_defunciones'
+#Ignoro el id 98 porque es null
 consulta = """
         SELECT DISTINCT jurisdiccion_de_residencia_id AS id, jurisdicion_residencia_nombre AS nombre
         FROM defunciones
@@ -266,6 +292,20 @@ consulta = """
 """
 provincias_defunciones = dd.query(consulta).df()
 
+#dejo los datos un poco mas lindos
+def quitar_comillas(lista):
+    res = lista.copy()
+
+    for i in range(len(lista)):
+        elem = lista[i]
+        if elem[0] == '"' and elem[len(elem)] == '"':
+            reemplazo = elem[1:len(elem)-1]
+            res[i] = reemplazo
+
+    return res
+
+provincias_defunciones["nombre"] = quitar_comillas(provincias_defunciones["nombre"])
+clasificacion_de_defunciones["clasificacion"] = quitar_comillas(clasificacion_de_defunciones['clasificacion'])
 
 
 
@@ -275,6 +315,8 @@ defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, enco
 clasificacion_de_defunciones.to_csv('Archivos_Propios/clasificacion_de_defunciones.csv', index=False, encoding='utf-8')
 
 provincias_defunciones.to_csv('Archivos_Propios/provincias.csv', index=False, encoding='utf-8')
+
+
 # %% INICIALIZACION DE DATAFRAMES:
 nuestra_carpeta = 'Archivos_Propios/'
 censos = pd.read_csv(nuestra_carpeta + 'censo2010-2022.csv')
