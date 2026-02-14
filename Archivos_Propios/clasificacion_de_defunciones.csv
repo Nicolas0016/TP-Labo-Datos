@@ -632,120 +632,120 @@ W05,Caída que implica silla de ruedas
 R86,Hallazgos anormales en muestras tomadas de órganos genitales masculinos
 N45,Orquitis y epididimitis
 A84,Encefalitis viral transmitida por garrapatas
-G64,Otros trastornos del sistema nervioso periférico
+J34,Otros trastornos de la nariz y de los senos paranasales
+W91,Exposición a radiación de tipo no especificado
+K60,Fisura y fístula de las regiones anal y rectal
+I84,
+J00,Rinofaringitis aguda [resfriado común]
+R91,Hallazgos anormales en diagnóstico por imagen del pulmón
+R52,"Dolor, no clasificado en otra parte"
+N61,Trastornos inflamatorios de la mama
+N63,Masa no especificada en la mama
 M54,Dorsalgia
-R20,Alteraciones de la sensibilidad cutánea
-A23,Brucelosis
+X16,"Contacto con radiadores, cañerías y artefactos para calefacción, calientes"
+L95,"Vasculitis limitada a la piel, no clasificada en otra parte"
+D34,Tumor benigno de la glándula tiroides
+E53,Deficiencias de otras vitaminas del grupo B
+Y13,"Envenenamiento por, y exposición a otras drogas que actúan sobre el sistema nervioso autónomo, de intención no determinada"
+E64,Secuelas de la desnutrición y de otras deficiencias nutricionales
+F25,Trastornos esquizoafectivos
+R22,"Tumefacción, masa  o prominencia de la piel y del tejido subcutáneo localizados"
+L80,Vitíligo
+X57,Privación no especificada
+H92,Otalgia y secreción del oído
+R92,Hallazgos anormales en diagnóstico por imagen de la mama
+D52,Anemia por deficiencia de folatos
+L27,Dermatitis debida a sustancias ingeridas
+M71,Otras bursopatías
+R61,Hiperhidrosis
+M92,Otras osteocondrosis juveniles
+X43,"Envenenamiento accidental por, y exposición a otras drogas que actúan sobre el sistema nervioso autónomo"
+F39,"Trastorno del humor [afectivo], no especificado"
+G64,Otros trastornos del sistema nervioso periférico
 F30,Episodio maníaco
+A23,Brucelosis
+F68,Otros trastornos de la personalidad y del comportamiento en adultos
+L84,Callos y callosidades
+H18,Otros trastornos de la córnea
+H70,Mastoiditis y afecciones relacionadas
+F04,"Síndrome amnésico orgánico, no inducido por alcohol o por otras sustancias psicoactivas"
+R87,Hallazgos anormales en muestras tomadas de órganos genitales femeninos
+U12,
+L42,Pitiriasis rosada
+L21,Dermatitis seborreica
+R46,Síntomas y signos que involucran la apariencia y el comportamiento
 F38,Otros trastornos del humor [afectivos]
 F51,Trastornos no orgánicos del sueño
-M67,Otros trastornos de la sinovia y del tendón
-H70,Mastoiditis y afecciones relacionadas
-M11,Otras artropatías por cristales
-R22,"Tumefacción, masa  o prominencia de la piel y del tejido subcutáneo localizados"
-L21,Dermatitis seborreica
-W03,Otras caídas en el mismo nivel por colisión con o por empujón de otra persona
-J34,Otros trastornos de la nariz y de los senos paranasales
-R91,Hallazgos anormales en diagnóstico por imagen del pulmón
-A63,"Otras enfermedades de transmisión predominantemente sexual, no clasificadas en otra parte"
-K02,Caries dental
-j18,
-D52,Anemia por deficiencia de folatos
-F04,"Síndrome amnésico orgánico, no inducido por alcohol o por otras sustancias psicoactivas"
-X34,Víctima de terremoto
-G51,Trastornos del nervio facial
-u07,
-R48,"Dislexia y otras disfunciones simbólicas, no clasificadas en otra parte"
-F25,Trastornos esquizoafectivos
-L42,Pitiriasis rosada
-X57,Privación no especificada
-E64,Secuelas de la desnutrición y de otras deficiencias nutricionales
-N35,Estrechez uretral
-W92,Exposición a calor excesivo de origen artificial
-K60,Fisura y fístula de las regiones anal y rectal
-R92,Hallazgos anormales en diagnóstico por imagen de la mama
-N63,Masa no especificada en la mama
-X16,"Contacto con radiadores, cañerías y artefactos para calefacción, calientes"
-N90,Otros trastornos no inflamatorios de la vulva y del perineo
-L95,"Vasculitis limitada a la piel, no clasificada en otra parte"
-R61,Hiperhidrosis
-L67,Anormalidades del tallo y del color del pelo
-L80,Vitíligo
-R30,Dolor asociado con la micción
-I84,
-Y61,Objeto extraño dejado accidentalmente en el cuerpo durante la atención médica y quirúrgica
-L24,Dermatitis de contacto por irritantes
-R87,Hallazgos anormales en muestras tomadas de órganos genitales femeninos
-N87,Displasia del cuello uterino
-M77,Otras entesopatías
-D34,Tumor benigno de la glándula tiroides
-Q15,Otras malformaciones congénitas del ojo
-R79,Otros hallazgos anormales en la química sanguínea
-J00,Rinofaringitis aguda [resfriado común]
-U12,
-E30,"Trastornos de la pubertad, no clasificados en otra parte"
-E45,Retardo del desarrollo debido a desnutrición proteicocalórica
-L65,Otra pérdida no cicatricial del pelo
-K03,Otras enfermedades de los tejidos duros de los dientes
-R81,Glucosuria
-L52,Eritema nudoso
-E68,Secuelas de hiperalimentación
-N61,Trastornos inflamatorios de la mama
+F62,"Cambios perdurables de la personalidad, no atribuibles a lesión o a enfermedad cerebral"
+F65,Trastornos de la preferencia sexual
+F66,Trastornos psicológicos y del comportamiento asociados con el desarrollo y con la orientación sexuales
 F89,"Trastorno del desarrollo psicológico, no especificado"
-k83,
-L29,Prurito
-F22,Trastornos delirantes persistentes
-H18,Otros trastornos de la córnea
-F68,Otros trastornos de la personalidad y del comportamiento en adultos
-F21,Trastorno esquizotípico
-R78,Hallazgo de drogas y otras sustancias que normalmente no se encuentran en la sangre
-Y64,Medicamentos o sustancias biológicas contaminados
+A55,Linfogranuloma (venéreo) por clamidias
+A71,Tracoma
+L57,Cambios de la piel debidos a exposición crónica a radiación no ionizante
+Y36,Operaciones de guerra
+Y61,Objeto extraño dejado accidentalmente en el cuerpo durante la atención médica y quirúrgica
+R71,Anormalidad de los eritrocitos
+G51,Trastornos del nervio facial
 B64,"Enfermedad debida a protozoarios, no especificada"
+H31,Otros trastornos de la coroides
+W92,Exposición a calor excesivo de origen artificial
+R30,Dolor asociado con la micción
+L20,Dermatitis atópica
+L29,Prurito
+L65,Otra pérdida no cicatricial del pelo
+L91,Trastornos hipertróficos de la piel
+N35,Estrechez uretral
+R70,Velocidad de eritrosedimentación elevada y otras anormalidades de la viscosidad del plasma
+c18,
+M22,Trastornos de la rótula
+K03,Otras enfermedades de los tejidos duros de los dientes
+M67,Otros trastornos de la sinovia y del tendón
+n18,
+E45,Retardo del desarrollo debido a desnutrición proteicocalórica
+N90,Otros trastornos no inflamatorios de la vulva y del perineo
 w74,
-F39,"Trastorno del humor [afectivo], no especificado"
-W91,Exposición a radiación de tipo no especificado
+W03,Otras caídas en el mismo nivel por colisión con o por empujón de otra persona
+Q15,Otras malformaciones congénitas del ojo
 G44,Otros síndromes de cefalea
 B83,Otros helmintiasis
-M92,Otras osteocondrosis juveniles
 V61,Ocupante de vehículo de transporte pesado lesionado por colisión con vehículo de pedal
 F78,Otros tipos de retraso mental
 V72,Ocupante de autobús lesionado por colisión con vehículo de motor de dos o tres ruedas
 Q83,Malformaciones congénitas de la mama
-Y13,"Envenenamiento por, y exposición a otras drogas que actúan sobre el sistema nervioso autónomo, de intención no determinada"
-X43,"Envenenamiento accidental por, y exposición a otras drogas que actúan sobre el sistema nervioso autónomo"
+X34,Víctima de terremoto
 W28,"Contacto traumático con cortadora de césped, con motor"
 J33,Pólipo nasal
 O61,Fracaso de la inducción del trabajo de parto
 H11,Otros trastornos de la conjuntiva
 N75,Enfermedades de la glándula de Bartholin
 O35,"Atención materna por anormalidad o lesión fetal, conocida o presunta"
+L52,Eritema nudoso
 K07,Anomalías dentofaciales (incluso la maloclusión)
 A88,"Otras infecciones virales del sistema nervioso central, no clasificadas en otra parte"
 L59,Otros trastornos de la piel y del tejido subcutáneo relacionados con radiación
+u07,
+N87,Displasia del cuello uterino
+F21,Trastorno esquizotípico
 W58,Mordedura o ataque de cocodrilo o caimán
-A71,Tracoma
-M71,Otras bursopatías
-F65,Trastornos de la preferencia sexual
-L20,Dermatitis atópica
 B77,Ascariasis
-R52,"Dolor, no clasificado en otra parte"
-E53,Deficiencias de otras vitaminas del grupo B
-H92,Otalgia y secreción del oído
-L27,Dermatitis debida a sustancias ingeridas
-L84,Callos y callosidades
-R46,Síntomas y signos que involucran la apariencia y el comportamiento
-F62,"Cambios perdurables de la personalidad, no atribuibles a lesión o a enfermedad cerebral"
-F66,Trastornos psicológicos y del comportamiento asociados con el desarrollo y con la orientación sexuales
-A55,Linfogranuloma (venéreo) por clamidias
-L57,Cambios de la piel debidos a exposición crónica a radiación no ionizante
-Y36,Operaciones de guerra
-R71,Anormalidad de los eritrocitos
-H31,Otros trastornos de la coroides
-L91,Trastornos hipertróficos de la piel
-R70,Velocidad de eritrosedimentación elevada y otras anormalidades de la viscosidad del plasma
-c18,
-M22,Trastornos de la rótula
-n18,
+R20,Alteraciones de la sensibilidad cutánea
+M11,Otras artropatías por cristales
+A63,"Otras enfermedades de transmisión predominantemente sexual, no clasificadas en otra parte"
+K02,Caries dental
+j18,
+R48,"Dislexia y otras disfunciones simbólicas, no clasificadas en otra parte"
+L67,Anormalidades del tallo y del color del pelo
+L24,Dermatitis de contacto por irritantes
+M77,Otras entesopatías
+R79,Otros hallazgos anormales en la química sanguínea
+E30,"Trastornos de la pubertad, no clasificados en otra parte"
+R81,Glucosuria
+E68,Secuelas de hiperalimentación
+k83,
+F22,Trastornos delirantes persistentes
+R78,Hallazgo de drogas y otras sustancias que normalmente no se encuentran en la sangre
+Y64,Medicamentos o sustancias biológicas contaminados
 P52,Hemorragia intracraneal no traumática del feto y del recién nacido
 Q91,Síndrome de Edwards y síndrome  de Patau
 Q79,"Malformaciones congénitas del sistema osteomuscular, no clasificadas en otra parte"
@@ -1396,109 +1396,58 @@ R17,Ictericia no especificada
 N41,Enfermedades inflamatorias de la próstata
 N64,Otros trastornos de la mama
 I36,Trastornos no reumáticos de la válvula tricúspide
-D29,Tumor benigno de los órganos genitales masculinos
-M20,Deformidades adquiridas de los dedos de la mano y del pie
-R51,Cefalea
-R54,Senilidad
-F12,Trastornos mentales y del comportamiento debidos al uso de cannabinoides
-K13,Otras enfermedades de los labios y de la mucosa bucal
-B47,Micetoma
-R14,Flatulencia y afecciones afines
-R26,Anormalidades de la marcha y de la movilidad
-V71,Ocupante de autobús lesionado por colisión con vehículo de pedal
-R35,Poliuria
-A77,Fiebre maculosa [rickettsiosis transmitida por garrapatas]
-N36,Otros trastornos de la uretra
-H60,Otitis externa
-K14,Enfermedades de la lengua
-M40,Cifosis y lordosis
-M42,Osteocondrosis de la columna vertebral
-F34,Trastorno del humor [afectivos] persistentes
-E50,Deficiencia de vitamina A
-H49,Estrabismo paralítico
-H81,Trastornos de la función vestibular
-M12,Otras artropatías específicas
-L11,Otros trastornos acantolíticos
-X51,Viajes y desplazamientos
-Y53,Efectos adversos de agentes que afectan primariamente el sistema gastrointestinal
-E61,Deficiencias de otros elementos nutricionales
-i50,
-J30,Rinitis alérgica y vasomotora
-R13,Disfagia
-K64,Hemorroides y trombosis venosa perianal
-L44,Otros trastornos papuloescamosos
-A07,Otras enfermedades intestinales debidas a protozoarios
-D51,Anemia por deficiencia de vitamina B12
-V70,Ocupante de autobús lesionado por colisión con peatón o animal
-F33,Trastorno depresivo recurrente
-Y51,Efectos adversos de drogas que afectan primariamente el sistema nervioso autónomo
-E28,Disfunción ovárica
-A95,Fiebre amarilla
-X50,Exceso de esfuerzo y movimientos extenuantes y repetitivos
-L75,Trastornos sudoríparos apocrinos
-Y56,"Efectos adversos de agentes tópicos que afectan primariamente la piel y las membranas mucosas, y drogas oftalmológicas, otorrinolaringológicas y dentales"
-R33,Retención de orina
-D10,Tumor benigno de la boca y de la faringe
-D30,Tumor benigno de los órganos urinarios
-E01,Trastornos tiroideos vinculados a deficiencia de yodo y afecciones relacionadas
-R43,Trastornos del olfato y del gusto
-R76,Otros hallazgos inmunológicos anormales en suero
-R84,Hallazgos anormales en muestras tomadas de órganos respiratorios y torácicos
-J63,Neumoconiosis debida a otros polvos inorgánicos
-F18,Trastornos mentales y del comportamiento debidos al uso de disolventes volátiles
-K11,Enfermedades de las glándulas salivales
-R42,Mareo y desvanecimiento
-L68,Hipertricosis
-X54,Privación de agua
-R74,Nivel anormal de enzimas en suero
-R80,Proteinuria aislada
-R82,Otros hallazgos anormales en la orina
-R89,"Hallazgos anormales en muestras tomadas de otros órganos, sistemas y tejidos"
-M21,Otras deformidades adquiridas de los miembros
-M66,Ruptura espontánea de la sinovia y del tendón
-Q54,Hipospadias
-Y72,Dispositivos otorrinolaringológicos asociados con incidentes adversos
-X52,Permanencia prolongada en ambiente sin gravedad
-L13,Otros trastornos flictenulares
-L63,Alopecia areata
-Y62,Fallas en la esterilización durante la atención médica y quirúrgica
-L25,"Dermatitis de contacto, forma no especificada"
 Y55,Efectos adversos de agentes que actúan primariamente sobre los músculos lisos y estriados y sobre el sistema respiratorio
-X63,"Envenenamiento autoinfligido intencionalmente por, y exposición a otras drogas que actúan sobre el sistema nervioso autónomo"
-E56,Otras deficiencias de vitaminas
-O21,Vómitos excesivos del embarazo
-O69,Trabajo de parto y parto complicados por problemas del cordón umbilical
-H16,Queratitis
-R94,Resultados anormales de estudios funcionales
-O25,Desnutrición en el embarazo
-R65,Síndrome de respuesta inflamatoria sistémica
-O60,Parto prematuro
-O66,Otras obstrucciones del trabajo de parto
-B65,Esquistosomiasis [bilharziasis]
-O20,Hemorragia precoz del embarazo
-J37,Laringitis y laringotraqueítis crónicas
-N98,Complicaciones asociadas con la fecundación artificial
-W41,Exposición a chorro de alta presión
-N44,Torsión del testículo
-O34,Atención materna por anormalidades conocidas o presuntas de los órganos pelvianos de la madre
-L71,Rosásea
-Y76,Dispositivos ginecológicos y obstétricos asociados con incidentes adversos
-B68,Teniasis
-A26,Erisipeloide
-A51,Sífilis precoz
-W60,"Contacto traumático con aguijones, espinas u hojas cortantes de plantas"
-G57,Mononeuropatías del miembro inferior
+H81,Trastornos de la función vestibular
+R13,Disfagia
+R54,Senilidad
+N36,Otros trastornos de la uretra
+Y72,Dispositivos otorrinolaringológicos asociados con incidentes adversos
 E58,Deficiencia dietética de calcio
+R76,Otros hallazgos inmunológicos anormales en suero
+K13,Otras enfermedades de los labios y de la mucosa bucal
+D29,Tumor benigno de los órganos genitales masculinos
+D51,Anemia por deficiencia de vitamina B12
 B76,Anquilostomiasis y necatoriasis
+F33,Trastorno depresivo recurrente
+L68,Hipertricosis
 L73,Otros trastornos foliculares
+K14,Enfermedades de la lengua
+X51,Viajes y desplazamientos
+E56,Otras deficiencias de vitaminas
+D10,Tumor benigno de la boca y de la faringe
+Y53,Efectos adversos de agentes que afectan primariamente el sistema gastrointestinal
+X63,"Envenenamiento autoinfligido intencionalmente por, y exposición a otras drogas que actúan sobre el sistema nervioso autónomo"
+G57,Mononeuropatías del miembro inferior
+R74,Nivel anormal de enzimas en suero
+K64,Hemorroides y trombosis venosa perianal
+R80,Proteinuria aislada
+M12,Otras artropatías específicas
 R77,Otras anormalidades de las proteínas plasmáticas
+X50,Exceso de esfuerzo y movimientos extenuantes y repetitivos
+E50,Deficiencia de vitamina A
+X54,Privación de agua
+J63,Neumoconiosis debida a otros polvos inorgánicos
+M42,Osteocondrosis de la columna vertebral
+M40,Cifosis y lordosis
 L83,Acantosis nigricans
+A95,Fiebre amarilla
 L72,Quiste folicular de la piel y del tejido subcutáneo
+K11,Enfermedades de las glándulas salivales
+Y56,"Efectos adversos de agentes tópicos que afectan primariamente la piel y las membranas mucosas, y drogas oftalmológicas, otorrinolaringológicas y dentales"
+E61,Deficiencias de otros elementos nutricionales
+F12,Trastornos mentales y del comportamiento debidos al uso de cannabinoides
 H65,Otitis media no supurativa
 B08,"Otras infeciones víricas caracterizadas por lesiones de la piel y de las membranas mucosas, no clasificadas en otra parte"
+A07,Otras enfermedades intestinales debidas a protozoarios
+B47,Micetoma
+A26,Erisipeloide
 F59,"Síndromes del comportamiento asociados con alteraciones fisiológicas y factores físicos, no especificados"
+D30,Tumor benigno de los órganos urinarios
+A51,Sífilis precoz
 A92,Otras fiebres virales transmitidas por mosquitos
 B09,"Infección viral no especificada, caracterizada por lesiones de la piel y de las membranas mucosas"
+Y51,Efectos adversos de drogas que afectan primariamente el sistema nervioso autónomo
+Y62,Fallas en la esterilización durante la atención médica y quirúrgica
 Y63,Falla en la dosificación durante la atención médica y quirúrgica
 k80,
 B30,Conjuntivitis viral
@@ -1506,5 +1455,56 @@ B35,Dermatofitosis
 B92,Secuelas de lepra
 b99,
 H15,Trastornos de la esclerótica
+R26,Anormalidades de la marcha y de la movilidad
+R43,Trastornos del olfato y del gusto
+L25,"Dermatitis de contacto, forma no especificada"
+L44,Otros trastornos papuloescamosos
 L58,Radiodermatitis
 L66,Alopecia cicatricial [pérdida cicatricial del pelo]
+R82,Otros hallazgos anormales en la orina
+M66,Ruptura espontánea de la sinovia y del tendón
+V71,Ocupante de autobús lesionado por colisión con vehículo de pedal
+O21,Vómitos excesivos del embarazo
+V70,Ocupante de autobús lesionado por colisión con peatón o animal
+O69,Trabajo de parto y parto complicados por problemas del cordón umbilical
+H16,Queratitis
+R94,Resultados anormales de estudios funcionales
+O25,Desnutrición en el embarazo
+F34,Trastorno del humor [afectivos] persistentes
+R65,Síndrome de respuesta inflamatoria sistémica
+O60,Parto prematuro
+O66,Otras obstrucciones del trabajo de parto
+B65,Esquistosomiasis [bilharziasis]
+O20,Hemorragia precoz del embarazo
+J37,Laringitis y laringotraqueítis crónicas
+N98,Complicaciones asociadas con la fecundación artificial
+L13,Otros trastornos flictenulares
+W41,Exposición a chorro de alta presión
+J30,Rinitis alérgica y vasomotora
+N44,Torsión del testículo
+O34,Atención materna por anormalidades conocidas o presuntas de los órganos pelvianos de la madre
+L71,Rosásea
+Y76,Dispositivos ginecológicos y obstétricos asociados con incidentes adversos
+B68,Teniasis
+W60,"Contacto traumático con aguijones, espinas u hojas cortantes de plantas"
+R51,Cefalea
+M20,Deformidades adquiridas de los dedos de la mano y del pie
+R14,Flatulencia y afecciones afines
+R35,Poliuria
+A77,Fiebre maculosa [rickettsiosis transmitida por garrapatas]
+H60,Otitis externa
+H49,Estrabismo paralítico
+L11,Otros trastornos acantolíticos
+i50,
+E28,Disfunción ovárica
+L75,Trastornos sudoríparos apocrinos
+R33,Retención de orina
+E01,Trastornos tiroideos vinculados a deficiencia de yodo y afecciones relacionadas
+R84,Hallazgos anormales en muestras tomadas de órganos respiratorios y torácicos
+F18,Trastornos mentales y del comportamiento debidos al uso de disolventes volátiles
+R42,Mareo y desvanecimiento
+R89,"Hallazgos anormales en muestras tomadas de otros órganos, sistemas y tejidos"
+M21,Otras deformidades adquiridas de los miembros
+Q54,Hipospadias
+X52,Permanencia prolongada en ambiente sin gravedad
+L63,Alopecia areata

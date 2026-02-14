@@ -10,7 +10,7 @@ Created on Sun Feb  8 07:40:51 2026
 
 import pandas as pd
 import duckdb as dd
-
+#%%
 carpeta = './Archivos-TP/' 
 censo2010 = pd.read_excel(carpeta + 'censo2010.xlsX') 
 censo2022 = pd.read_excel(carpeta + 'censo2022.xlsX')
@@ -248,10 +248,10 @@ clasificacion_de_defunciones = dd.query(consulta).df()
 
 #Creacion del DataFrame 'provincias_defunciones'
 consulta = """
-        SELECT DISTINCT jurisdiccion_de_residencia_id AS provincia_id, jurisdicion_residencia_nombre AS provincia_nombre
+        SELECT DISTINCT jurisdiccion_de_residencia_id AS id, jurisdicion_residencia_nombre AS nombre
         FROM defunciones
-        WHERE provincia_id != 98
-        ORDER BY provincia_id
+        WHERE id != 98
+        ORDER BY id
 """
 provincias_defunciones = dd.query(consulta).df()
 
@@ -264,18 +264,28 @@ defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, enco
 clasificacion_de_defunciones.to_csv('Archivos_Propios/clasificacion_de_defunciones.csv', index=False, encoding='utf-8')
 
 provincias_defunciones.to_csv('Archivos_Propios/provincias.csv', index=False, encoding='utf-8')
+# %% INICIALIZACION DE DATAFRAMES:
+nuestra_carpeta = 'Archivos_Propios/'
+censos = pd.read_csv(nuestra_carpeta + 'censo2010-2022.csv')
+defunciones = pd.read_csv(nuestra_carpeta + 'defunciones.csv')
+clasificacion_de_defunciones = pd.read_csv(nuestra_carpeta + 'clasificacion_de_defunciones.csv')
+departamentos = pd.read_csv(nuestra_carpeta + 'departamentos.csv')
+establecimientos = pd.read_csv(nuestra_carpeta + 'establecimiento.csv')
+provincias = pd.read_csv(nuestra_carpeta + 'provincias.csv')
 # %% PUNTO 2:
-estableciientos_con_terapia_intensiva = dd.query(
+
+establecientos_con_terapia_intensiva = dd.query(
     """
         SELECT 
-            departamentos.provincia_id, 
+            provincias.nombre AS nombre, 
             IF(es_publico, 'estatal', 'privado') AS financiamiento,
             count(*) as cantidad,
         FROM establecimientos
         INNER JOIN departamentos 
-        ON departamentos.id = establecimientos.id_departamento
-        
+            ON departamentos.id = establecimientos.id_departamento
+        INNER JOIN provincias
+            ON provincias.id = departamentos.provincia_id
         WHERE terapia_intensiva
-        GROUP BY provincia_id, es_publico
-        ORDER BY provincia_id, financiamiento
+        GROUP BY provincias.nombre, establecimientos.es_publico
+        ORDER BY provincias.nombre, financiamiento
     """).df()
