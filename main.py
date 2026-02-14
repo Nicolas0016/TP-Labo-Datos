@@ -263,5 +263,5 @@ defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, enco
 
 clasificacion_de_defunciones.to_csv('Archivos_Propios/clasificacion_de_defunciones.csv', index=False, encoding='utf-8')
 
-provincias_defunciones.to_csv('Archivos_Propios/provincias_defunciones.csv', index=False, encoding='utf-8')
+provincias_defunciones.to_csv('Archivos_Propios/provincias.csv', index=False, encoding='utf-8')
 # %%
