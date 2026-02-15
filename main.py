@@ -8,14 +8,20 @@ Created on Sun Feb  8 07:40:51 2026
 
 # %%
 
+import numpy as np
 import pandas as pd
 import duckdb as dd
+import matplotlib.pyplot as plt
+from matplotlib import ticker
+import seaborn as sns
 #%%
 carpeta = './Archivos-TP/' 
 censo2010 = pd.read_excel(carpeta + 'censo2010.xlsX') 
 censo2022 = pd.read_excel(carpeta + 'censo2022.xlsX')
 defunciones = pd.read_csv(carpeta + 'defunciones.csv')
 establecimientos = pd.read_excel(carpeta + 'instituciones_de_salud.xlsx')
+clasificacion_defunciones = pd.read_csv(carpeta + 'categoriasDefunciones.csv')
+
 #%% CENSOS
 def obtener_index_provincias(anio=0):
     celdas = ([],[])
@@ -182,7 +188,7 @@ def limpieza_establecimientos():
     
     ids_establecimientos = establecimientos['establecimiento_id'].tolist()
     nombres = establecimientos['establecimiento_nombre'].tolist()
-    ids_departamentos = (establecimientos['provincia_id'].astype(str) + '_' + 
+    ids_departamentos = (establecimientos['provincia_id'].astype(str) + 
                         establecimientos['departamento_id'].astype(str)).tolist()
     
     establecimientos_datos['id'].extend(ids_establecimientos)
@@ -217,7 +223,7 @@ def crear_departamento():
     consultaSQL = """
             SELECT DISTINCT 
                 
-                CONCAT(provincia_id, '_' , departamento_id) AS id, 
+                CONCAT(provincia_id, departamento_id) AS id, 
                 provincia_id,
                 departamento_nombre AS nombre
             
@@ -235,18 +241,20 @@ df_departamentos.to_csv('Archivos_Propios/departamentos.csv', index= False, enco
 #cambio los id de 98 a 99 (de null a 'Sin Informacion')
 consulta = """
         SELECT 
-            anio, 
+            defunciones.anio, 
             CASE 
                 WHEN jurisdiccion_de_residencia_id = 98 
                 THEN 99
                 ELSE jurisdiccion_de_residencia_id
                 END as provincia_id,
-            cie10_causa_id AS codigo_defuncion, 
+            clasificacion_defunciones.categorias AS categoria_defuncion, 
             Sexo AS sexo, 
             grupo_edad, 
             cantidad,
-            
         FROM defunciones
+        INNER JOIN clasificacion_defunciones
+        ON clasificacion_defunciones.codigo_def = defunciones.cie10_causa_id
+        ORDER BY clasificacion_defunciones.codigo_def 
             """
 defunciones_tuneado = dd.query(consulta).df()
 
@@ -274,7 +282,7 @@ dicc_nulls = {}
 for codigo in codigos_null:
     dicc_nulls[codigo] = "A00"
     
-defunciones_tuneado['codigo_defuncion'].replace(dicc_nulls,inplace=True)
+defunciones_tuneado['categoria_defuncion'].replace(dicc_nulls,inplace=True)
 
 
 #defunciones_tuneado.loc[defunciones_tuneado['codigo_defuncion'] == "A00",'clasificacion'] = "Sin Información"
@@ -307,6 +315,12 @@ def quitar_comillas(lista):
 provincias_defunciones["nombre"] = quitar_comillas(provincias_defunciones["nombre"])
 clasificacion_de_defunciones["clasificacion"] = quitar_comillas(clasificacion_de_defunciones['clasificacion'])
 
+clasificacion_de_defunciones = dd.query(
+    """
+    SELECT * 
+    FROM clasificacion_de_defunciones
+    ORDER BY codigo
+    """).df()
 
 
 #ARCHIVOS
@@ -369,7 +383,7 @@ cobertura_de_salud = dd.query(
     
     FROM tabla_intermedia
     GROUP BY Provincia, Rango_etario
-    ORDER BY Provincia, Rango_etario;
+    ORDER BY Provincia, Rango_etario
     """).df()
 
 
@@ -640,3 +654,84 @@ diferencia_entre_2010_2022 = dd.query(
         FROM cantidad_defunciones_2010_2022
         ORDER BY diferencia DESC
     """).df()
+
+# %% VISUALIZACIÓN PUNTO 1: Cantidad de habitantes por provincia
+
+habitantes_por_provincia = dd.query(
+    """
+        SELECT c.anio, p.nombre, SUM(c.cantidad) AS cantidad_habitantes
+        FROM censos AS c
+        INNER JOIN provincias AS p
+            ON c.provincia = p.id
+        GROUP BY c.anio, p.nombre
+        ORDER BY cantidad_habitantes, p.nombre, c.anio
+    """).df()
+
+habitantes_por_provincia = habitantes_por_provincia.pivot(index='nombre', columns='anio', values='cantidad_habitantes')
+
+fig, ax = plt.subplots()
+
+x = habitantes_por_provincia['provincia']
+datos_2010 = habitantes_por_provincia['anio'] == 2010
+
+x = np.arange(len(habitantes_por_provincia.index))
+habitantes_2010 = habitantes_por_provincia[2010]
+habitantes_2022 = habitantes_por_provincia[2022]
+
+width = 0.4
+
+ax.bar(x - width/2, habitantes_2010, width=width, label='Habitantes 2010')
+ax.bar(x + width/2, habitantes_2022, width=width, label='Habitantes 2022')
+
+ax.set_title('Población Argentina por provincia 2010 vs 2022')
+ax.set_xlabel('Provincias')
+ax.set_xticks(x, labels=habitantes_por_provincia.index, rotation=45, ha='right')
+ax.legend()
+
+plt.show()
+# %% VISUALIZACION PUNTO 2
+
+
+cantidad_defunciones_por_tiempo = dd.query(
+    """
+        SELECT anio, categoria_defuncion, sum(cantidad) as cantidad
+        FROM defunciones_tuneado
+        GROUP BY anio, categoria_defuncion
+        ORDER BY cantidad DESC
+    """    
+    
+).df()
+# %%
+categorias_df = dd.query(
+    """
+        SELECT DISTINCT categoria_defuncion
+        FROM cantidad_defunciones_por_tiempo
+    """    
+).df()
+n_categorias = len(categorias.index.tolist())
+mitad = n_categorias // 2
+categorias_lista = categorias_df['categoria_defuncion'].tolist()
+primer_grupo = categorias_lista[:mitad]
+segundo_grupo = categorias_lista[mitad:]
+# %%
+# PRIMER GÁFICO
+fig1, ax1 = plt.subplots(figsize=(20, 8))
+sns.lineplot(data=cantidad_defunciones_por_tiempo[cantidad_defunciones_por_tiempo['categoria_defuncion'].isin(primer_grupo)], 
+             x='anio', y='cantidad', hue='categoria_defuncion', marker='o', ax=ax1)
+ax1.set_xlabel('Año', fontsize=12)
+ax1.set_ylabel('Cantidad de defunciones', fontsize=12)
+ax1.set_title(f'Categorías 1 a {mitad} (mayor cantidad)', fontsize=14, fontweight='bold')
+ax1.legend(title='Categoría', bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.tight_layout()
+plt.show()
+
+# SEGUNDO GRÁFICO
+fig2, ax2 = plt.subplots(figsize=(20, 8))
+sns.lineplot(data=cantidad_defunciones_por_tiempo[cantidad_defunciones_por_tiempo['categoria_defuncion'].isin(segundo_grupo)], 
+             x='anio', y='cantidad', hue='categoria_defuncion', marker='o', ax=ax2)
+ax2.set_xlabel('Año', fontsize=12)
+ax2.set_ylabel('Cantidad de defunciones', fontsize=12)
+ax2.set_title(f'Categorías {mitad+1} a {len(categorias)} (menor cantidad)', fontsize=14, fontweight='bold')
+ax2.legend(title='Categoría', bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.tight_layout()
+plt.show()
