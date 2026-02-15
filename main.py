@@ -479,49 +479,92 @@ ax.set_xticks(x, labels=habitantes_por_provincia.index, rotation=45, ha='right')
 ax.legend()
 
 plt.show()
-# %% VISUALIZACION PUNTO 2
 
+# %% VISUALIZACION PUNTO 2 - DIVISIÓN OPTIMIZADA SEGÚN PERCENTILES
+def percentil_manual(datos, p):
+        datos_ordenados = sorted(datos)
+        posicion = (len(datos_ordenados) - 1) * (p / 100)
+        i = int(posicion)  # posicion entera
+        
+        return datos_ordenados[i] + (posicion-i) * (datos_ordenados[i + 1] - datos_ordenados[i])
 
+def calcular_percentiles_de_corte(medianas_df):
+    valores = medianas_df['mediana'].tolist()
+    
+    q1 = percentil_manual(valores, 25)
+    q2 = percentil_manual(valores, 50)
+    q3 = percentil_manual(valores, 75)
+    
+    return (
+        int(round(q1)),
+        int(round(q2)),
+        int(round(q3))
+    )
+
+# 1. Obtener los datos
 cantidad_defunciones_por_tiempo = dd.query(
     """
         SELECT anio, categoria_defuncion, sum(cantidad) as cantidad
-        FROM defunciones_tuneado
+        FROM defunciones
         GROUP BY anio, categoria_defuncion
         ORDER BY cantidad DESC
     """    
-    
 ).df()
-# %%
+
+# 2. Calcular las medianas por categoría
 categorias_df = dd.query(
     """
         SELECT DISTINCT categoria_defuncion
         FROM cantidad_defunciones_por_tiempo
     """    
 ).df()
-n_categorias = len(categorias.index.tolist())
-mitad = n_categorias // 2
-categorias_lista = categorias_df['categoria_defuncion'].tolist()
-primer_grupo = categorias_lista[:mitad]
-segundo_grupo = categorias_lista[mitad:]
-# %%
-# PRIMER GÁFICO
-fig1, ax1 = plt.subplots(figsize=(20, 8))
-sns.lineplot(data=cantidad_defunciones_por_tiempo[cantidad_defunciones_por_tiempo['categoria_defuncion'].isin(primer_grupo)], 
-             x='anio', y='cantidad', hue='categoria_defuncion', marker='o', ax=ax1)
-ax1.set_xlabel('Año', fontsize=12)
-ax1.set_ylabel('Cantidad de defunciones', fontsize=12)
-ax1.set_title(f'Categorías 1 a {mitad} (mayor cantidad)', fontsize=14, fontweight='bold')
-ax1.legend(title='Categoría', bbox_to_anchor=(1.05, 1), loc='upper left')
-plt.tight_layout()
-plt.show()
 
-# SEGUNDO GRÁFICO
-fig2, ax2 = plt.subplots(figsize=(20, 8))
-sns.lineplot(data=cantidad_defunciones_por_tiempo[cantidad_defunciones_por_tiempo['categoria_defuncion'].isin(segundo_grupo)], 
-             x='anio', y='cantidad', hue='categoria_defuncion', marker='o', ax=ax2)
-ax2.set_xlabel('Año', fontsize=12)
-ax2.set_ylabel('Cantidad de defunciones', fontsize=12)
-ax2.set_title(f'Categorías {mitad+1} a {len(categorias)} (menor cantidad)', fontsize=14, fontweight='bold')
-ax2.legend(title='Categoría', bbox_to_anchor=(1.05, 1), loc='upper left')
-plt.tight_layout()
-plt.show()
+res = []
+for _, row in categorias_df.iterrows():
+    categoria = row['categoria_defuncion']
+    df = dd.query(
+        f"""
+            SELECT sum(cantidad) as cantidad
+            FROM defunciones
+            WHERE categoria_defuncion = '{categoria}'
+            GROUP BY anio
+        """
+    ).df()
+    mediana = df['cantidad'].median()
+    res.append({'categoria': categoria, 'mediana': mediana})
+
+medianas_df = pd.DataFrame(res)
+
+(corte_grupo1,corte_grupo2,corte_grupo3) = calcular_percentiles_de_corte(medianas_df)
+
+grupo1 = medianas_df[medianas_df['mediana'] <= corte_grupo1]['categoria'].tolist()  # Muy bajas
+grupo2 = medianas_df[(medianas_df['mediana'] > corte_grupo1) & (medianas_df['mediana'] <= corte_grupo2)]['categoria'].tolist()  # Bajas
+grupo3 = medianas_df[(medianas_df['mediana'] > corte_grupo2) & (medianas_df['mediana'] <= corte_grupo3)]['categoria'].tolist()  # Medias
+grupo4 = medianas_df[medianas_df['mediana'] > corte_grupo3]['categoria'].tolist()  # Altas + outliers
+
+
+def graficar_grupo(grupo, titulo):
+    
+    datos_grupo = cantidad_defunciones_por_tiempo[cantidad_defunciones_por_tiempo['categoria_defuncion'].isin(grupo)]
+    
+    fig, ax = plt.subplots(figsize=(20, 8))
+    
+    sns.lineplot(data=datos_grupo, 
+                 x='anio', y='cantidad', 
+                 hue='categoria_defuncion', 
+                 marker='o')
+    
+    ax.set_xlabel('Año', fontsize=12)
+    ax.set_ylabel('Cantidad de defunciones', fontsize=12)
+    
+    ax.set_title(f'{titulo}', fontsize=14, fontweight='bold')
+    
+    ax.legend(title='Categoría', loc='upper left')
+    plt.tight_layout()
+    plt.show()
+
+
+graficar_grupo(grupo1, f"GRUPO 1 (0 - {corte_grupo1})")
+graficar_grupo(grupo2, f"GRUPO 2 ({corte_grupo1} - {corte_grupo2})")
+graficar_grupo(grupo3, f"GRUPO 3 ({corte_grupo2} - {corte_grupo3})")
+graficar_grupo(grupo4, f"GRUPO 4 ({corte_grupo3} - ...)")
