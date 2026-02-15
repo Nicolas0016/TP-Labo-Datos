@@ -555,16 +555,19 @@ habitantes_por_provincia = dd.query(
         INNER JOIN provincias AS p
             ON c.provincia = p.id
         GROUP BY c.anio, p.nombre
-        ORDER BY cantidad_habitantes, p.nombre, c.anio
+        ORDER BY c.anio, cantidad_habitantes 
     """).df()
-
 habitantes_por_provincia = habitantes_por_provincia.pivot(index='nombre', columns='anio', values='cantidad_habitantes')
+
+habitantes_por_provincia = habitantes_por_provincia.sort_values(2022, ascending=False)
 
 fig, ax = plt.subplots()
 
 
 y = np.arange(len(habitantes_por_provincia.index))
 habitantes_2010 = habitantes_por_provincia[2010]
+
+    
 habitantes_2022 = habitantes_por_provincia[2022]
 
 width = 0.4

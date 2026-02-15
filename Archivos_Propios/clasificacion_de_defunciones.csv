@@ -1,1477 +1,1495 @@
-Unnamed: 0,codigo_def,categorias,codigo,clasificacion
-,,,A00,Sin Información
-0.0,A01,Enfermedades infecciosas y parasitarias ,,
-1.0,A02,Enfermedades infecciosas y parasitarias ,,
-2.0,A03,Enfermedades infecciosas y parasitarias ,,
-3.0,A04,Enfermedades infecciosas y parasitarias ,,
-4.0,A05,Enfermedades infecciosas y parasitarias ,,
-5.0,A06,Enfermedades infecciosas y parasitarias ,,
-6.0,A07,Enfermedades infecciosas y parasitarias ,,
-7.0,A08,Enfermedades infecciosas y parasitarias ,,
-8.0,A09,Enfermedades infecciosas y parasitarias ,,
-9.0,A15,Enfermedades infecciosas y parasitarias ,,
-10.0,A16,Enfermedades infecciosas y parasitarias ,,
-11.0,A17,Enfermedades infecciosas y parasitarias ,,
-12.0,A18,Enfermedades infecciosas y parasitarias ,,
-13.0,A19,Enfermedades infecciosas y parasitarias ,,
-14.0,A21,Enfermedades infecciosas y parasitarias ,,
-15.0,A22,Enfermedades infecciosas y parasitarias ,,
-16.0,A23,Enfermedades infecciosas y parasitarias ,,
-17.0,A26,Enfermedades infecciosas y parasitarias ,,
-18.0,A27,Enfermedades infecciosas y parasitarias ,,
-19.0,A28,Enfermedades infecciosas y parasitarias ,,
-20.0,A30,Enfermedades infecciosas y parasitarias ,,
-21.0,A31,Enfermedades infecciosas y parasitarias ,,
-22.0,A32,Enfermedades infecciosas y parasitarias ,,
-23.0,A33,Enfermedades infecciosas y parasitarias ,,
-24.0,A35,Enfermedades infecciosas y parasitarias ,,
-25.0,A37,Enfermedades infecciosas y parasitarias ,,
-26.0,A39,Enfermedades infecciosas y parasitarias ,,
-27.0,A40,Enfermedades infecciosas y parasitarias ,,
-28.0,A41,Enfermedades infecciosas y parasitarias ,,
-29.0,A42,Enfermedades infecciosas y parasitarias ,,
-30.0,A43,Enfermedades infecciosas y parasitarias ,,
-31.0,A44,Enfermedades infecciosas y parasitarias ,,
-32.0,A46,Enfermedades infecciosas y parasitarias ,,
-33.0,A48,Enfermedades infecciosas y parasitarias ,,
-34.0,A49,Enfermedades infecciosas y parasitarias ,,
-35.0,A50,Enfermedades infecciosas y parasitarias ,,
-36.0,A51,Enfermedades infecciosas y parasitarias ,,
-37.0,A52,Enfermedades infecciosas y parasitarias ,,
-38.0,A53,Enfermedades infecciosas y parasitarias ,,
-39.0,A54,Enfermedades infecciosas y parasitarias ,,
-40.0,A55,Enfermedades infecciosas y parasitarias ,,
-41.0,A59,Enfermedades infecciosas y parasitarias ,,
-42.0,A60,Enfermedades infecciosas y parasitarias ,,
-43.0,A63,Enfermedades infecciosas y parasitarias ,,
-44.0,A64,Enfermedades infecciosas y parasitarias ,,
-45.0,A69,Enfermedades infecciosas y parasitarias ,,
-46.0,A70,Enfermedades infecciosas y parasitarias ,,
-47.0,A71,Enfermedades infecciosas y parasitarias ,,
-48.0,A74,Enfermedades infecciosas y parasitarias ,,
-49.0,A77,Enfermedades infecciosas y parasitarias ,,
-50.0,A81,Enfermedades infecciosas y parasitarias ,,
-51.0,A83,Enfermedades infecciosas y parasitarias ,,
-52.0,A84,Enfermedades infecciosas y parasitarias ,,
-53.0,A85,Enfermedades infecciosas y parasitarias ,,
-54.0,A86,Enfermedades infecciosas y parasitarias ,,
-55.0,A87,Enfermedades infecciosas y parasitarias ,,
-56.0,A88,Enfermedades infecciosas y parasitarias ,,
-57.0,A89,Enfermedades infecciosas y parasitarias ,,
-58.0,A90,Enfermedades infecciosas y parasitarias ,,
-59.0,A91,Enfermedades infecciosas y parasitarias ,,
-60.0,A92,Enfermedades infecciosas y parasitarias ,,
-61.0,A94,Enfermedades infecciosas y parasitarias ,,
-62.0,A95,Enfermedades infecciosas y parasitarias ,,
-63.0,A96,Enfermedades infecciosas y parasitarias ,,
-64.0,A98,Enfermedades infecciosas y parasitarias ,,
-65.0,A99,Enfermedades infecciosas y parasitarias ,,
-66.0,B00,Enfermedades infecciosas y parasitarias ,,
-67.0,B01,Enfermedades infecciosas y parasitarias ,,
-68.0,B02,Enfermedades infecciosas y parasitarias ,,
-69.0,B04,Enfermedades infecciosas y parasitarias ,,
-70.0,B05,Enfermedades infecciosas y parasitarias ,,
-71.0,B06,Enfermedades infecciosas y parasitarias ,,
-72.0,B09,Enfermedades infecciosas y parasitarias ,,
-73.0,B15,Enfermedades infecciosas y parasitarias ,,
-74.0,B16,Enfermedades infecciosas y parasitarias ,,
-75.0,B17,Enfermedades infecciosas y parasitarias ,,
-76.0,B18,Enfermedades infecciosas y parasitarias ,,
-77.0,B19,Enfermedades infecciosas y parasitarias ,,
-78.0,B20,Enfermedades infecciosas y parasitarias ,,
-79.0,B21,Enfermedades infecciosas y parasitarias ,,
-80.0,B22,Enfermedades infecciosas y parasitarias ,,
-81.0,B23,Enfermedades infecciosas y parasitarias ,,
-82.0,B24,Enfermedades infecciosas y parasitarias ,,
-83.0,B25,Enfermedades infecciosas y parasitarias ,,
-84.0,B26,Enfermedades infecciosas y parasitarias ,,
-85.0,B27,Enfermedades infecciosas y parasitarias ,,
-86.0,B30,Enfermedades infecciosas y parasitarias ,,
-87.0,B33,Enfermedades infecciosas y parasitarias ,,
-88.0,B34,Enfermedades infecciosas y parasitarias ,,
-89.0,B35,Enfermedades infecciosas y parasitarias ,,
-90.0,B36,Enfermedades infecciosas y parasitarias ,,
-91.0,B37,Enfermedades infecciosas y parasitarias ,,
-92.0,B38,Enfermedades infecciosas y parasitarias ,,
-93.0,B39,Enfermedades infecciosas y parasitarias ,,
-94.0,B40,Enfermedades infecciosas y parasitarias ,,
-95.0,B41,Enfermedades infecciosas y parasitarias ,,
-96.0,B42,Enfermedades infecciosas y parasitarias ,,
-97.0,B43,Enfermedades infecciosas y parasitarias ,,
-98.0,B44,Enfermedades infecciosas y parasitarias ,,
-99.0,B45,Enfermedades infecciosas y parasitarias ,,
-100.0,B46,Enfermedades infecciosas y parasitarias ,,
-101.0,B48,Enfermedades infecciosas y parasitarias ,,
-102.0,B49,Enfermedades infecciosas y parasitarias ,,
-103.0,B54,Enfermedades infecciosas y parasitarias ,,
-104.0,B55,Enfermedades infecciosas y parasitarias ,,
-105.0,B56,Enfermedades infecciosas y parasitarias ,,
-106.0,B57,Enfermedades infecciosas y parasitarias ,,
-107.0,B58,Enfermedades infecciosas y parasitarias ,,
-108.0,B59,Enfermedades infecciosas y parasitarias ,,
-109.0,B60,Enfermedades infecciosas y parasitarias ,,
-110.0,B64,Enfermedades infecciosas y parasitarias ,,
-111.0,B66,Enfermedades infecciosas y parasitarias ,,
-112.0,B67,Enfermedades infecciosas y parasitarias ,,
-113.0,B69,Enfermedades infecciosas y parasitarias ,,
-114.0,B74,Enfermedades infecciosas y parasitarias ,,
-115.0,B75,Enfermedades infecciosas y parasitarias ,,
-116.0,B76,Enfermedades infecciosas y parasitarias ,,
-117.0,B77,Enfermedades infecciosas y parasitarias ,,
-118.0,B78,Enfermedades infecciosas y parasitarias ,,
-119.0,B82,Enfermedades infecciosas y parasitarias ,,
-120.0,B83,Enfermedades infecciosas y parasitarias ,,
-121.0,B86,Enfermedades infecciosas y parasitarias ,,
-122.0,B87,Enfermedades infecciosas y parasitarias ,,
-123.0,B88,Enfermedades infecciosas y parasitarias ,,
-124.0,B89,Enfermedades infecciosas y parasitarias ,,
-125.0,B90,Enfermedades infecciosas y parasitarias ,,
-126.0,B91,Enfermedades infecciosas y parasitarias ,,
-127.0,B92,Enfermedades infecciosas y parasitarias ,,
-128.0,B94,Enfermedades infecciosas y parasitarias ,,
-129.0,B99,Enfermedades infecciosas y parasitarias ,,
-130.0,C00,Tumores ,,
-131.0,C01,Tumores ,,
-132.0,C02,Tumores ,,
-133.0,C03,Tumores ,,
-134.0,C04,Tumores ,,
-135.0,C05,Tumores ,,
-136.0,C06,Tumores ,,
-137.0,C07,Tumores ,,
-138.0,C08,Tumores ,,
-139.0,C09,Tumores ,,
-140.0,C10,Tumores ,,
-141.0,C11,Tumores ,,
-142.0,C12,Tumores ,,
-143.0,C13,Tumores ,,
-144.0,C14,Tumores ,,
-145.0,C15,Tumores ,,
-146.0,C16,Tumores ,,
-147.0,C17,Tumores ,,
-148.0,C18,Tumores ,,
-149.0,C19,Tumores ,,
-150.0,C20,Tumores ,,
-151.0,C21,Tumores ,,
-152.0,C22,Tumores ,,
-153.0,C23,Tumores ,,
-154.0,C24,Tumores ,,
-155.0,C25,Tumores ,,
-156.0,C26,Tumores ,,
-157.0,C30,Tumores ,,
-158.0,C31,Tumores ,,
-159.0,C32,Tumores ,,
-160.0,C33,Tumores ,,
-161.0,C34,Tumores ,,
-162.0,C37,Tumores ,,
-163.0,C38,Tumores ,,
-164.0,C39,Tumores ,,
-165.0,C40,Tumores ,,
-166.0,C41,Tumores ,,
-167.0,C43,Tumores ,,
-168.0,C44,Tumores ,,
-169.0,C45,Tumores ,,
-170.0,C46,Tumores ,,
-171.0,C47,Tumores ,,
-172.0,C48,Tumores ,,
-173.0,C49,Tumores ,,
-174.0,C50,Tumores ,,
-175.0,C51,Tumores ,,
-176.0,C52,Tumores ,,
-177.0,C53,Tumores ,,
-178.0,C54,Tumores ,,
-179.0,C55,Tumores ,,
-180.0,C56,Tumores ,,
-181.0,C57,Tumores ,,
-182.0,C58,Tumores ,,
-183.0,C60,Tumores ,,
-184.0,C61,Tumores ,,
-185.0,C62,Tumores ,,
-186.0,C63,Tumores ,,
-187.0,C64,Tumores ,,
-188.0,C65,Tumores ,,
-189.0,C66,Tumores ,,
-190.0,C67,Tumores ,,
-191.0,C68,Tumores ,,
-192.0,C69,Tumores ,,
-193.0,C70,Tumores ,,
-194.0,C71,Tumores ,,
-195.0,C72,Tumores ,,
-196.0,C73,Tumores ,,
-197.0,C74,Tumores ,,
-198.0,C75,Tumores ,,
-199.0,C76,Tumores ,,
-200.0,C77,Tumores ,,
-201.0,C78,Tumores ,,
-202.0,C79,Tumores ,,
-203.0,C80,Tumores ,,
-204.0,C81,Tumores ,,
-205.0,C82,Tumores ,,
-206.0,C83,Tumores ,,
-207.0,C84,Tumores ,,
-208.0,C85,Tumores ,,
-209.0,C86,Tumores ,,
-210.0,C88,Tumores ,,
-211.0,C90,Tumores ,,
-212.0,C91,Tumores ,,
-213.0,C92,Tumores ,,
-214.0,C93,Tumores ,,
-215.0,C94,Tumores ,,
-216.0,C95,Tumores ,,
-217.0,C96,Tumores ,,
-218.0,C97,Tumores ,,
-219.0,D00,Tumores ,,
-220.0,D01,Tumores ,,
-221.0,D02,Tumores ,,
-222.0,D03,Tumores ,,
-223.0,D04,Tumores ,,
-224.0,D05,Tumores ,,
-225.0,D06,Tumores ,,
-226.0,D07,Tumores ,,
-227.0,D09,Tumores ,,
-228.0,D10,Tumores ,,
-229.0,D11,Tumores ,,
-230.0,D12,Tumores ,,
-231.0,D13,Tumores ,,
-232.0,D14,Tumores ,,
-233.0,D15,Tumores ,,
-234.0,D16,Tumores ,,
-235.0,D17,Tumores ,,
-236.0,D18,Tumores ,,
-237.0,D19,Tumores ,,
-238.0,D20,Tumores ,,
-239.0,D21,Tumores ,,
-240.0,D22,Tumores ,,
-241.0,D23,Tumores ,,
-242.0,D24,Tumores ,,
-243.0,D25,Tumores ,,
-244.0,D26,Tumores ,,
-245.0,D27,Tumores ,,
-246.0,D28,Tumores ,,
-247.0,D29,Tumores ,,
-248.0,D30,Tumores ,,
-249.0,D31,Tumores ,,
-250.0,D32,Tumores ,,
-251.0,D33,Tumores ,,
-252.0,D34,Tumores ,,
-253.0,D35,Tumores ,,
-254.0,D36,Tumores ,,
-255.0,D37,Tumores ,,
-256.0,D38,Tumores ,,
-257.0,D39,Tumores ,,
-258.0,D40,Tumores ,,
-259.0,D41,Tumores ,,
-260.0,D42,Tumores ,,
-261.0,D43,Tumores ,,
-262.0,D44,Tumores ,,
-263.0,D45,Tumores ,,
-264.0,D46,Tumores ,,
-265.0,D47,Tumores ,,
-266.0,D48,Tumores ,,
-267.0,D50,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-268.0,D51,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-269.0,D52,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-270.0,D53,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-271.0,D55,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-272.0,D56,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-273.0,D57,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-274.0,D58,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-275.0,D59,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-276.0,D60,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-277.0,D61,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-278.0,D62,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-279.0,D64,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-280.0,D65,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-281.0,D66,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-282.0,D67,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-283.0,D68,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-284.0,D69,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-285.0,D70,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-286.0,D71,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-287.0,D72,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-288.0,D73,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-289.0,D74,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-290.0,D75,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-291.0,D76,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-292.0,D80,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-293.0,D81,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-294.0,D82,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-295.0,D83,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-296.0,D84,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-297.0,D86,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-298.0,D89,"Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ",,
-299.0,E00,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-300.0,E01,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-301.0,E03,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-302.0,E04,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-303.0,E05,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-304.0,E06,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-305.0,E07,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-306.0,E10,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-307.0,E11,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-308.0,E12,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-309.0,E13,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-310.0,E14,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-311.0,E15,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-312.0,E16,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-313.0,E20,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-314.0,E21,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-315.0,E22,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-316.0,E23,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-317.0,E24,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-318.0,E25,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-319.0,E26,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-320.0,E27,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-321.0,E28,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-322.0,E30,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-323.0,E31,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-324.0,E32,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-325.0,E34,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-326.0,E40,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-327.0,E41,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-328.0,E42,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-329.0,E43,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-330.0,E44,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-331.0,E45,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-332.0,E46,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-333.0,E50,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-334.0,E51,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-335.0,E52,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-336.0,E53,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-337.0,E55,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-338.0,E56,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-339.0,E61,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-340.0,E63,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-341.0,E64,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-342.0,E66,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-343.0,E67,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-344.0,E70,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-345.0,E71,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-346.0,E72,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-347.0,E74,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-348.0,E75,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-349.0,E76,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-350.0,E77,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-351.0,E78,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-352.0,E79,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-353.0,E80,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-354.0,E83,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-355.0,E84,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-356.0,E85,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-357.0,E86,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-358.0,E87,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-359.0,E88,"Enfermedades endocrinas, nutricionales y metabólicas ",,
-360.0,F01,Trastornos mentales,,
-361.0,F03,Trastornos mentales,,
-362.0,F04,Trastornos mentales,,
-363.0,F05,Trastornos mentales,,
-364.0,F06,Trastornos mentales,,
-365.0,F07,Trastornos mentales,,
-366.0,F09,Trastornos mentales,,
-367.0,F10,Trastornos mentales,,
-368.0,F11,Trastornos mentales,,
-369.0,F12,Trastornos mentales,,
-370.0,F13,Trastornos mentales,,
-371.0,F14,Trastornos mentales,,
-372.0,F16,Trastornos mentales,,
-373.0,F17,Trastornos mentales,,
-374.0,F18,Trastornos mentales,,
-375.0,F19,Trastornos mentales,,
-376.0,F20,Trastornos mentales,,
-377.0,F21,Trastornos mentales,,
-378.0,F22,Trastornos mentales,,
-379.0,F23,Trastornos mentales,,
-380.0,F25,Trastornos mentales,,
-381.0,F28,Trastornos mentales,,
-382.0,F29,Trastornos mentales,,
-383.0,F30,Trastornos mentales,,
-384.0,F31,Trastornos mentales,,
-385.0,F32,Trastornos mentales,,
-386.0,F33,Trastornos mentales,,
-387.0,F34,Trastornos mentales,,
-388.0,F38,Trastornos mentales,,
-389.0,F39,Trastornos mentales,,
-390.0,F40,Trastornos mentales,,
-391.0,F41,Trastornos mentales,,
-392.0,F42,Trastornos mentales,,
-393.0,F43,Trastornos mentales,,
-394.0,F44,Trastornos mentales,,
-395.0,F45,Trastornos mentales,,
-396.0,F48,Trastornos mentales,,
-397.0,F50,Trastornos mentales,,
-398.0,F51,Trastornos mentales,,
-399.0,F60,Trastornos mentales,,
-400.0,F62,Trastornos mentales,,
-401.0,F65,Trastornos mentales,,
-402.0,F66,Trastornos mentales,,
-403.0,F68,Trastornos mentales,,
-404.0,F70,Trastornos mentales,,
-405.0,F71,Trastornos mentales,,
-406.0,F72,Trastornos mentales,,
-407.0,F73,Trastornos mentales,,
-408.0,F78,Trastornos mentales,,
-409.0,F79,Trastornos mentales,,
-410.0,F82,Trastornos mentales,,
-411.0,F84,Trastornos mentales,,
-412.0,F89,Trastornos mentales,,
-413.0,F99,Trastornos mentales,,
-414.0,G00,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-415.0,G03,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-416.0,G04,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-417.0,G06,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-418.0,G08,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-419.0,G09,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-420.0,G10,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-421.0,G11,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-422.0,G12,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-423.0,G20,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-424.0,G21,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-425.0,G23,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-426.0,G24,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-427.0,G25,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-428.0,G30,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-429.0,G31,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-430.0,G35,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-431.0,G36,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-432.0,G37,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-433.0,G40,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-434.0,G41,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-435.0,G43,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-436.0,G44,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-437.0,G45,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-438.0,G47,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-439.0,G50,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-440.0,G51,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-441.0,G52,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-442.0,G54,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-443.0,G56,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-444.0,G57,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-445.0,G58,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-446.0,G60,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-447.0,G61,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-448.0,G62,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-449.0,G64,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-450.0,G70,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-451.0,G71,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-452.0,G72,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-453.0,G80,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-454.0,G81,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-455.0,G82,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-456.0,G83,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-457.0,G90,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-458.0,G91,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-459.0,G92,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-460.0,G93,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-461.0,G95,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-462.0,G96,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-463.0,G98,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-464.0,H04,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-465.0,H05,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-466.0,H11,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-467.0,H15,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-468.0,H16,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-469.0,H18,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-470.0,H20,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-471.0,H31,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-472.0,H44,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-473.0,H49,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-474.0,H60,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-475.0,H65,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-476.0,H66,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-477.0,H70,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-478.0,H72,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-479.0,H81,Enfermedades del sistema nervioso y de los órganos de los sentidos  ,,
-480.0,I00,Enfermedades del aparato circulatorio,,
-481.0,I01,Enfermedades del aparato circulatorio,,
-482.0,I02,Enfermedades del aparato circulatorio,,
-483.0,I05,Enfermedades del aparato circulatorio,,
-484.0,I06,Enfermedades del aparato circulatorio,,
-485.0,I07,Enfermedades del aparato circulatorio,,
-486.0,I08,Enfermedades del aparato circulatorio,,
-487.0,I09,Enfermedades del aparato circulatorio,,
-488.0,I10,Enfermedades del aparato circulatorio,,
-489.0,I11,Enfermedades del aparato circulatorio,,
-490.0,I12,Enfermedades del aparato circulatorio,,
-491.0,I13,Enfermedades del aparato circulatorio,,
-492.0,I15,Enfermedades del aparato circulatorio,,
-493.0,I20,Enfermedades del aparato circulatorio,,
-494.0,I21,Enfermedades del aparato circulatorio,,
-495.0,I22,Enfermedades del aparato circulatorio,,
-496.0,I24,Enfermedades del aparato circulatorio,,
-497.0,I25,Enfermedades del aparato circulatorio,,
-498.0,I26,Enfermedades del aparato circulatorio,,
-499.0,I27,Enfermedades del aparato circulatorio,,
-500.0,I28,Enfermedades del aparato circulatorio,,
-501.0,I30,Enfermedades del aparato circulatorio,,
-502.0,I31,Enfermedades del aparato circulatorio,,
-503.0,I33,Enfermedades del aparato circulatorio,,
-504.0,I34,Enfermedades del aparato circulatorio,,
-505.0,I35,Enfermedades del aparato circulatorio,,
-506.0,I36,Enfermedades del aparato circulatorio,,
-507.0,I37,Enfermedades del aparato circulatorio,,
-508.0,I38,Enfermedades del aparato circulatorio,,
-509.0,I40,Enfermedades del aparato circulatorio,,
-510.0,I42,Enfermedades del aparato circulatorio,,
-511.0,I44,Enfermedades del aparato circulatorio,,
-512.0,I45,Enfermedades del aparato circulatorio,,
-513.0,I46,Enfermedades del aparato circulatorio,,
-514.0,I47,Enfermedades del aparato circulatorio,,
-515.0,I48,Enfermedades del aparato circulatorio,,
-516.0,I49,Enfermedades del aparato circulatorio,,
-517.0,I50,Enfermedades del aparato circulatorio,,
-518.0,I51,Enfermedades del aparato circulatorio,,
-519.0,I60,Enfermedades del aparato circulatorio,,
-520.0,I61,Enfermedades del aparato circulatorio,,
-521.0,I62,Enfermedades del aparato circulatorio,,
-522.0,I63,Enfermedades del aparato circulatorio,,
-523.0,I64,Enfermedades del aparato circulatorio,,
-524.0,I67,Enfermedades del aparato circulatorio,,
-525.0,I69,Enfermedades del aparato circulatorio,,
-526.0,I70,Enfermedades del aparato circulatorio,,
-527.0,I71,Enfermedades del aparato circulatorio,,
-528.0,I72,Enfermedades del aparato circulatorio,,
-529.0,I73,Enfermedades del aparato circulatorio,,
-530.0,I74,Enfermedades del aparato circulatorio,,
-531.0,I77,Enfermedades del aparato circulatorio,,
-532.0,I78,Enfermedades del aparato circulatorio,,
-533.0,I80,Enfermedades del aparato circulatorio,,
-534.0,I81,Enfermedades del aparato circulatorio,,
-535.0,I82,Enfermedades del aparato circulatorio,,
-536.0,I83,Enfermedades del aparato circulatorio,,
-537.0,I84,Enfermedades del aparato circulatorio,,
-538.0,I85,Enfermedades del aparato circulatorio,,
-539.0,I86,Enfermedades del aparato circulatorio,,
-540.0,I87,Enfermedades del aparato circulatorio,,
-541.0,I88,Enfermedades del aparato circulatorio,,
-542.0,I89,Enfermedades del aparato circulatorio,,
-543.0,I95,Enfermedades del aparato circulatorio,,
-544.0,I99,Enfermedades del aparato circulatorio,,
-545.0,J00,Enfermedades del aparato respiratorio,,
-546.0,J01,Enfermedades del aparato respiratorio,,
-547.0,J02,Enfermedades del aparato respiratorio,,
-548.0,J03,Enfermedades del aparato respiratorio,,
-549.0,J04,Enfermedades del aparato respiratorio,,
-550.0,J05,Enfermedades del aparato respiratorio,,
-551.0,J06,Enfermedades del aparato respiratorio,,
-552.0,J09,Enfermedades del aparato respiratorio,,
-553.0,J10,Enfermedades del aparato respiratorio,,
-554.0,J11,Enfermedades del aparato respiratorio,,
-555.0,J12,Enfermedades del aparato respiratorio,,
-556.0,J13,Enfermedades del aparato respiratorio,,
-557.0,J14,Enfermedades del aparato respiratorio,,
-558.0,J15,Enfermedades del aparato respiratorio,,
-559.0,J16,Enfermedades del aparato respiratorio,,
-560.0,J18,Enfermedades del aparato respiratorio,,
-561.0,J20,Enfermedades del aparato respiratorio,,
-562.0,J21,Enfermedades del aparato respiratorio,,
-563.0,J22,Enfermedades del aparato respiratorio,,
-564.0,J30,Enfermedades del aparato respiratorio,,
-565.0,J31,Enfermedades del aparato respiratorio,,
-566.0,J32,Enfermedades del aparato respiratorio,,
-567.0,J33,Enfermedades del aparato respiratorio,,
-568.0,J34,Enfermedades del aparato respiratorio,,
-569.0,J35,Enfermedades del aparato respiratorio,,
-570.0,J36,Enfermedades del aparato respiratorio,,
-571.0,J38,Enfermedades del aparato respiratorio,,
-572.0,J39,Enfermedades del aparato respiratorio,,
-573.0,J40,Enfermedades del aparato respiratorio,,
-574.0,J41,Enfermedades del aparato respiratorio,,
-575.0,J42,Enfermedades del aparato respiratorio,,
-576.0,J43,Enfermedades del aparato respiratorio,,
-577.0,J44,Enfermedades del aparato respiratorio,,
-578.0,J45,Enfermedades del aparato respiratorio,,
-579.0,J46,Enfermedades del aparato respiratorio,,
-580.0,J47,Enfermedades del aparato respiratorio,,
-581.0,J60,Enfermedades del aparato respiratorio,,
-582.0,J61,Enfermedades del aparato respiratorio,,
-583.0,J62,Enfermedades del aparato respiratorio,,
-584.0,J63,Enfermedades del aparato respiratorio,,
-585.0,J64,Enfermedades del aparato respiratorio,,
-586.0,J65,Enfermedades del aparato respiratorio,,
-587.0,J66,Enfermedades del aparato respiratorio,,
-588.0,J67,Enfermedades del aparato respiratorio,,
-589.0,J68,Enfermedades del aparato respiratorio,,
-590.0,J69,Enfermedades del aparato respiratorio,,
-591.0,J70,Enfermedades del aparato respiratorio,,
-592.0,J80,Enfermedades del aparato respiratorio,,
-593.0,J81,Enfermedades del aparato respiratorio,,
-594.0,J82,Enfermedades del aparato respiratorio,,
-595.0,J84,Enfermedades del aparato respiratorio,,
-596.0,J85,Enfermedades del aparato respiratorio,,
-597.0,J86,Enfermedades del aparato respiratorio,,
-598.0,J90,Enfermedades del aparato respiratorio,,
-599.0,J92,Enfermedades del aparato respiratorio,,
-600.0,J93,Enfermedades del aparato respiratorio,,
-601.0,J94,Enfermedades del aparato respiratorio,,
-602.0,J96,Enfermedades del aparato respiratorio,,
-603.0,J98,Enfermedades del aparato respiratorio,,
-604.0,K02,Enfermedades del aparato digestivo,,
-605.0,K03,Enfermedades del aparato digestivo,,
-606.0,K04,Enfermedades del aparato digestivo,,
-607.0,K05,Enfermedades del aparato digestivo,,
-608.0,K07,Enfermedades del aparato digestivo,,
-609.0,K08,Enfermedades del aparato digestivo,,
-610.0,K09,Enfermedades del aparato digestivo,,
-611.0,K10,Enfermedades del aparato digestivo,,
-612.0,K11,Enfermedades del aparato digestivo,,
-613.0,K12,Enfermedades del aparato digestivo,,
-614.0,K13,Enfermedades del aparato digestivo,,
-615.0,K14,Enfermedades del aparato digestivo,,
-616.0,K20,Enfermedades del aparato digestivo,,
-617.0,K21,Enfermedades del aparato digestivo,,
-618.0,K22,Enfermedades del aparato digestivo,,
-619.0,K25,Enfermedades del aparato digestivo,,
-620.0,K26,Enfermedades del aparato digestivo,,
-621.0,K27,Enfermedades del aparato digestivo,,
-622.0,K28,Enfermedades del aparato digestivo,,
-623.0,K29,Enfermedades del aparato digestivo,,
-624.0,K30,Enfermedades del aparato digestivo,,
-625.0,K31,Enfermedades del aparato digestivo,,
-626.0,K35,Enfermedades del aparato digestivo,,
-627.0,K36,Enfermedades del aparato digestivo,,
-628.0,K37,Enfermedades del aparato digestivo,,
-629.0,K38,Enfermedades del aparato digestivo,,
-630.0,K40,Enfermedades del aparato digestivo,,
-631.0,K41,Enfermedades del aparato digestivo,,
-632.0,K42,Enfermedades del aparato digestivo,,
-633.0,K43,Enfermedades del aparato digestivo,,
-634.0,K44,Enfermedades del aparato digestivo,,
-635.0,K45,Enfermedades del aparato digestivo,,
-636.0,K46,Enfermedades del aparato digestivo,,
-637.0,K50,Enfermedades del aparato digestivo,,
-638.0,K51,Enfermedades del aparato digestivo,,
-639.0,K52,Enfermedades del aparato digestivo,,
-640.0,K55,Enfermedades del aparato digestivo,,
-641.0,K56,Enfermedades del aparato digestivo,,
-642.0,K57,Enfermedades del aparato digestivo,,
-643.0,K58,Enfermedades del aparato digestivo,,
-644.0,K59,Enfermedades del aparato digestivo,,
-645.0,K60,Enfermedades del aparato digestivo,,
-646.0,K61,Enfermedades del aparato digestivo,,
-647.0,K62,Enfermedades del aparato digestivo,,
-648.0,K63,Enfermedades del aparato digestivo,,
-649.0,K64,Enfermedades del aparato digestivo,,
-650.0,K65,Enfermedades del aparato digestivo,,
-651.0,K66,Enfermedades del aparato digestivo,,
-652.0,K70,Enfermedades del aparato digestivo,,
-653.0,K71,Enfermedades del aparato digestivo,,
-654.0,K72,Enfermedades del aparato digestivo,,
-655.0,K73,Enfermedades del aparato digestivo,,
-656.0,K74,Enfermedades del aparato digestivo,,
-657.0,K75,Enfermedades del aparato digestivo,,
-658.0,K76,Enfermedades del aparato digestivo,,
-659.0,K80,Enfermedades del aparato digestivo,,
-660.0,K81,Enfermedades del aparato digestivo,,
-661.0,K82,Enfermedades del aparato digestivo,,
-662.0,K83,Enfermedades del aparato digestivo,,
-663.0,K85,Enfermedades del aparato digestivo,,
-664.0,K86,Enfermedades del aparato digestivo,,
-665.0,K90,Enfermedades del aparato digestivo,,
-666.0,K92,Enfermedades del aparato digestivo,,
-667.0,L00,Enfermedades de la piel y del tejido subcutáneo ,,
-668.0,L01,Enfermedades de la piel y del tejido subcutáneo ,,
-669.0,L02,Enfermedades de la piel y del tejido subcutáneo ,,
-670.0,L03,Enfermedades de la piel y del tejido subcutáneo ,,
-671.0,L04,Enfermedades de la piel y del tejido subcutáneo ,,
-672.0,L05,Enfermedades de la piel y del tejido subcutáneo ,,
-673.0,L08,Enfermedades de la piel y del tejido subcutáneo ,,
-674.0,L10,Enfermedades de la piel y del tejido subcutáneo ,,
-675.0,L11,Enfermedades de la piel y del tejido subcutáneo ,,
-676.0,L12,Enfermedades de la piel y del tejido subcutáneo ,,
-677.0,L13,Enfermedades de la piel y del tejido subcutáneo ,,
-678.0,L20,Enfermedades de la piel y del tejido subcutáneo ,,
-679.0,L21,Enfermedades de la piel y del tejido subcutáneo ,,
-680.0,L24,Enfermedades de la piel y del tejido subcutáneo ,,
-681.0,L25,Enfermedades de la piel y del tejido subcutáneo ,,
-682.0,L26,Enfermedades de la piel y del tejido subcutáneo ,,
-683.0,L27,Enfermedades de la piel y del tejido subcutáneo ,,
-684.0,L28,Enfermedades de la piel y del tejido subcutáneo ,,
-685.0,L29,Enfermedades de la piel y del tejido subcutáneo ,,
-686.0,L30,Enfermedades de la piel y del tejido subcutáneo ,,
-687.0,L40,Enfermedades de la piel y del tejido subcutáneo ,,
-688.0,L41,Enfermedades de la piel y del tejido subcutáneo ,,
-689.0,L42,Enfermedades de la piel y del tejido subcutáneo ,,
-690.0,L44,Enfermedades de la piel y del tejido subcutáneo ,,
-691.0,L50,Enfermedades de la piel y del tejido subcutáneo ,,
-692.0,L51,Enfermedades de la piel y del tejido subcutáneo ,,
-693.0,L52,Enfermedades de la piel y del tejido subcutáneo ,,
-694.0,L53,Enfermedades de la piel y del tejido subcutáneo ,,
-695.0,L57,Enfermedades de la piel y del tejido subcutáneo ,,
-696.0,L58,Enfermedades de la piel y del tejido subcutáneo ,,
-697.0,L59,Enfermedades de la piel y del tejido subcutáneo ,,
-698.0,L60,Enfermedades de la piel y del tejido subcutáneo ,,
-699.0,L63,Enfermedades de la piel y del tejido subcutáneo ,,
-700.0,L65,Enfermedades de la piel y del tejido subcutáneo ,,
-701.0,L66,Enfermedades de la piel y del tejido subcutáneo ,,
-702.0,L67,Enfermedades de la piel y del tejido subcutáneo ,,
-703.0,L68,Enfermedades de la piel y del tejido subcutáneo ,,
-704.0,L70,Enfermedades de la piel y del tejido subcutáneo ,,
-705.0,L71,Enfermedades de la piel y del tejido subcutáneo ,,
-706.0,L72,Enfermedades de la piel y del tejido subcutáneo ,,
-707.0,L73,Enfermedades de la piel y del tejido subcutáneo ,,
-708.0,L75,Enfermedades de la piel y del tejido subcutáneo ,,
-709.0,L80,Enfermedades de la piel y del tejido subcutáneo ,,
-710.0,L81,Enfermedades de la piel y del tejido subcutáneo ,,
-711.0,L83,Enfermedades de la piel y del tejido subcutáneo ,,
-712.0,L84,Enfermedades de la piel y del tejido subcutáneo ,,
-713.0,L85,Enfermedades de la piel y del tejido subcutáneo ,,
-714.0,L88,Enfermedades de la piel y del tejido subcutáneo ,,
-715.0,L89,Enfermedades de la piel y del tejido subcutáneo ,,
-716.0,L90,Enfermedades de la piel y del tejido subcutáneo ,,
-717.0,L92,Enfermedades de la piel y del tejido subcutáneo ,,
-718.0,L93,Enfermedades de la piel y del tejido subcutáneo ,,
-719.0,L94,Enfermedades de la piel y del tejido subcutáneo ,,
-720.0,L95,Enfermedades de la piel y del tejido subcutáneo ,,
-721.0,L97,Enfermedades de la piel y del tejido subcutáneo ,,
-722.0,L98,Enfermedades de la piel y del tejido subcutáneo ,,
-723.0,M00,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-724.0,M02,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-725.0,M05,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-726.0,M06,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-727.0,M08,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-728.0,M10,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-729.0,M11,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-730.0,M12,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-731.0,M13,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-732.0,M15,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-733.0,M16,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-734.0,M17,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-735.0,M18,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-736.0,M19,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-737.0,M20,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-738.0,M21,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-739.0,M22,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-740.0,M23,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-741.0,M24,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-742.0,M25,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-743.0,M30,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-744.0,M31,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-745.0,M32,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-746.0,M33,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-747.0,M34,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-748.0,M35,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-749.0,M40,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-750.0,M41,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-751.0,M42,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-752.0,M43,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-753.0,M45,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-754.0,M46,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-755.0,M47,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-756.0,M48,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-757.0,M50,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-758.0,M51,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-759.0,M53,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-760.0,M54,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-761.0,M60,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-762.0,M61,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-763.0,M62,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-764.0,M65,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-765.0,M66,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-766.0,M67,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-767.0,M70,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-768.0,M71,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-769.0,M72,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-770.0,M76,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-771.0,M77,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-772.0,M79,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-773.0,M80,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-774.0,M81,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-775.0,M83,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-776.0,M84,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-777.0,M85,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-778.0,M86,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-779.0,M87,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-780.0,M88,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-781.0,M89,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-782.0,M91,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-783.0,M92,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-784.0,M93,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-785.0,M94,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-786.0,M95,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-787.0,M99,Enfermedades del sistema osteomuscular y del tejido conjuntivo,,
-788.0,N00,Enfermedades del sistema genitourinario ,,
-789.0,N01,Enfermedades del sistema genitourinario ,,
-790.0,N02,Enfermedades del sistema genitourinario ,,
-791.0,N03,Enfermedades del sistema genitourinario ,,
-792.0,N04,Enfermedades del sistema genitourinario ,,
-793.0,N05,Enfermedades del sistema genitourinario ,,
-794.0,N06,Enfermedades del sistema genitourinario ,,
-795.0,N07,Enfermedades del sistema genitourinario ,,
-796.0,N10,Enfermedades del sistema genitourinario ,,
-797.0,N11,Enfermedades del sistema genitourinario ,,
-798.0,N12,Enfermedades del sistema genitourinario ,,
-799.0,N13,Enfermedades del sistema genitourinario ,,
-800.0,N14,Enfermedades del sistema genitourinario ,,
-801.0,N15,Enfermedades del sistema genitourinario ,,
-802.0,N17,Enfermedades del sistema genitourinario ,,
-803.0,N18,Enfermedades del sistema genitourinario ,,
-804.0,N19,Enfermedades del sistema genitourinario ,,
-805.0,N20,Enfermedades del sistema genitourinario ,,
-806.0,N21,Enfermedades del sistema genitourinario ,,
-807.0,N23,Enfermedades del sistema genitourinario ,,
-808.0,N25,Enfermedades del sistema genitourinario ,,
-809.0,N26,Enfermedades del sistema genitourinario ,,
-810.0,N27,Enfermedades del sistema genitourinario ,,
-811.0,N28,Enfermedades del sistema genitourinario ,,
-812.0,N30,Enfermedades del sistema genitourinario ,,
-813.0,N31,Enfermedades del sistema genitourinario ,,
-814.0,N32,Enfermedades del sistema genitourinario ,,
-815.0,N34,Enfermedades del sistema genitourinario ,,
-816.0,N35,Enfermedades del sistema genitourinario ,,
-817.0,N36,Enfermedades del sistema genitourinario ,,
-818.0,N39,Enfermedades del sistema genitourinario ,,
-819.0,N40,Enfermedades del sistema genitourinario ,,
-820.0,N41,Enfermedades del sistema genitourinario ,,
-821.0,N42,Enfermedades del sistema genitourinario ,,
-822.0,N43,Enfermedades del sistema genitourinario ,,
-823.0,N45,Enfermedades del sistema genitourinario ,,
-824.0,N47,Enfermedades del sistema genitourinario ,,
-825.0,N48,Enfermedades del sistema genitourinario ,,
-826.0,N49,Enfermedades del sistema genitourinario ,,
-827.0,N50,Enfermedades del sistema genitourinario ,,
-828.0,N60,Enfermedades del sistema genitourinario ,,
-829.0,N61,Enfermedades del sistema genitourinario ,,
-830.0,N62,Enfermedades del sistema genitourinario ,,
-831.0,N63,Enfermedades del sistema genitourinario ,,
-832.0,N64,Enfermedades del sistema genitourinario ,,
-833.0,N70,Enfermedades del sistema genitourinario ,,
-834.0,N71,Enfermedades del sistema genitourinario ,,
-835.0,N72,Enfermedades del sistema genitourinario ,,
-836.0,N73,Enfermedades del sistema genitourinario ,,
-837.0,N76,Enfermedades del sistema genitourinario ,,
-838.0,N80,Enfermedades del sistema genitourinario ,,
-839.0,N81,Enfermedades del sistema genitourinario ,,
-840.0,N82,Enfermedades del sistema genitourinario ,,
-841.0,N83,Enfermedades del sistema genitourinario ,,
-842.0,N84,Enfermedades del sistema genitourinario ,,
-843.0,N85,Enfermedades del sistema genitourinario ,,
-844.0,N87,Enfermedades del sistema genitourinario ,,
-845.0,N88,Enfermedades del sistema genitourinario ,,
-846.0,N89,Enfermedades del sistema genitourinario ,,
-847.0,N90,Enfermedades del sistema genitourinario ,,
-848.0,N92,Enfermedades del sistema genitourinario ,,
-849.0,N93,Enfermedades del sistema genitourinario ,,
-850.0,N94,Enfermedades del sistema genitourinario ,,
-851.0,N95,Enfermedades del sistema genitourinario ,,
-852.0,N98,Enfermedades del sistema genitourinario ,,
-853.0,O00,"Embarazo, parto y puerperio ",,
-854.0,O01,"Embarazo, parto y puerperio ",,
-855.0,O02,"Embarazo, parto y puerperio ",,
-856.0,O03,"Embarazo, parto y puerperio ",,
-857.0,O04,"Embarazo, parto y puerperio ",,
-858.0,O05,"Embarazo, parto y puerperio ",,
-859.0,O06,"Embarazo, parto y puerperio ",,
-860.0,O07,"Embarazo, parto y puerperio ",,
-861.0,O10,"Embarazo, parto y puerperio ",,
-862.0,O11,"Embarazo, parto y puerperio ",,
-863.0,O13,"Embarazo, parto y puerperio ",,
-864.0,O14,"Embarazo, parto y puerperio ",,
-865.0,O15,"Embarazo, parto y puerperio ",,
-866.0,O16,"Embarazo, parto y puerperio ",,
-867.0,O20,"Embarazo, parto y puerperio ",,
-868.0,O22,"Embarazo, parto y puerperio ",,
-869.0,O23,"Embarazo, parto y puerperio ",,
-870.0,O24,"Embarazo, parto y puerperio ",,
-871.0,O25,"Embarazo, parto y puerperio ",,
-872.0,O26,"Embarazo, parto y puerperio ",,
-873.0,O29,"Embarazo, parto y puerperio ",,
-874.0,O34,"Embarazo, parto y puerperio ",,
-875.0,O35,"Embarazo, parto y puerperio ",,
-876.0,O36,"Embarazo, parto y puerperio ",,
-877.0,O41,"Embarazo, parto y puerperio ",,
-878.0,O42,"Embarazo, parto y puerperio ",,
-879.0,O43,"Embarazo, parto y puerperio ",,
-880.0,O44,"Embarazo, parto y puerperio ",,
-881.0,O45,"Embarazo, parto y puerperio ",,
-882.0,O46,"Embarazo, parto y puerperio ",,
-883.0,O60,"Embarazo, parto y puerperio ",,
-884.0,O61,"Embarazo, parto y puerperio ",,
-885.0,O62,"Embarazo, parto y puerperio ",,
-886.0,O66,"Embarazo, parto y puerperio ",,
-887.0,O67,"Embarazo, parto y puerperio ",,
-888.0,O68,"Embarazo, parto y puerperio ",,
-889.0,O69,"Embarazo, parto y puerperio ",,
-890.0,O70,"Embarazo, parto y puerperio ",,
-891.0,O71,"Embarazo, parto y puerperio ",,
-892.0,O72,"Embarazo, parto y puerperio ",,
-893.0,O73,"Embarazo, parto y puerperio ",,
-894.0,O74,"Embarazo, parto y puerperio ",,
-895.0,O75,"Embarazo, parto y puerperio ",,
-896.0,O85,"Embarazo, parto y puerperio ",,
-897.0,O86,"Embarazo, parto y puerperio ",,
-898.0,O87,"Embarazo, parto y puerperio ",,
-899.0,O88,"Embarazo, parto y puerperio ",,
-900.0,O89,"Embarazo, parto y puerperio ",,
-901.0,O90,"Embarazo, parto y puerperio ",,
-902.0,O91,"Embarazo, parto y puerperio ",,
-903.0,O95,"Embarazo, parto y puerperio ",,
-904.0,O96,"Embarazo, parto y puerperio ",,
-905.0,O97,"Embarazo, parto y puerperio ",,
-906.0,O98,"Embarazo, parto y puerperio ",,
-907.0,O99,"Embarazo, parto y puerperio ",,
-908.0,P00,Afecciones originadas en el periodo perinatal ,,
-909.0,P01,Afecciones originadas en el periodo perinatal ,,
-910.0,P02,Afecciones originadas en el periodo perinatal ,,
-911.0,P03,Afecciones originadas en el periodo perinatal ,,
-912.0,P04,Afecciones originadas en el periodo perinatal ,,
-913.0,P05,Afecciones originadas en el periodo perinatal ,,
-914.0,P07,Afecciones originadas en el periodo perinatal ,,
-915.0,P08,Afecciones originadas en el periodo perinatal ,,
-916.0,P10,Afecciones originadas en el periodo perinatal ,,
-917.0,P11,Afecciones originadas en el periodo perinatal ,,
-918.0,P12,Afecciones originadas en el periodo perinatal ,,
-919.0,P13,Afecciones originadas en el periodo perinatal ,,
-920.0,P14,Afecciones originadas en el periodo perinatal ,,
-921.0,P15,Afecciones originadas en el periodo perinatal ,,
-922.0,P20,Afecciones originadas en el periodo perinatal ,,
-923.0,P21,Afecciones originadas en el periodo perinatal ,,
-924.0,P22,Afecciones originadas en el periodo perinatal ,,
-925.0,P23,Afecciones originadas en el periodo perinatal ,,
-926.0,P24,Afecciones originadas en el periodo perinatal ,,
-927.0,P25,Afecciones originadas en el periodo perinatal ,,
-928.0,P26,Afecciones originadas en el periodo perinatal ,,
-929.0,P27,Afecciones originadas en el periodo perinatal ,,
-930.0,P28,Afecciones originadas en el periodo perinatal ,,
-931.0,P29,Afecciones originadas en el periodo perinatal ,,
-932.0,P35,Afecciones originadas en el periodo perinatal ,,
-933.0,P36,Afecciones originadas en el periodo perinatal ,,
-934.0,P37,Afecciones originadas en el periodo perinatal ,,
-935.0,P38,Afecciones originadas en el periodo perinatal ,,
-936.0,P39,Afecciones originadas en el periodo perinatal ,,
-937.0,P50,Afecciones originadas en el periodo perinatal ,,
-938.0,P51,Afecciones originadas en el periodo perinatal ,,
-939.0,P52,Afecciones originadas en el periodo perinatal ,,
-940.0,P53,Afecciones originadas en el periodo perinatal ,,
-941.0,P54,Afecciones originadas en el periodo perinatal ,,
-942.0,P55,Afecciones originadas en el periodo perinatal ,,
-943.0,P56,Afecciones originadas en el periodo perinatal ,,
-944.0,P57,Afecciones originadas en el periodo perinatal ,,
-945.0,P58,Afecciones originadas en el periodo perinatal ,,
-946.0,P59,Afecciones originadas en el periodo perinatal ,,
-947.0,P60,Afecciones originadas en el periodo perinatal ,,
-948.0,P61,Afecciones originadas en el periodo perinatal ,,
-949.0,P70,Afecciones originadas en el periodo perinatal ,,
-950.0,P71,Afecciones originadas en el periodo perinatal ,,
-951.0,P74,Afecciones originadas en el periodo perinatal ,,
-952.0,P76,Afecciones originadas en el periodo perinatal ,,
-953.0,P77,Afecciones originadas en el periodo perinatal ,,
-954.0,P78,Afecciones originadas en el periodo perinatal ,,
-955.0,P80,Afecciones originadas en el periodo perinatal ,,
-956.0,P81,Afecciones originadas en el periodo perinatal ,,
-957.0,P83,Afecciones originadas en el periodo perinatal ,,
-958.0,P90,Afecciones originadas en el periodo perinatal ,,
-959.0,P91,Afecciones originadas en el periodo perinatal ,,
-960.0,P92,Afecciones originadas en el periodo perinatal ,,
-961.0,P94,Afecciones originadas en el periodo perinatal ,,
-962.0,P96,Afecciones originadas en el periodo perinatal ,,
-963.0,Q00,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-964.0,Q01,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-965.0,Q02,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-966.0,Q03,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-967.0,Q04,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-968.0,Q05,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-969.0,Q06,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-970.0,Q07,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-971.0,Q12,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-972.0,Q13,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-973.0,Q14,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-974.0,Q15,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-975.0,Q16,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-976.0,Q18,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-977.0,Q20,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-978.0,Q21,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-979.0,Q22,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-980.0,Q23,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-981.0,Q24,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-982.0,Q25,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-983.0,Q26,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-984.0,Q27,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-985.0,Q28,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-986.0,Q30,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-987.0,Q31,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-988.0,Q32,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-989.0,Q33,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-990.0,Q34,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-991.0,Q35,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-992.0,Q36,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-993.0,Q37,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-994.0,Q38,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-995.0,Q39,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-996.0,Q40,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-997.0,Q41,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-998.0,Q42,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-999.0,Q43,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1000.0,Q44,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1001.0,Q45,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1002.0,Q52,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1003.0,Q53,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1004.0,Q54,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1005.0,Q55,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1006.0,Q56,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1007.0,Q60,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1008.0,Q61,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1009.0,Q62,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1010.0,Q63,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1011.0,Q64,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1012.0,Q65,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1013.0,Q67,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1014.0,Q68,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1015.0,Q71,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1016.0,Q72,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1017.0,Q74,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1018.0,Q75,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1019.0,Q76,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1020.0,Q77,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1021.0,Q78,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1022.0,Q79,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1023.0,Q80,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1024.0,Q81,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1025.0,Q82,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1026.0,Q83,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1027.0,Q84,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1028.0,Q85,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1029.0,Q86,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1030.0,Q87,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1031.0,Q89,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1032.0,Q90,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1033.0,Q91,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1034.0,Q92,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1035.0,Q93,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1036.0,Q96,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1037.0,Q97,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1038.0,Q98,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1039.0,Q99,"Malformaciones congénitas, deformidades y anomalías cromosómicas ",,
-1040.0,R00,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1041.0,R01,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1042.0,R02,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1043.0,R04,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1044.0,R06,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1045.0,R07,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1046.0,R09,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1047.0,R10,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1048.0,R11,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1049.0,R13,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1050.0,R14,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1051.0,R16,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1052.0,R17,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1053.0,R18,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1054.0,R19,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1055.0,R20,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1056.0,R22,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1057.0,R23,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1058.0,R25,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1059.0,R26,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1060.0,R27,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1061.0,R29,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1062.0,R30,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1063.0,R31,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1064.0,R33,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1065.0,R34,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1066.0,R35,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1067.0,R39,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1068.0,R40,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1069.0,R41,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1070.0,R42,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1071.0,R43,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1072.0,R45,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1073.0,R47,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1074.0,R48,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1075.0,R50,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1076.0,R51,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1077.0,R52,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1078.0,R53,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1079.0,R54,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1080.0,R55,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1081.0,R56,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1082.0,R57,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1083.0,R58,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1084.0,R59,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1085.0,R60,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1086.0,R61,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1087.0,R62,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1088.0,R63,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1089.0,R64,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1090.0,R65,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1091.0,R68,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1092.0,R70,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1093.0,R71,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1094.0,R72,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1095.0,R73,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1096.0,R74,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1097.0,R76,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1098.0,R77,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1099.0,R78,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1100.0,R79,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1101.0,R80,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1102.0,R81,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1103.0,R82,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1104.0,R83,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1105.0,R84,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1106.0,R85,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1107.0,R86,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1108.0,R87,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1109.0,R89,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1110.0,R90,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1111.0,R91,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1112.0,R92,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1113.0,R93,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1114.0,R94,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1115.0,R95,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1116.0,R96,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1117.0,R97,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1118.0,R98,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1119.0,R99,"Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte",,
-1120.0,U07,COVID-19,,
-1121.0,U10,COVID-19,,
-1122.0,U12,COVID-19,,
-1123.0,V01,Accidentes y causas externas,,
-1124.0,V02,Accidentes y causas externas,,
-1125.0,V03,Accidentes y causas externas,,
-1126.0,V04,Accidentes y causas externas,,
-1127.0,V05,Accidentes y causas externas,,
-1128.0,V06,Accidentes y causas externas,,
-1129.0,V09,Accidentes y causas externas,,
-1130.0,V10,Accidentes y causas externas,,
-1131.0,V11,Accidentes y causas externas,,
-1132.0,V12,Accidentes y causas externas,,
-1133.0,V13,Accidentes y causas externas,,
-1134.0,V14,Accidentes y causas externas,,
-1135.0,V15,Accidentes y causas externas,,
-1136.0,V16,Accidentes y causas externas,,
-1137.0,V17,Accidentes y causas externas,,
-1138.0,V18,Accidentes y causas externas,,
-1139.0,V19,Accidentes y causas externas,,
-1140.0,V20,Accidentes y causas externas,,
-1141.0,V21,Accidentes y causas externas,,
-1142.0,V22,Accidentes y causas externas,,
-1143.0,V23,Accidentes y causas externas,,
-1144.0,V24,Accidentes y causas externas,,
-1145.0,V25,Accidentes y causas externas,,
-1146.0,V26,Accidentes y causas externas,,
-1147.0,V27,Accidentes y causas externas,,
-1148.0,V28,Accidentes y causas externas,,
-1149.0,V29,Accidentes y causas externas,,
-1150.0,V30,Accidentes y causas externas,,
-1151.0,V31,Accidentes y causas externas,,
-1152.0,V32,Accidentes y causas externas,,
-1153.0,V33,Accidentes y causas externas,,
-1154.0,V34,Accidentes y causas externas,,
-1155.0,V37,Accidentes y causas externas,,
-1156.0,V38,Accidentes y causas externas,,
-1157.0,V39,Accidentes y causas externas,,
-1158.0,V40,Accidentes y causas externas,,
-1159.0,V41,Accidentes y causas externas,,
-1160.0,V42,Accidentes y causas externas,,
-1161.0,V43,Accidentes y causas externas,,
-1162.0,V44,Accidentes y causas externas,,
-1163.0,V45,Accidentes y causas externas,,
-1164.0,V46,Accidentes y causas externas,,
-1165.0,V47,Accidentes y causas externas,,
-1166.0,V48,Accidentes y causas externas,,
-1167.0,V49,Accidentes y causas externas,,
-1168.0,V50,Accidentes y causas externas,,
-1169.0,V51,Accidentes y causas externas,,
-1170.0,V52,Accidentes y causas externas,,
-1171.0,V53,Accidentes y causas externas,,
-1172.0,V54,Accidentes y causas externas,,
-1173.0,V55,Accidentes y causas externas,,
-1174.0,V56,Accidentes y causas externas,,
-1175.0,V57,Accidentes y causas externas,,
-1176.0,V58,Accidentes y causas externas,,
-1177.0,V59,Accidentes y causas externas,,
-1178.0,V60,Accidentes y causas externas,,
-1179.0,V62,Accidentes y causas externas,,
-1180.0,V63,Accidentes y causas externas,,
-1181.0,V64,Accidentes y causas externas,,
-1182.0,V65,Accidentes y causas externas,,
-1183.0,V66,Accidentes y causas externas,,
-1184.0,V67,Accidentes y causas externas,,
-1185.0,V68,Accidentes y causas externas,,
-1186.0,V69,Accidentes y causas externas,,
-1187.0,V70,Accidentes y causas externas,,
-1188.0,V71,Accidentes y causas externas,,
-1189.0,V72,Accidentes y causas externas,,
-1190.0,V73,Accidentes y causas externas,,
-1191.0,V74,Accidentes y causas externas,,
-1192.0,V75,Accidentes y causas externas,,
-1193.0,V76,Accidentes y causas externas,,
-1194.0,V77,Accidentes y causas externas,,
-1195.0,V78,Accidentes y causas externas,,
-1196.0,V79,Accidentes y causas externas,,
-1197.0,V80,Accidentes y causas externas,,
-1198.0,V81,Accidentes y causas externas,,
-1199.0,V82,Accidentes y causas externas,,
-1200.0,V83,Accidentes y causas externas,,
-1201.0,V84,Accidentes y causas externas,,
-1202.0,V85,Accidentes y causas externas,,
-1203.0,V86,Accidentes y causas externas,,
-1204.0,V87,Accidentes y causas externas,,
-1205.0,V88,Accidentes y causas externas,,
-1206.0,V89,Accidentes y causas externas,,
-1207.0,V90,Accidentes y causas externas,,
-1208.0,V91,Accidentes y causas externas,,
-1209.0,V92,Accidentes y causas externas,,
-1210.0,V93,Accidentes y causas externas,,
-1211.0,V94,Accidentes y causas externas,,
-1212.0,V95,Accidentes y causas externas,,
-1213.0,V96,Accidentes y causas externas,,
-1214.0,V97,Accidentes y causas externas,,
-1215.0,V98,Accidentes y causas externas,,
-1216.0,V99,Accidentes y causas externas,,
-1217.0,W00,Accidentes y causas externas,,
-1218.0,W01,Accidentes y causas externas,,
-1219.0,W02,Accidentes y causas externas,,
-1220.0,W03,Accidentes y causas externas,,
-1221.0,W04,Accidentes y causas externas,,
-1222.0,W05,Accidentes y causas externas,,
-1223.0,W06,Accidentes y causas externas,,
-1224.0,W07,Accidentes y causas externas,,
-1225.0,W08,Accidentes y causas externas,,
-1226.0,W09,Accidentes y causas externas,,
-1227.0,W10,Accidentes y causas externas,,
-1228.0,W11,Accidentes y causas externas,,
-1229.0,W12,Accidentes y causas externas,,
-1230.0,W13,Accidentes y causas externas,,
-1231.0,W14,Accidentes y causas externas,,
-1232.0,W15,Accidentes y causas externas,,
-1233.0,W16,Accidentes y causas externas,,
-1234.0,W17,Accidentes y causas externas,,
-1235.0,W18,Accidentes y causas externas,,
-1236.0,W19,Accidentes y causas externas,,
-1237.0,W20,Accidentes y causas externas,,
-1238.0,W21,Accidentes y causas externas,,
-1239.0,W22,Accidentes y causas externas,,
-1240.0,W23,Accidentes y causas externas,,
-1241.0,W24,Accidentes y causas externas,,
-1242.0,W25,Accidentes y causas externas,,
-1243.0,W26,Accidentes y causas externas,,
-1244.0,W27,Accidentes y causas externas,,
-1245.0,W28,Accidentes y causas externas,,
-1246.0,W29,Accidentes y causas externas,,
-1247.0,W30,Accidentes y causas externas,,
-1248.0,W31,Accidentes y causas externas,,
-1249.0,W32,Accidentes y causas externas,,
-1250.0,W33,Accidentes y causas externas,,
-1251.0,W34,Accidentes y causas externas,,
-1252.0,W35,Accidentes y causas externas,,
-1253.0,W36,Accidentes y causas externas,,
-1254.0,W37,Accidentes y causas externas,,
-1255.0,W38,Accidentes y causas externas,,
-1256.0,W39,Accidentes y causas externas,,
-1257.0,W40,Accidentes y causas externas,,
-1258.0,W41,Accidentes y causas externas,,
-1259.0,W43,Accidentes y causas externas,,
-1260.0,W44,Accidentes y causas externas,,
-1261.0,W45,Accidentes y causas externas,,
-1262.0,W49,Accidentes y causas externas,,
-1263.0,W50,Accidentes y causas externas,,
-1264.0,W51,Accidentes y causas externas,,
-1265.0,W52,Accidentes y causas externas,,
-1266.0,W54,Accidentes y causas externas,,
-1267.0,W55,Accidentes y causas externas,,
-1268.0,W57,Accidentes y causas externas,,
-1269.0,W58,Accidentes y causas externas,,
-1270.0,W59,Accidentes y causas externas,,
-1271.0,W60,Accidentes y causas externas,,
-1272.0,W64,Accidentes y causas externas,,
-1273.0,W65,Accidentes y causas externas,,
-1274.0,W66,Accidentes y causas externas,,
-1275.0,W67,Accidentes y causas externas,,
-1276.0,W68,Accidentes y causas externas,,
-1277.0,W69,Accidentes y causas externas,,
-1278.0,W70,Accidentes y causas externas,,
-1279.0,W73,Accidentes y causas externas,,
-1280.0,W74,Accidentes y causas externas,,
-1281.0,W75,Accidentes y causas externas,,
-1282.0,W76,Accidentes y causas externas,,
-1283.0,W77,Accidentes y causas externas,,
-1284.0,W78,Accidentes y causas externas,,
-1285.0,W79,Accidentes y causas externas,,
-1286.0,W80,Accidentes y causas externas,,
-1287.0,W81,Accidentes y causas externas,,
-1288.0,W83,Accidentes y causas externas,,
-1289.0,W84,Accidentes y causas externas,,
-1290.0,W85,Accidentes y causas externas,,
-1291.0,W86,Accidentes y causas externas,,
-1292.0,W87,Accidentes y causas externas,,
-1293.0,W88,Accidentes y causas externas,,
-1294.0,W89,Accidentes y causas externas,,
-1295.0,W91,Accidentes y causas externas,,
-1296.0,W92,Accidentes y causas externas,,
-1297.0,W94,Accidentes y causas externas,,
-1298.0,X00,Accidentes y causas externas,,
-1299.0,X01,Accidentes y causas externas,,
-1300.0,X02,Accidentes y causas externas,,
-1301.0,X03,Accidentes y causas externas,,
-1302.0,X04,Accidentes y causas externas,,
-1303.0,X05,Accidentes y causas externas,,
-1304.0,X06,Accidentes y causas externas,,
-1305.0,X08,Accidentes y causas externas,,
-1306.0,X09,Accidentes y causas externas,,
-1307.0,X10,Accidentes y causas externas,,
-1308.0,X11,Accidentes y causas externas,,
-1309.0,X12,Accidentes y causas externas,,
-1310.0,X13,Accidentes y causas externas,,
-1311.0,X14,Accidentes y causas externas,,
-1312.0,X15,Accidentes y causas externas,,
-1313.0,X16,Accidentes y causas externas,,
-1314.0,X17,Accidentes y causas externas,,
-1315.0,X18,Accidentes y causas externas,,
-1316.0,X19,Accidentes y causas externas,,
-1317.0,X20,Accidentes y causas externas,,
-1318.0,X21,Accidentes y causas externas,,
-1319.0,X22,Accidentes y causas externas,,
-1320.0,X23,Accidentes y causas externas,,
-1321.0,X24,Accidentes y causas externas,,
-1322.0,X25,Accidentes y causas externas,,
-1323.0,X26,Accidentes y causas externas,,
-1324.0,X27,Accidentes y causas externas,,
-1325.0,X28,Accidentes y causas externas,,
-1326.0,X29,Accidentes y causas externas,,
-1327.0,X30,Accidentes y causas externas,,
-1328.0,X31,Accidentes y causas externas,,
-1329.0,X32,Accidentes y causas externas,,
-1330.0,X33,Accidentes y causas externas,,
-1331.0,X34,Accidentes y causas externas,,
-1332.0,X35,Accidentes y causas externas,,
-1333.0,X36,Accidentes y causas externas,,
-1334.0,X37,Accidentes y causas externas,,
-1335.0,X38,Accidentes y causas externas,,
-1336.0,X39,Accidentes y causas externas,,
-1337.0,X40,Accidentes y causas externas,,
-1338.0,X41,Accidentes y causas externas,,
-1339.0,X42,Accidentes y causas externas,,
-1340.0,X43,Accidentes y causas externas,,
-1341.0,X44,Accidentes y causas externas,,
-1342.0,X45,Accidentes y causas externas,,
-1343.0,X46,Accidentes y causas externas,,
-1344.0,X47,Accidentes y causas externas,,
-1345.0,X48,Accidentes y causas externas,,
-1346.0,X49,Accidentes y causas externas,,
-1347.0,X50,Accidentes y causas externas,,
-1348.0,X51,Accidentes y causas externas,,
-1349.0,X52,Accidentes y causas externas,,
-1350.0,X53,Accidentes y causas externas,,
-1351.0,X54,Accidentes y causas externas,,
-1352.0,X57,Accidentes y causas externas,,
-1353.0,X58,Accidentes y causas externas,,
-1354.0,X59,Accidentes y causas externas,,
-1355.0,X60,Accidentes y causas externas,,
-1356.0,X61,Accidentes y causas externas,,
-1357.0,X62,Accidentes y causas externas,,
-1358.0,X63,Accidentes y causas externas,,
-1359.0,X64,Accidentes y causas externas,,
-1360.0,X65,Accidentes y causas externas,,
-1361.0,X66,Accidentes y causas externas,,
-1362.0,X67,Accidentes y causas externas,,
-1363.0,X68,Accidentes y causas externas,,
-1364.0,X69,Accidentes y causas externas,,
-1365.0,X70,Accidentes y causas externas,,
-1366.0,X71,Accidentes y causas externas,,
-1367.0,X72,Accidentes y causas externas,,
-1368.0,X73,Accidentes y causas externas,,
-1369.0,X74,Accidentes y causas externas,,
-1370.0,X75,Accidentes y causas externas,,
-1371.0,X76,Accidentes y causas externas,,
-1372.0,X77,Accidentes y causas externas,,
-1373.0,X78,Accidentes y causas externas,,
-1374.0,X79,Accidentes y causas externas,,
-1375.0,X80,Accidentes y causas externas,,
-1376.0,X81,Accidentes y causas externas,,
-1377.0,X82,Accidentes y causas externas,,
-1378.0,X83,Accidentes y causas externas,,
-1379.0,X84,Accidentes y causas externas,,
-1380.0,X85,Accidentes y causas externas,,
-1381.0,X86,Accidentes y causas externas,,
-1382.0,X87,Accidentes y causas externas,,
-1383.0,X88,Accidentes y causas externas,,
-1384.0,X89,Accidentes y causas externas,,
-1385.0,X90,Accidentes y causas externas,,
-1386.0,X91,Accidentes y causas externas,,
-1387.0,X92,Accidentes y causas externas,,
-1388.0,X93,Accidentes y causas externas,,
-1389.0,X94,Accidentes y causas externas,,
-1390.0,X95,Accidentes y causas externas,,
-1391.0,X96,Accidentes y causas externas,,
-1392.0,X97,Accidentes y causas externas,,
-1393.0,X98,Accidentes y causas externas,,
-1394.0,X99,Accidentes y causas externas,,
-1395.0,Y00,Accidentes y causas externas,,
-1396.0,Y01,Accidentes y causas externas,,
-1397.0,Y02,Accidentes y causas externas,,
-1398.0,Y03,Accidentes y causas externas,,
-1399.0,Y04,Accidentes y causas externas,,
-1400.0,Y05,Accidentes y causas externas,,
-1401.0,Y06,Accidentes y causas externas,,
-1402.0,Y07,Accidentes y causas externas,,
-1403.0,Y08,Accidentes y causas externas,,
-1404.0,Y09,Accidentes y causas externas,,
-1405.0,Y10,Accidentes y causas externas,,
-1406.0,Y11,Accidentes y causas externas,,
-1407.0,Y12,Accidentes y causas externas,,
-1408.0,Y13,Accidentes y causas externas,,
-1409.0,Y14,Accidentes y causas externas,,
-1410.0,Y15,Accidentes y causas externas,,
-1411.0,Y16,Accidentes y causas externas,,
-1412.0,Y17,Accidentes y causas externas,,
-1413.0,Y18,Accidentes y causas externas,,
-1414.0,Y19,Accidentes y causas externas,,
-1415.0,Y20,Accidentes y causas externas,,
-1416.0,Y21,Accidentes y causas externas,,
-1417.0,Y22,Accidentes y causas externas,,
-1418.0,Y23,Accidentes y causas externas,,
-1419.0,Y24,Accidentes y causas externas,,
-1420.0,Y25,Accidentes y causas externas,,
-1421.0,Y26,Accidentes y causas externas,,
-1422.0,Y27,Accidentes y causas externas,,
-1423.0,Y28,Accidentes y causas externas,,
-1424.0,Y29,Accidentes y causas externas,,
-1425.0,Y30,Accidentes y causas externas,,
-1426.0,Y31,Accidentes y causas externas,,
-1427.0,Y32,Accidentes y causas externas,,
-1428.0,Y33,Accidentes y causas externas,,
-1429.0,Y34,Accidentes y causas externas,,
-1430.0,Y35,Accidentes y causas externas,,
-1431.0,Y36,Accidentes y causas externas,,
-1432.0,Y40,Accidentes y causas externas,,
-1433.0,Y41,Accidentes y causas externas,,
-1434.0,Y42,Accidentes y causas externas,,
-1435.0,Y43,Accidentes y causas externas,,
-1436.0,Y44,Accidentes y causas externas,,
-1437.0,Y45,Accidentes y causas externas,,
-1438.0,Y46,Accidentes y causas externas,,
-1439.0,Y47,Accidentes y causas externas,,
-1440.0,Y48,Accidentes y causas externas,,
-1441.0,Y49,Accidentes y causas externas,,
-1442.0,Y50,Accidentes y causas externas,,
-1443.0,Y51,Accidentes y causas externas,,
-1444.0,Y52,Accidentes y causas externas,,
-1445.0,Y53,Accidentes y causas externas,,
-1446.0,Y54,Accidentes y causas externas,,
-1447.0,Y55,Accidentes y causas externas,,
-1448.0,Y56,Accidentes y causas externas,,
-1449.0,Y57,Accidentes y causas externas,,
-1450.0,Y59,Accidentes y causas externas,,
-1451.0,Y60,Accidentes y causas externas,,
-1452.0,Y61,Accidentes y causas externas,,
-1453.0,Y62,Accidentes y causas externas,,
-1454.0,Y63,Accidentes y causas externas,,
-1455.0,Y64,Accidentes y causas externas,,
-1456.0,Y65,Accidentes y causas externas,,
-1457.0,Y69,Accidentes y causas externas,,
-1458.0,Y70,Accidentes y causas externas,,
-1459.0,Y71,Accidentes y causas externas,,
-1460.0,Y73,Accidentes y causas externas,,
-1461.0,Y74,Accidentes y causas externas,,
-1462.0,Y75,Accidentes y causas externas,,
-1463.0,Y76,Accidentes y causas externas,,
-1464.0,Y79,Accidentes y causas externas,,
-1465.0,Y80,Accidentes y causas externas,,
-1466.0,Y81,Accidentes y causas externas,,
-1467.0,Y82,Accidentes y causas externas,,
-1468.0,Y83,Accidentes y causas externas,,
-1469.0,Y84,Accidentes y causas externas,,
-1470.0,Y85,Accidentes y causas externas,,
-1471.0,Y86,Accidentes y causas externas,,
-1472.0,Y87,Accidentes y causas externas,,
-1473.0,Y88,Accidentes y causas externas,,
-1474.0,Y89,Accidentes y causas externas,,
+codigo,clasificacion
+A00,Sin Información
+A01,Fiebres tifoidea y paratifoidea
+A02,Otras infecciones debidas a Salmonella
+A03,Shigelosis
+A04,Otras infecciones intestinales bacterianas
+A05,"Otras intoxicaciones alimentarias bacterianas, no clasificadas en otra parte"
+A06,Amebiasis
+A07,Otras enfermedades intestinales debidas a protozoarios
+A08,Infecciones intestinales debidas a virus y otros organismos especificados
+A09,Otras gastroenteritis y colitis de origen infeccioso y no especificado
+A15,"Tuberculosis respiratoria, confirmada bacteriológica e histológicamente"
+A16,"Tuberculosis respiratoria, no confirmada bacteriológica o histológicamente"
+A17,Tuberculosis del sistema nervioso
+A18,Tuberculosis de otros órganos
+A19,Tuberculosis miliar
+A21,Tularemia
+A22,Carbunco [ántrax]
+A23,Brucelosis
+A26,Erisipeloide
+A27,Leptospirosis
+A28,"Otras enfermedades zoonóticas bacterianas, no clasificadas en otra parte"
+A30,Lepra [enfermedad de Hansen]
+A31,Infecciones debidas a otras micobacterias
+A32,Listeriosis
+A33,Tétanos neonatal
+A35,Otros tétanos
+A37,Tos ferina [tos convulsiva]
+A39,Enfermedad meningocócica
+A40,Sepsis estreptocócica
+A41,Otras Sepsis
+A42,Actinomicosis
+A43,Nocardiosis
+A44,Bartonelosis
+A46,Erisipela
+A48,"Otras enfermedades bacterianas, no clasificadas en otra parte"
+A49,Infección bacteriana de sitio no especificado
+A50,Sífilis congénita
+A51,Sífilis precoz
+A52,Sífilis tardía
+A53,Otras sífilis y las no especificadas
+A54,Infección gonocócica
+A55,Linfogranuloma (venéreo) por clamidias
+A59,Tricomoniasis
+A60,Infección anogenital debida a virus del herpes [herpes simple]
+A63,"Otras enfermedades de transmisión predominantemente sexual, no clasificadas en otra parte"
+A64,Enfermedad de transmisión sexual no especificada
+A69,Otras infecciones causadas por espiroquetas
+A70,Infeccion debida a Chlamydia psittaci
+A71,Tracoma
+A74,Otras enfermedades causadas por clamidias
+A77,Fiebre maculosa [rickettsiosis transmitida por garrapatas]
+A81,Infecciones del sistema nervioso central por virus atípico
+A82,Rabia
+A83,Encefalitis viral transmitida por mosquitos
+A84,Encefalitis viral transmitida por garrapatas
+A85,"Otras encefalitis virales, no clasificadas en otra parte"
+A86,"Encefalitis viral, no especificada"
+A87,Meningitis viral
+A88,"Otras infecciones virales del sistema nervioso central, no clasificadas en otra parte"
+A89,"Infección viral del sistema nervioso central, no especificada"
+A90,Fiebre del dengue [dengue clásico]
+A91,Fiebre del dengue hemorrágico
+A92,Otras fiebres virales transmitidas por mosquitos
+A94,"Fiebre viral transmitida por artrópodos, no especificada"
+A95,Fiebre amarilla
+A96,Fiebre hemorrágica por arenavirus
+A98,"Otras fiebres virales hemorrágicas, no clasificadas en otra parte"
+A99,"Fiebre viral hemorrágica, no especificada"
+B00,Infecciones herpética [herpes simple]
+B01,Varicela
+B02,Herpes zoster
+B04,Viruela de los monos
+B05,Sarampión
+B06,Rubéola [sarampión alemán]
+B08,"Otras infeciones víricas caracterizadas por lesiones de la piel y de las membranas mucosas, no clasificadas en otra parte"
+B09,"Infección viral no especificada, caracterizada por lesiones de la piel y de las membranas mucosas"
+B15,Hepatitis aguda tipo A
+B16,Hepatitis aguda tipo B
+B17,Otras hepatitis virales agudas
+B18,Hepatitis viral crónica
+B19,"Hepatitis viral, sin otra especificación"
+B20,"Enfermedad por virus de la inmunodeficiencia humana [VIH], resultante en enfermedades infecciosas y parasitarias"
+B21,"Enfermedad por virus de la inmunodeficiencia humana [VIH], resultante  en tumores malignos"
+B22,"Enfermedad por virus de la inmunodeficiencia humana [VIH], resultante en otras enfermedades especificadas"
+B23,"Enfermedad por virus de la inmunodeficiencia humana [VIH], resultante en otras afecciones"
+B24,"Enfermedad por virus de la inmunodeficiencia humana [VIH], sin otra especificación"
+B25,Enfermedad debida a virus citomegálico
+B26,Parotiditis infecciosa
+B27,Mononucleosis infecciosa
+B30,Conjuntivitis viral
+B33,"Otras enfermedades virales, no clasificadas en otra parte"
+B34,Infección viral de sitio no especificado
+B35,Dermatofitosis
+B36,Otras micosis superficiales
+B37,Candidiasis
+B38,Coccidioidomicosis
+B39,Histoplasmosis
+B40,Blastomicosis
+B41,Paracoccidioidomicosis
+B42,Esporotricosis
+B43,Cromomicosis y absceso feomicótico
+B44,Aspergilosis
+B45,Criptococosis
+B46,Cigomicosis
+B47,Micetoma
+B48,"Otras micosis, no clasificadas en otra parte"
+B49,"Micosis, no especificada"
+B54,Paludismo [malaria] no especificado
+B55,Leishmaniasis
+B56,Tripanosomiasis africana
+B57,Enfermedad de Chagas
+B58,Toxoplasmosis
+B59,Neumocistosis
+B60,"Otras enfermedades debidas a protozoarios, no clasificadas en otra parte"
+B64,"Enfermedad debida a protozoarios, no especificada"
+B65,Esquistosomiasis [bilharziasis]
+B66,Otras infecciones debidas a trematodos
+B67,Equinococosis
+B68,Teniasis
+B69,Cisticercosis
+B74,Filariasis
+B75,Triquinosis
+B76,Anquilostomiasis y necatoriasis
+B77,Ascariasis
+B78,Estrongiloidiasis
+B82,"Parasitosis intestinal, sin otra especificación"
+B83,Otros helmintiasis
+B86,Escabiosis
+B87,Miasis
+B88,Otras infestaciones
+B89,"Enfermedad parasitaria, no especificada"
+B90,Secuelas de tuberculosis
+B91,Secuelas de poliomielitis
+B92,Secuelas de lepra
+B94,Secuelas de otras enfermedades infecciosas y parasitarias de los no especificadas
+B99,Otras enfermedades infecciosas y las no especificadas
+C00,Tumor maligno del labio
+C01,Tumor maligno de la base de la lengua
+C02,Tumor maligno de otras partes y de las no especificadas de la lengua
+C03,Tumor maligno de la encía
+C04,Tumor maligno del piso de la boca
+C05,Tumor maligno del paladar
+C06,Tumor maligno de otras partes y de las no especificadas de la boca
+C07,Tumor maligno de la glándula parótida
+C08,Tumor maligno de otras glándulas salivales mayores y de las no especificadas
+C09,Tumor maligno de la amígdala
+C10,Tumor maligno de la orofaringe
+C11,Tumor maligno de la nasofaringe
+C12,Tumor maligno del seno piriforme
+C13,Tumor maligno de la hipofaringe
+C14,"Tumor maligno de otros sitios y de los mal definidos del labio, de la cavidad bucal y de la faringe"
+C15,Tumor maligno del esófago
+C16,Tumor maligno del estómago
+C17,Tumor maligno del intestino delgado
+C18,Tumor maligno del colon
+C19,Tumor maligno de la unión rectosigmoidea
+C20,Tumor maligno del recto
+C21,Tumor maligno del ano y del conducto anal
+C22,Tumor maligno del hígado y de las vías biliares intrahepáticas
+C23,Tumor maligno de la vesícula biliar
+C24,Tumor maligno de otras partes y de las no especificadas de las vías biliares
+C25,Tumor maligno del páncreas
+C26,Tumor maligno de otros sitios y de los mal definidos de los órganos digestivos
+C30,Tumor maligno de las fosas nasales y del oído medio
+C31,Tumor maligno de los senos paranasales
+C32,Tumor maligno de la laringe
+C33,Tumor maligno de la tráquea
+C34,Tumor maligno de los bronquios y del pulmón
+C37,Tumor maligno del timo
+C38,"Tumor maligno del corazón, del mediastino y de la pleura"
+C39,Tumor maligno de otros sitios y de los mal definidos del sistema respiratorio y de los órganos intratorácicos
+C40,Tumor maligno de los huesos y de los cartílagos articulares de los miembros
+C41,"Tumor maligno de los huesos y de los cartílagos articulares, de otros sitios y de sitios no especificados"
+C43,Melanoma maligno de la piel
+C44,Otros tumores malignos de la piel
+C45,Mesotelioma
+C46,Sarcoma de Kaposi
+C47,Tumor maligno de los nervios periféricos y del sistema nervioso autónomo
+C48,Tumor maligno del peritoneo y del retroperitoneo
+C49,Tumor maligno de otros tejidos conjuntivos y de tejidos blandos
+C50,Tumor maligno de la mama
+C51,Tumor maligno de la vulva
+C52,Tumor maligno de la vagina
+C53,Tumor maligno del cuello del útero
+C54,Tumor maligno del cuerpo del útero
+C55,"Tumor maligno del útero, parte no especificada"
+C56,Tumor maligno del ovario
+C57,Tumor maligno de otros órganos genitales femeninos y de los no especificados
+C58,Tumor maligno de la placenta
+C60,Tumor maligno del pene
+C61,Tumor maligno de la próstata
+C62,Tumor maligno del testículo
+C63,Tumor maligno de otros órganos genitales maculinos y de los no especificados
+C64,"Tumor maligno del riñón, excepto de la pelvis renal"
+C65,Tumor maligno de la pelvis renal
+C66,Tumor maligno del uréter
+C67,Tumor maligno de la vejiga urinaria
+C68,Tumor maligno de otros óganos urinarios y de los no especificados
+C69,Tumor maligno del ojo y sus anexos
+C70,Tumor maligno de las meninges
+C71,Tumor maligno del encéfalo
+C72,"Tumor maligno de la médula espinal, de los nervios craneales y de otras partes del sistema nervioso central"
+C73,Tumor maligno de la glándula tiroides
+C74,Tumor maligno de la glándula suprarrenal
+C75,Tumor maligno de otras glándulas endocrinas y de estructuras afines
+C76,Tumor maligno de otros sitios y de los sitios mal definidos
+C77,Tumor maligno secundario y el no especificado de los ganglios linfáticos
+C78,Tumor maligno secundario de los órganos respiratorios y digestivos
+C79,Tumor maligno secundario de otros sitios y de sitios no especificados
+C80,Tumor maligno de sitios no especificados
+C81,Linfoma de Hodgkin
+C82,Linfoma folicular
+C83,Linfoma no folicular
+C84,Linfomas de células T/NK maduras
+C85,Linfoma no Hodgkin de otro tipo y el no especificado
+C86,Otros tipos especificados de linfoma de células T/NK
+C88,Otros linfomas de células B [enfermedades inmunoproliferativas malignas]
+C90,Mieloma múltiple y tumores malignos de células plasmáticas
+C91,Leucemia linfoide
+C92,Leucemia mieloide
+C93,Leucemia monocítica
+C94,Otras leucemias de tipo celular especificado
+C95,Leucemia de células de tipo no especificado
+C96,"Otros tumores malignos y los no especificados del tejido linfático, de los órganos hematopoyéticos y de tejidos afines"
+C97,Tumores malignos (primarios) de sitios múltiples independientes
+D00,"Carcinoma in situ de la cavidad bucal, del esófago y del estómago"
+D01,Carcinoma in situ de otros órganos digestivos y de los no especificados
+D02,Carcinoma in situ del sistema respiratorio y del oído medio
+D03,Melanoma in situ
+D04,Carcinoma in situ de la piel
+D05,Carcinoma in situ de la mama
+D06,Carcinoma in situ del cuello del útero
+D07,Carcinoma in situ de otros órganos genitales y de los no especificados
+D09,Carcinoma in situ de otros sitios y de los no especificados
+D10,Tumor benigno de la boca y de la faringe
+D11,Tumor benigno de las glándulas salivales mayores
+D12,"Tumor benigno del colon, del recto, del conducto anal y del ano"
+D13,Tumor benigno de otras partes y de las mal definidas del sistema digestivo
+D14,Tumor benigno del oído medio y del sistema respiratorio
+D15,Tumor benigno de otros órganos intratorácicos y de los no especificados
+D16,Tumor benigno del hueso y del cartílago articular
+D17,Tumores benignos lipomatosos
+D18,Hemangioma y linfangioma de cualquier sitio
+D19,Tumores benignos del tejido mesotelial
+D20,Tumor benigno del tejido blando del peritoneo y del retroperitoneo
+D21,Otros tumores benignos del tejido conjuntivo y de los tejidos blandos
+D22,Nevo melanocítico
+D23,Otros tumores benignos de la piel
+D24,Tumor benigno de la mama
+D25,Leiomioma del útero
+D26,Otros tumores benignos del útero
+D27,Tumor benigno del ovario
+D28,Tumor benigno de otros órganos genitales femeninos y de los no especificados
+D29,Tumor benigno de los órganos genitales masculinos
+D30,Tumor benigno de los órganos urinarios
+D31,Tumor benigno del ojo y sus anexos
+D32,Tumores benignos de las meninges
+D33,Tumor benigno del encéfalo y de otras partes del sistema nervioso central
+D34,Tumor benigno de la glándula tiroides
+D35,Tumor benigno de otras glándulas endocrinas y de las no especificadas
+D36,Tumor benigno de otros sitios y de los no especificados
+D37,Tumor de comportamiento incierto o desconocido de la cavidad bucal y de los órganos digestivos
+D38,Tumor de comportamiento incierto o desconocido del oído medio y de los órganos respiratorios e intratorácicos
+D39,Tumor de comportamiento incierto o desconocido de los órganos genitales femeninos
+D40,Tumor de comportamiento incierto o desconocido de los órganos genitales masculinos
+D41,Tumor de comportamiento incierto o desconocido de los órganos urinarios
+D42,Tumor de comportamiento incierto o desconocido de las meninges
+D43,Tumor de comportamiento incierto o desconocido del encéfalo y del sistema nervioso central
+D44,Tumor de comportamiento incierto o desconocido de las glándulas endocrinas
+D45,Policitemia vera
+D46,Síndromes mielodisplásicos
+D47,"Otros tumores de comportamiento incierto o desconocido del tejido linfático, de los órganos hematopoyéticos y de tejidos afines"
+D48,Tumor de comportamiento incierto o desconocido de otros sitios y de los no especificados
+D50,Anemias por deficiencia de hierro
+D51,Anemia por deficiencia de vitamina B12
+D52,Anemia por deficiencia de folatos
+D53,Otras anemias nutricionales
+D55,Anemia debida a trastornos enzimáticos
+D56,Talasemia
+D57,Trastornos falciformes
+D58,Otras anemias hemolíticas hereditarias
+D59,Anemia hemolítica adquirida
+D60,"Aplasia adquirida, exclusiva de la serie roja [eritroblastopenia]"
+D61,Otras anemias aplásticas
+D62,Anemia posthemorrágica aguda
+D64,Otras anemias
+D65,Coagulación intravascular diseminada [síndrome de desfibrinación]
+D66,Deficiencia hereditaria del factor VIII
+D67,Deficiencia hereditaria del factor IX
+D68,Otros defectos de la coagulación
+D69,Púrpura y otras afecciones hemorrágicas
+D70,Agranulocitosis
+D71,Trastornos funcionales de los polimorfonucleares neutrófilos
+D72,Otros trastornos de los leucocitos
+D73,Enfermedades del bazo
+D74,Metahemoglobinemia
+D75,Otras enfermedades de la sangre y de los órganos hematopoyéticos
+D76,Otras enfermedades especificadas con participación deL tejido linforreticular y del tejido reticulohistiocítico
+D80,Inmunodeficiencia con predominio de defectos de los anticuerpos
+D81,Inmunodeficiencias combinadas
+D82,Inmunodeficiencia asociada con otros defectos mayores
+D83,Inmunodeficiencia variable común
+D84,Otras inmunodeficiencias
+D86,Sarcoidosis
+D89,"Otros trastornos que afectan el mecanismo de la inmunidad, no clasificados en otra parte"
+E00,Síndrome congénito de deficiencia de yodo
+E01,Trastornos tiroideos vinculados a deficiencia de yodo y afecciones relacionadas
+E03,Otros hipotiroidismos
+E04,Otros bocios no tóxicos
+E05,Tirotoxicosis [hipertiroidismo]
+E06,Tiroiditis
+E07,Otros trastornos tiroideos
+E10,Diabetes mellitus insulinodependiente
+E11,Diabetes mellitus no insulinodependiente
+E12,Diabetes mellitus asociada con desnutrición
+E13,Otras diabetes mellitus especificadas
+E14,"Diabetes mellitus, no especificada"
+E15,Coma hipoglicémico no diabético
+E16,Otros trastornos de la secreción interna del páncreas
+E20,Hipoparatiroidismo
+E21,Hiperparatiroidismo y otros trastornos de la glándula paratiroides
+E22,Hiperfunción de la glándula hipófisis
+E23,Hipofunción y otros trastornos de la glándula hipófisis
+E24,Síndrome de Cushing
+E25,Trastornos adrenogenitales
+E26,Hiperaldosteronismo
+E27,Otros trastornos  de la glándula suprarrenal
+E28,Disfunción ovárica
+E30,"Trastornos de la pubertad, no clasificados en otra parte"
+E31,Disfunción poliglandular
+E32,Enfermedades del timo
+E34,Otros trastornos endocrinos
+E40,Kwashiorkor
+E41,Marasmo nutricional
+E42,Kwashiorkor marasmático
+E43,"Desnutrición proteicocalórica severa, no especificada"
+E44,Desnutrición proteicocalórica de grado moderado y leve
+E45,Retardo del desarrollo debido a desnutrición proteicocalórica
+E46,"Desnutrición proteicocalórica, no especificada"
+E50,Deficiencia de vitamina A
+E51,Deficiencia de tiamina
+E52,Deficiencia de niacina [pelagra]
+E53,Deficiencias de otras vitaminas del grupo B
+E55,Deficiencia de vitamina D
+E56,Otras deficiencias de vitaminas
+E58,Deficiencia dietética de calcio
+E61,Deficiencias de otros elementos nutricionales
+E63,Otras deficiencias nutricionales
+E64,Secuelas de la desnutrición y de otras deficiencias nutricionales
+E66,Obesidad
+E67,Otros tipos de hiperalimentación
+E68,Secuelas de hiperalimentación
+E70,Trastornos del metabolismo de los aminoácidos aromáticos
+E71,Trastornos del metabolismo de los aminoácidos de cadena ramificada y de los ácidos grasos
+E72,Otros trastornos del metabolismo de los aminoácidos
+E74,Otros trastornos del metabolismo de los carbohidratos
+E75,Trastornos del metabolismo de los esfingolípidos y otros trastornos por almacenamiento de lípidos
+E76,Trastornos del metabolismo de los glucosaminoglicanos
+E77,Trastornos del metabolismo de las glucoproteínas
+E78,Trastornos del metabolismo de las lipoproteínas y otras lipidemias
+E79,Trastornos del metabolismo de las purinas y de las pirimidinas
+E80,Trastornos del metabolismo de las porfirinas y de la bilirrubina
+E83,Trastornos del metabolismo de los minerales
+E84,Fibrosis quística
+E85,Amiloidosis
+E86,Depleción del volumen
+E87,"Otros trastornos de los líquidos, de los electrólitos y del equilibrio ácido-básico"
+E88,Otros trastornos metabólicos
+F01,Demencia vascular
+F03,"Demencia , no especificada"
+F04,"Síndrome amnésico orgánico, no inducido por alcohol o por otras sustancias psicoactivas"
+F05,"Delirio, no inducido por alcohol o por otras sustancias psicoactivas"
+F06,"Otros trastornos mentales debidos a lesión y disfunción cerebral, y a enfermedad física"
+F07,"Trastronos de la personalidad y del comportamiento debidos a enfermedad, lesión o disfunción cerebral"
+F09,"Trastorno mental orgánico o sintomático, no especificado"
+F10,Trastornos mentales y del comportamiento debidos al uso de alcohol
+F11,Trastornos mentales y del comportamiento debidos al uso de opiáceos
+F12,Trastornos mentales y del comportamiento debidos al uso de cannabinoides
+F13,Trastornos mentales y del comportamiento debidos al uso de sedantes  o hipnóticos
+F14,Trastornos mentales y del comportamiento debidos al uso de cocaína
+F16,Trastornos mentales y del comportamiento debidos al uso de alucinógenos
+F17,Trastornos mentales y del comportamiento debidos al uso de tabaco
+F18,Trastornos mentales y del comportamiento debidos al uso de disolventes volátiles
+F19,Trastornos mentales y del comportamiento debidos al uso de múltiples drogas y al uso de otras sustancias psicoactivas
+F20,Esquizofrenia
+F21,Trastorno esquizotípico
+F22,Trastornos delirantes persistentes
+F23,Trastornos psicóticos agudos y transitorios
+F25,Trastornos esquizoafectivos
+F28,Otros trastornos psicóticos  de origen no orgánico
+F29,"Psicosis de origen no orgánico, no especificada"
+F30,Episodio maníaco
+F31,Trastorno afectivo bipolar
+F32,Episodio depresivo
+F33,Trastorno depresivo recurrente
+F34,Trastorno del humor [afectivos] persistentes
+F38,Otros trastornos del humor [afectivos]
+F39,"Trastorno del humor [afectivo], no especificado"
+F40,Trastornos fóbicos de ansiedad
+F41,Otros trastornos de ansiedad
+F42,Trastorno obsesivo-compulsivo
+F43,Reacción al estrés grave y trastornos de adaptación
+F44,Trastornos disociativos [de conversión]
+F45,Trastornos somatomorfos
+F48,Otros trastornos neuróticos
+F50,Trastornos de la ingestión de alimentos
+F51,Trastornos no orgánicos del sueño
+F59,"Síndromes del comportamiento asociados con alteraciones fisiológicas y factores físicos, no especificados"
+F60,Trastornos específicos de la personalidad
+F62,"Cambios perdurables de la personalidad, no atribuibles a lesión o a enfermedad cerebral"
+F65,Trastornos de la preferencia sexual
+F66,Trastornos psicológicos y del comportamiento asociados con el desarrollo y con la orientación sexuales
+F68,Otros trastornos de la personalidad y del comportamiento en adultos
+F70,Retraso mental leve
+F71,Retraso mental moderado
+F72,Retraso mental grave
+F73,Retraso mental profundo
+F78,Otros tipos de retraso mental
+F79,"Retraso mental, no especificado"
+F82,Trastorno especÍfico del desarrollo de la función motriz
+F84,Trastornos generalizados del desarrollo
+F89,"Trastorno del desarrollo psicológico, no especificado"
+F99,"Trastorno mental, no especificado"
+G00,"Meningitis bacteriana, no clasificada en otra parte"
+G03,Meningitis debida a otras causas y a las no especificadas
+G04,"Encefalitis, mielitis y encefalomielitis"
+G06,Absceso y granuloma intracraneal e intrarraquídeo
+G08,Flebitis y tromboflebitis intracraneal e intrarraquídea
+G09,Secuelas de enfermedades inflamatorias del sistema nervioso central
+G10,Enfermedad de Huntington
+G11,Ataxia hereditaria
+G12,Atrofia muscular espinal y síndromes afines
+G20,Enfermedad de Parkinson
+G21,Parkinsonismo secundario
+G23,Otras enfermedades degenerativas de los núcleos de la base
+G24,Distonía
+G25,Otros trastornos extrapiramidales y del movimiento
+G30,Enfermedad de Alzheimer
+G31,"Otras enfermedades degenerativas del sistema nervioso, no clasificadas en otra parte"
+G35,Esclerosis múltiple
+G36,Otras desmielinizaciones diseminadas agudas
+G37,Otras enfermedades desmielinizantes del sistema nervioso central
+G40,Epilepsia
+G41,Estado de mal epiléptico
+G43,Migraña
+G44,Otros síndromes de cefalea
+G45,Ataques de isquemia cerebral transitoria y síndromes afines
+G47,Trastornos del sueño
+G50,Trastornos del nervio trigémino
+G51,Trastornos del nervio facial
+G52,Trastornos de otros nervios craneales
+G54,Trastornos de las raíces y de los plexos nerviosos
+G56,Mononeuropatías del miembro superior
+G57,Mononeuropatías del miembro inferior
+G58,Otras mononeuropatías
+G60,Neuropatía hereditaria e idiopática
+G61,Polineuopatía inflamatoria
+G62,Otras polineuropatías
+G64,Otros trastornos del sistema nervioso periférico
+G70,Miastenia gravis y otros trastornos neuromusculares
+G71,Trastornos musculares primarios
+G72,Otras miopatías
+G80,Parálisis cerebral
+G81,Hemiplejía
+G82,Paraplejía y cuadriplejía
+G83,Otros síndromes paralíticos
+G90,Trastornos del sistema nervioso autónomo
+G91,Hidrocéfalo
+G92,Encefalopatía tóxica
+G93,Otros trastornos del encéfalo
+G95,Otras enfermedades de la médula espinal
+G96,Otros trastornos del sistema nervioso central
+G98,"Otros trastornos del sistema nervioso, no clasificados en otra parte"
+H04,Trastornos del aparato lagrimal
+H05,Trastornos de la órbita
+H11,Otros trastornos de la conjuntiva
+H15,Trastornos de la esclerótica
+H16,Queratitis
+H18,Otros trastornos de la córnea
+H20,Iridociclitis
+H31,Otros trastornos de la coroides
+H35,Otros trastornos de la retina
+H44,Trastornos del globo ocular
+H49,Estrabismo paralítico
+H60,Otitis externa
+H65,Otitis media no supurativa
+H66,Otitis media supurativa y la no especificada
+H70,Mastoiditis y afecciones relacionadas
+H72,Perforación de la membrana timpánica
+H74,Otros trastornos del oído medio y de la apófisis mastoides
+H81,Trastornos de la función vestibular
+H92,Otalgia y secreción del oído
+I00,Fiebre reumática sin mención de complicación cardíaca
+I01,Fiebre reumática con complicación cardíaca
+I02,Corea reumática
+I05,Enfermedades reumáticas de la válvula mitral
+I06,Enfermedades reumáticas de la válvula aórtica
+I07,Enfermedades reumáticas de la válvula tricúspide
+I08,Enfermedades valvulares múltiples
+I09,Otras enfermedades reumáticas del corazón
+I10,Hipertensión esencial (primaria)
+I11,Enfermedad cardíaca hipertensiva
+I12,Enfermedad renal hipertensiva
+I13,Enfermedad cardiorrenal hipertensiva
+I15,Hipertensión secundaria
+I20,Angina de pecho
+I21,Infarto agudo del miocardio
+I22,Infarto subsecuente del miocardio
+I24,Otras enfermedades isquémicas agudas del corazón
+I25,Enfermedad isquémica crónica del corazón
+I26,Embolia pulmonar
+I27,Otras enfermedades cardiopulmonares
+I28,Otras enfermedades de los vasos pulmonares
+I30,Pericarditis aguda
+I31,Otras enfermedades del pericardio
+I33,Endocarditis aguda y subaguda
+I34,Trastornos no reumáticos de la válvula mitral
+I35,Trastornos no reumáticos de la válvula aórtica
+I36,Trastornos no reumáticos de la válvula tricúspide
+I37,Trastornos de la válvula pulmonar
+I38,"Endocarditis, válvula no especificada"
+I40,Miocarditis aguda
+I42,Cardiomiopatía
+I44,Bloqueo auriculoventricular y de rama izquierda del haz
+I45,Otros trastornos de la conducción
+I46,Paro cardíaco
+I47,Taquicardia paroxística
+I48,Fibrilación y aleteo auricular
+I49,Otras arritmias cardiacas
+I50,Insuficiencia cardíaca
+I51,Complicaciones y descripciones mal definidas de enfermedad cardíaca
+I60,Hemorragia subaracnoidea
+I61,Hemorragia intraencefálica
+I62,Otras hemorragias intracraneales no traumáticas
+I63,Infarto cerebral
+I64,"Accidente vascular encefálico agudo, no especificado como hemorrágico o isquémico"
+I67,Otras enfermedades cerebrovasculares
+I69,Secuelas de enfermedad cerebrovascular
+I70,Aterosclerosis
+I71,Aneurisma y disección aórticos
+I72,Otros aneurismas y aneurismas disecantes
+I73,Otras enfermedades vasculares periféricas
+I74,Embolia y trombosis arteriales
+I77,Otros trastornos arteriales o arteriolares
+I78,Enfermedades de los vasos capilares
+I80,Flebitis y tromboflebitis
+I81,Trombosis de la vena porta
+I82,Otras embolias y trombosis venosas
+I83,Venas varicosas de los miembros inferiores
+I85,Várices esofágicas
+I86,Várices de otros sitios
+I87,Otros trastornos de las venas
+I88,Linfadenitis inespecífica
+I89,Otros trastornos no infecciosos de los vasos y ganglios linfáticos
+I95,Hipotensión
+I99,Otros trastornos y los no especificados del sistema circulatorio
+J00,Rinofaringitis aguda [resfriado común]
+J01,Sinusitis aguda
+J02,Faringitis aguda
+J03,Amigdalitis aguda
+J04,Laringitis y traqueítis agudas
+J05,Laringitis obstructiva aguda [crup] y epiglotitis
+J06,"Infecciones agudas de las vías respiratorias superiores, de sitios múltiples o no especificados"
+J09,Influenza debida a ciertos virus de la influenza identificados
+J10,Influenza debida a otro virus de la influenza identificado
+J11,Influenza debida a virus no identificado
+J12,"Neumonía viral, no clasificada en otra parte"
+J13,Neumonía debida a Streptococcus pneumoniae
+J14,Neumonía debida a Haemophilus influenzae
+J15,"Neumonía bacteriana, no clasificada en otra parte"
+J16,"Neumonía debida a otros microorganismos infecciosos, no clasificados en otra parte"
+J18,"Neumonía, organismo no especificado"
+J20,Bronquitis aguda
+J21,Bronquiolitis aguda
+J22,Infección aguda no especificada de las vías respiratorias inferiores
+J30,Rinitis alérgica y vasomotora
+J31,"Rinitis, rinofaringitis y faringitis crónicas"
+J32,Sinusitis crónica
+J33,Pólipo nasal
+J34,Otros trastornos de la nariz y de los senos paranasales
+J35,Enfermedades crónicas de las amígdalas y de las adenoides
+J36,Absceso periamigdalino
+J37,Laringitis y laringotraqueítis crónicas
+J38,"Enfermedades de las cuerdas vocales y de la laringe, no clasificadas en otra parte"
+J39,Otras enfermedades de las vías respiratorias superiores
+J40,"Bronquitis, no especificada como aguda o crónica"
+J41,Bronquitis crónica simple y mucopurulenta
+J42,Bronquitis crónica no especificada
+J43,Enfisema
+J44,Otras enfermedades pulmonares obstructivas crónicas
+J45,Asma
+J46,Estado asmático
+J47,Bronquiectasia
+J60,Neumoconiosis de los mineros del carbón
+J61,Neumoconiosis debida al asbesto y a otras fibras minerales
+J62,Neumoconiosis debida a polvo de sílice
+J63,Neumoconiosis debida a otros polvos inorgánicos
+J64,"Neumoconiosis, no especificada"
+J65,Neumoconiosis asociada con tuberculosis
+J66,Enfermedades de las vías aéreas debidas a polvos orgánicos específicos
+J67,Neumonitis debida a hipersensibilidad al polvo orgánico
+J68,"Afecciones respiratorias debidas a inhalación de gases, humos, vapores y sustancias químicas"
+J69,Neumonitis debida a sólidos y líquidos
+J70,Afecciones respiratorias debidas a otros agentes externos
+J80,Síndrome de dificultad respiratoria del adulto
+J81,Edema pulmonar
+J82,"Eosinofilia pulmonar, no clasificada en otra parte"
+J84,Otras enfermedades pulmonares intersticiales
+J85,Absceso del pulmón y del mediastino
+J86,Piotórax
+J90,Derrame pleural no clasificado en otra parte
+J92,Paquipleuritis
+J93,Neumotórax
+J94,Otras afecciones de la pleura
+J96,"Insuficiencia respiratoria, no clasificada en otra parte"
+J98,Otros trastornos respiratorios
+K02,Caries dental
+K03,Otras enfermedades de los tejidos duros de los dientes
+K04,Enfermedades de la pulpa y de los tejidos periapicales
+K05,Gingivitis y enfermedades periodontales
+K07,Anomalías dentofaciales (incluso la maloclusión)
+K08,Otros trastornos de los dientes y de sus estructuras de sostén
+K09,"Quites de la región bucal, no clasificados en otra parte"
+K10,Otras enfermedades de los maxilares
+K11,Enfermedades de las glándulas salivales
+K12,Estomatitis y lesiones afines
+K13,Otras enfermedades de los labios y de la mucosa bucal
+K14,Enfermedades de la lengua
+K20,Esofagitis
+K21,Enfermedad del reflujo gastroesofágico
+K22,Otras enfermedades del esófago
+K25,Úlcera gástrica
+K26,Úlcera duodenal
+K27,"Úlcera péptica, de sitio no especificado"
+K28,Úlcera gastroyeyunal
+K29,Gastritis y duodenitis
+K30,Dispepsia funcional
+K31,Otras enfermedades del estómago y del duodeno
+K35,Apendicitis aguda
+K36,Otros tipos de apendicitis
+K37,"Apendicitis, no especificada"
+K38,Otras enfermedades del apéndice
+K40,Hernia inguinal
+K41,Hernia femoral
+K42,Hernia umbilical
+K43,Hernia ventral
+K44,Hernia diafragmática
+K45,Otras hernias de la cavidad abdominal
+K46,Hernia no especificada de la cavidad abdominal
+K50,Enfermedad de Crohn [enteritis regional]
+K51,Colitis Ulcerativa
+K52,Otras colitis y gastroenteritis no infecciosas
+K55,Trastornos vasculares de los intestinos
+K56,Ileo paralítico y obstrucción intestinal sin hernia
+K57,Enfermedad diverticular del intestino
+K58,Síndrome del colon irritable
+K59,Otros trastornos funcionles del intestino
+K60,Fisura y fístula de las regiones anal y rectal
+K61,Absceso de las regiones anal y rectal
+K62,Otras enfermedades del ano y del recto
+K63,Otras enfermedades de los intestinos
+K64,Hemorroides y trombosis venosa perianal
+K65,Peritonitis
+K66,Otros trastornos del peritoneo
+K70,Enfermedad alcohólica del hígado
+K71,Enfermedad tóxica del hígado
+K72,"Insuficiencia hepática, no clasificada en otra parte"
+K73,"Hepatitis crónica, no clasificada en otra parte"
+K74,Fibrosis y cirrosis del hígado
+K75,Otras enfermedades inflamatorias del hígado
+K76,Otras enfermedades del hígado
+K80,Colelitiasis
+K81,Colecistitis
+K82,Otras enfermedades de la vesícula biliar
+K83,Otras enfermedades de las vías biliares
+K85,Pancreatitis aguda
+K86,Otras enfermedades del páncreas
+K90,Malabsorción intestinal
+K92,Otras enfermedades del sistema digestivo
+L00,Síndrome estafilocócico de la piel escaldada
+L01,Impétigo
+L02,"Absceso cutáneo, furúnculo y ántrax"
+L03,Celulitis
+L04,Linfadenitis aguda
+L05,Quiste pilonidal
+L08,Otras infecciones locales de la piel y del tejido subcutáneo
+L10,Pénfigo
+L11,Otros trastornos acantolíticos
+L12,Penfigoide
+L13,Otros trastornos flictenulares
+L20,Dermatitis atópica
+L21,Dermatitis seborreica
+L24,Dermatitis de contacto por irritantes
+L25,"Dermatitis de contacto, forma no especificada"
+L26,Dermatitis exfoliativa
+L27,Dermatitis debida a sustancias ingeridas
+L28,Liquen simple crónico y prurigo
+L29,Prurito
+L30,Otras dermatitis
+L40,Psoriasis
+L41,Parapsoriasis
+L42,Pitiriasis rosada
+L44,Otros trastornos papuloescamosos
+L50,Urticaria
+L51,Eritema multiforme
+L52,Eritema nudoso
+L53,Otras afecciones eritematosas
+L57,Cambios de la piel debidos a exposición crónica a radiación no ionizante
+L58,Radiodermatitis
+L59,Otros trastornos de la piel y del tejido subcutáneo relacionados con radiación
+L60,Trastornos de las uñas
+L63,Alopecia areata
+L65,Otra pérdida no cicatricial del pelo
+L66,Alopecia cicatricial [pérdida cicatricial del pelo]
+L67,Anormalidades del tallo y del color del pelo
+L68,Hipertricosis
+L70,Acné
+L71,Rosásea
+L72,Quiste folicular de la piel y del tejido subcutáneo
+L73,Otros trastornos foliculares
+L75,Trastornos sudoríparos apocrinos
+L80,Vitíligo
+L81,Otros trastornos de la pigmentación
+L83,Acantosis nigricans
+L84,Callos y callosidades
+L85,Otros tipos de engrosamiento epidérmico
+L87,Trastornos de la eliminación transepidérmica
+L88,Pioderma gangrenoso
+L89,Úlcera de decúbito
+L90,Trastornos atróficos de la piel
+L91,Trastornos hipertróficos de la piel
+L92,Trastornos granulomatosos de la piel y del tejido subcutáneo
+L93,Lupus eritematoso
+L94,Otros trastornos localizados del tejido conjuntivo
+L95,"Vasculitis limitada a la piel, no clasificada en otra parte"
+L97,"Úlcera de miembro inferior, no clasificada en otra parte"
+L98,Otros trastornos de la piel y del tejido subcutáneo no clasificados en otra parte
+M00,Artritis piógena
+M02,Artropatías reactivas
+M05,Artritis reumatoide seropositiva
+M06,Otras artritis reumatoides
+M08,Artritis juvenil
+M10,Gota
+M11,Otras artropatías por cristales
+M12,Otras artropatías específicas
+M13,Otras artritis
+M15,Poliartrosis
+M16,Coxartrosis [artrosis de la cadera]
+M17,Gonartrosis [artrosis de la rodilla]
+M18,Artrosis de la primera articulación carpometacarpiana
+M19,Otras artrosis
+M20,Deformidades adquiridas de los dedos de la mano y del pie
+M21,Otras deformidades adquiridas de los miembros
+M22,Trastornos de la rótula
+M23,Trastorno interno de la rodilla
+M24,Otros trastornos articulares específicos
+M25,"Otros trastornos articulares, no clasificados en otra parte"
+M30,Poliarteritis nudosa y afecciones relacionadas
+M31,Otras vasculopatías necrotizantes
+M32,Lupus eritematoso sistémico
+M33,Dermatopolimiositis
+M34,Esclerosis sistémica
+M35,Otro compromiso sistémico del tejido conjuntivo
+M40,Cifosis y lordosis
+M41,Escoliosis
+M42,Osteocondrosis de la columna vertebral
+M43,Otras dorsopatías deformantes
+M45,Espondilitis anquilosante
+M46,Otras espondilopatías inflamatorias
+M47,Espondilosis
+M48,Otras espondilopatías
+M50,Trastornos de disco cervical
+M51,Otros trastornos de los discos intervertebrales
+M53,"Otras dorsopatías, no clasificadas en otra parte"
+M54,Dorsalgia
+M60,Miositis
+M61,Calcificación y osificación del músculo
+M62,Otros trastornos de los músculos
+M65,Sinovitis y tenosinovitis
+M66,Ruptura espontánea de la sinovia y del tendón
+M67,Otros trastornos de la sinovia y del tendón
+M70,"Trastornos de los tejidos blandos relacionados con el uso, el uso excesivo y la presión"
+M71,Otras bursopatías
+M72,Trastornos fibroblásticos
+M76,"Entesopatías del miembro inferior, excluido el pie"
+M77,Otras entesopatías
+M79,"Otros trastornos de los tejidos blandos, no clasificados en otra parte"
+M80,Osteoporosis con fractura patológica
+M81,Osteoporosis sin fractura patológica
+M83,Osteomalacia del adulto
+M84,Trastornos de la continuidad del hueso
+M85,Otros trastornos de la densidad y de la estructura óseas
+M86,Osteomielitis
+M87,Osteonecrosis
+M88,Enfermedad de Paget de los huesos [osteítis deformante]
+M89,Otros trastornos del hueso
+M91,Osteocondrosis juvenil de la cadera y de la pelvis
+M92,Otras osteocondrosis juveniles
+M93,Otras osteocondropatías
+M94,Otros trastornos del cartílago
+M95,Otras deformidades adquiridas del sistema osteomuscular y del tejido conjuntivo
+M99,"Lesiones biomecánicas, no clasificadas en otra parte"
+N00,Síndrome nefrítico agudo
+N01,Síndrome nefrítico rápidamente progresivo
+N02,Hematuria recurrente y persistente
+N03,Síndrome nefrítico crónico
+N04,Síndrome nefrótico
+N05,Síndrome nefrítico no especificado
+N06,Proteinuria aislada con lesión morfológica especificada
+N07,Nefropatía hereditaria no clasificada en otra parte
+N10,Nefritis tubulointersticial aguda
+N11,Nefritis  tubulointersticial crónica
+N12,"Nefritis tubulointersticial, no especificada como aguda o crónica"
+N13,Uropatía obstructiva y por reflujo
+N14,Afecciones tubulares y tubulointersticiales inducidas por drogas y por metales pesados
+N15,Otras enfermedades renales tubulointersticiales
+N17,Insuficiencia renal aguda
+N18,Enfermedad renal crónica
+N19,Insuficiencia renal no especificada
+N20,Cálculo del riñón y del uréter
+N21,Cálculo de las vías urinarias inferiores
+N23,"Cólico renal, no especificado"
+N25,Trastornos resultantes de la función tubular renal alterada
+N26,"Riñón contraído, no especificado"
+N27,Riñón pequeño de causa desconocida
+N28,"Otros trastornos del riñón y del uréter, no clasificados en otra parte"
+N30,Cistitis
+N31,"Disfunción neuromuscular de la vejiga, no clasificada en otra parte"
+N32,Otros trastornos de la vejiga
+N34,Uretritis y síndrome uretral
+N35,Estrechez uretral
+N36,Otros trastornos de la uretra
+N39,Otros trastornos del sistema urinario
+N40,Hiperplasia de la próstata
+N41,Enfermedades inflamatorias de la próstata
+N42,Otros trastornos de la próstata
+N43,Hidrocele y espermatocele
+N44,Torsión del testículo
+N45,Orquitis y epididimitis
+N47,"Prepucio redundante, fimosis y parafimosis"
+N48,Otros trastornos del pene
+N49,"Trastornos inflamatorios de órganos genitales masculinos, no clasificados en otra parte"
+N50,Otros trastornos de los órganos genitales masculinos
+N60,Displasia mamaria benigna
+N61,Trastornos inflamatorios de la mama
+N62,Hipertrofia de la mama
+N63,Masa no especificada en la mama
+N64,Otros trastornos de la mama
+N70,Salpingitis y ooforitis
+N71,"Enfermedad inflamatoria del útero, excepto del cuello uterino"
+N72,Enfermedad inflamatoria del cuello uterino
+N73,Otras enfermedades pélvicas inflamatorias femeninas
+N75,Enfermedades de la glándula de Bartholin
+N76,Otras afecciones inflamatorias de la vagina y de la vulva
+N80,Endometriosis
+N81,Prolapso genital femenino
+N82,Fístulas que afectan el tracto genital femenino
+N83,"Tratornos no inflamatorios del ovario, de la trompa de Falopio y del ligamento ancho"
+N84,Pólipo del tracto genital femenino
+N85,"Otros trastornos no inflamatorios del útero, excepto del cuello"
+N87,Displasia del cuello uterino
+N88,Otros trastornos no inflamatorios del cuello del útero
+N89,Otros trastornos no inflamatorios de la vagina
+N90,Otros trastornos no inflamatorios de la vulva y del perineo
+N92,"Menstruación excesiva, frecuente e irregular"
+N93,Otras hemorragias uterinas o vaginales anormales
+N94,Dolor y otras afecciones relacionadas con los órganos genitales femeninos y con el ciclo menstrual
+N95,Otros trastornos menopáusicos y perimenopáusicos
+N98,Complicaciones asociadas con la fecundación artificial
+O00,Embarazo ectópico
+O01,Mola hidatiforme
+O02,Otros productos anormales  de la concepción
+O03,Aborto espontáneo
+O04,Aborto médico
+O05,Otro aborto
+O06,Aborto no especificado
+O07,Intento fallido de aborto
+O10,"Hipertensión preexistente que complica el embarazo, el parto y el puerperio"
+O11,Preeclampsia superpuesta en hipertensión crónica
+O13,Hipertensión gestacional [inducida por el embarazo]
+O14,Preeclampsia
+O15,Eclampsia
+O16,"Hipertensión materna, no especificada"
+O20,Hemorragia precoz del embarazo
+O21,Vómitos excesivos del embarazo
+O22,Complicaciones venosas y hemorroides en el embarazo
+O23,Infección de las vías genitourinarias en el embarazo
+O24,Diabetes mellitus en el embarazo
+O25,Desnutrición en el embarazo
+O26,Atención a la madre por otras complicaciones principalmente relacionadas con el embarazo
+O29,Complicaciones de la anestesia administrada durante el embarazo
+O34,Atención materna por anormalidades conocidas o presuntas de los órganos pelvianos de la madre
+O35,"Atención materna por anormalidad o lesión fetal, conocida o presunta"
+O36,Atención materna por otros problemas fetales conocidos o presuntos
+O41,Otros trastornos del líquido amniótico y de las membranas
+O42,Ruptura prematura de las membranas
+O43,Trastornos placentarios
+O44,Placenta previa
+O45,Desprendimiento prematuro de la placenta [Abruptio placentae]
+O46,"Hemorragia anteparto, no clasificada en otra parte"
+O60,Parto prematuro
+O61,Fracaso de la inducción del trabajo de parto
+O62,Anormalidades de la dinámica del trabajo de parto
+O66,Otras obstrucciones del trabajo de parto
+O67,"Trabajo de parto y parto complicados por hemorragia intraparto, no clasificados en otra parte"
+O68,Trabajo de parto y parto complicados por sufrimiento fetal
+O69,Trabajo de parto y parto complicados por problemas del cordón umbilical
+O70,Desgarro perineal durante el parto
+O71,Otro trauma obstétrico
+O72,Hemorragia postparto
+O73,"Retención de la placenta o de las membranas, sin hemorragia"
+O74,Complicaciones de la anestesia administrada durante el trabajo de parto y el parto
+O75,"Otras complicaciones del trabajo de parto y del parto, no clasificadas en otra parte"
+O85,Sepsis puerperal
+O86,Otras infecciones puerperales
+O87,Complicaciones venosas y hemorroides en el puerperio
+O88,Embolia obstétrica
+O89,Complicaciones de la anestesia administrada durante el puerperio
+O90,"Complicaciones del puerperio, no clasificadas en otra parte"
+O91,Infecciones de la mama asociadas con el parto
+O95,Muerte obstétrica de causa no especificada
+O96,Muerte materna debida a cualquier causa obstétrica que ocurre después de 42 días pero antes de un año del parto
+O97,Muerte por secuelas de causas obstétricas
+O98,"Enfermedades maternas infecciosas y parasitarias clasificables en otra parte, pero que complican el embarazo, el parto y el puerperio"
+O99,"Otras enfermedades maternas clasificables en otra parte, pero que complican el embarazo, el parto y el puerperio"
+P00,Feto y recién nacido afectado por condiciones de la madre no necesariamente relacionadas con el embarazo presente
+P01,Feto y recién nacido afectados por complicaciones maternas del embarazo
+P02,"Feto y recién nacido afectado por complicaciones de la placenta, del cordón umbilical y de las membranas"
+P03,Feto y recién nacido afectados por otras complicaciones del trabajo de parto y del parto
+P04,Feto y recién nacido afectados por influencias nocivas transmitidas a través de la placenta o de la leche materna
+P05,Retardo del crecimiento fetal y desnutrición fetal
+P07,"Trastornos relacionados con duración corta de la gestación y con bajo peso al nacer, no clasificados en otra parte"
+P08,Trastornos relacionados con el embarazo prolongado y con sobrepeso al nacer
+P10,Hemorragia y laceración intracraneal debidas a traumatismo del nacimiento
+P11,Otros traumatismos del nacimiento en el sistema nervioso central
+P12,Traumatismo del nacimiento en el cuero cabelludo
+P13,Traumatismo del esqueleto durante el nacimiento
+P14,Traumatismo del sistema nervioso periférico durante el nacimiento
+P15,Otros traumatismos del nacimiento
+P20,Hipoxia intrauterina
+P21,Asfixia del nacimiento
+P22,Dificultad respiratoria del recién nacido
+P23,Neumonía congénita
+P24,Síndromes de aspiración neonatal
+P25,"Enfisema intersticial y afecciones relacionadas, originadas en el período perinatal"
+P26,Hemorragia pulmonar originada en el período perinatal
+P27,Enfermedad respiratoria crónica originada en el período perinatal
+P28,"Otros problemas respiratorios del recién nacido, originados en el período perinatal"
+P29,Trastornos cardiovasculares originados en el período perinatal
+P35,Enfermedades virales congénitas
+P36,Sepsis bacteriana del recién nacido
+P37,Otras enfermedades infecciosas y parasitarias congénitas
+P38,Onfalitis del recién nacido con o sin hemorragia leve
+P39,Otras infecciones especificas del período perinatal
+P50,Pérdida de sangre fetal
+P51,Hemorragia umbilical del recién nacido
+P52,Hemorragia intracraneal no traumática del feto y del recién nacido
+P53,Enfermedad hemorrágica del feto y del recién nacido
+P54,Otras hemorragias neonatales
+P55,Enfermedad hemolítica del feto y del recién nacido
+P56,Hidropesía fetal debida a enfermedad hemolítica
+P57,Kernicterus
+P58,Ictericia neonatal debida a otras hemólisis excesivas
+P59,Ictericia neonatal por otras causas y por las no especificadas
+P60,Coagulación intravascular diseminada en el feto y el recién nacido
+P61,Otros trastornos hematológicos perinatales
+P70,Trastornos transitorios del metabolismo de los carbohidratos específicos del feto y del recién nacido
+P71,Trastornos neonatales transitorios del metabolismo del calcio y del magnesio
+P72,Otros trastornos endocrinos neonatales transitorios
+P74,Otras alteraciones metabólicas y electrolíticas neonatales transitorias
+P76,Otras obstrucciones intestinales del recién nacido
+P77,Enterocolitis necrotizante del feto y del recién nacido
+P78,Otros trastornos perinatales del sistema digestivo
+P80,Hipotermia del recién nacido
+P81,Otras alteraciones de la regulación de la temperatura en el recién nacido
+P83,Otras afecciones de la piel especificas del feto y del recién nacido
+P90,Convulsiones del recién nacido
+P91,Otras alteraciones cerebrales del recién nacido
+P92,Problemas de la ingestión de alimentos del recién nacido
+P94,Trastornos del tono muscular del recién nacido
+P96,Otras afecciones originadas en el período perinatal
+Q00,Anencefalia y malformaciones congénitas similares
+Q01,Encefalocele
+Q02,Microcefalia
+Q03,Hidrocéfalo congénito
+Q04,Otras malformaciones congénitas del encéfalo
+Q05,Espina bífida
+Q06,Otras malformaciones congénitas de la médula espinal
+Q07,Otras malformaciones congénitas del sistema nervioso
+Q12,Malformaciones congénitas del cristalino
+Q13,Malformaciones congénitas del segmento anterior del ojo
+Q14,Malformaciones congénitas del segmento posterior del ojo
+Q15,Otras malformaciones congénitas del ojo
+Q16,Malformaciones congénitas del oído que causan la alteración de la audición
+Q18,Otras malformaciones congénitas del la cara y del cuello
+Q20,Malformaciones congénitas de las cámaras cardíacas y sus conexiones
+Q21,Malformaciones congénitas de los tabiques cardíacos
+Q22,Malformaciones congénitas de la válvulas pulmonar y tricúspide
+Q23,Malformaciones congénitas de las válvulas aórtica y mitral
+Q24,Otras malformaciones congénitas del corazón
+Q25,Malformaciones congénitas de las grandes arterias
+Q26,Malformaciones congénitas de las grandes venas
+Q27,Otras malformaciones congénitas del sistema vascular periférico
+Q28,Otras malformaciones congénitas del sistema circulatorio
+Q30,Malformaciones congénitas de la nariz
+Q31,Malformaciones congénitas de la laringe
+Q32,Malformaciones congénitas de la tráquea y de los bronquios
+Q33,Malformaciones congénitas del pulmón
+Q34,Otras malformaciones congénitas del sistema respiratorio
+Q35,Fisura del paladar
+Q36,Labio leporino
+Q37,Fisura del paladar con labio leporino
+Q38,"Otras malformaciones congénitas de la lengua, de la boca y de la faringe"
+Q39,Malformaciones congénitas del esófago
+Q40,Otras malformaciones congénitas de la parte superior del tubo digestivo
+Q41,"Ausencia, atresia y estenosis congénita del intestino delgado"
+Q42,"Ausencia, atresia y estenosis congénita del intestino grueso"
+Q43,Otras malformaciones congénitas del intestino
+Q44,"Malformaciones congénitas de la vesícula biliar, de los conductos biliares y del hígado"
+Q45,Otras malformaciones congénitas del sistema digestivo
+Q52,Otras malformaciones congénitas de los órganos genitales femeninos
+Q53,Testículo no descendido
+Q54,Hipospadias
+Q55,Otras malformaciones congénitas de los órganos genitales masculinos
+Q56,Sexo indeterminado y seudohermafroditismo
+Q60,Agenesia renal y otras malformaciones hipoplásicas del riñón
+Q61,Enfermedad quística del riñón
+Q62,Defectos obstructivos congénitos de la pelvis renal y malformaciones congénitas del uréter
+Q63,Otras malformaciones congénitas del riñón
+Q64,Otras malformaciones congénitas del sistema urinario
+Q65,Deformidades congénitas de la cadera
+Q67,"Deformidades osteomusculares congénitas de la cabeza, de la cara, de la columna vertebral y del tórax"
+Q68,Otras deformidades osteomusculares congénitas
+Q71,Defectos por reducción del miembro superior
+Q72,Defectos por reducción del miembro inferior
+Q73,Defectos por reducción de miembro no especificado
+Q74,Otras anomalías congénitas del (de los) miembro(s)
+Q75,Otras malformaciones congénitas de los huesos del cráneo y de la cara
+Q76,Malformaciones congénitas de la columna vertebral y tórax óseo
+Q77,Osteocondrodisplasia con defecto del crecimiento de los huesos largos y de la columna vertebral
+Q78,Otras osteocondrodisplasias
+Q79,"Malformaciones congénitas del sistema osteomuscular, no clasificadas en otra parte"
+Q80,Ictiosis congénita
+Q81,Epidermólisis bullosa
+Q82,Otras malformaciones congénitas de la piel
+Q83,Malformaciones congénitas de la mama
+Q84,Otras malformaciones congénitas de las faneras
+Q85,"Facomatosis, no clasificada en otra parte"
+Q86,"Síndromes de malformaciones congénitas debidos a causas exógenas conocidas, no clasificados en otra parte"
+Q87,Otros síndromes de malformaciones congénitas especificados que afectan múltiples sistemas
+Q89,"Otras malformaciones congénitas, no clasificadas en otra parte"
+Q90,Síndrome de Down
+Q91,Síndrome de Edwards y síndrome  de Patau
+Q92,"Otras trisomías y trisomías parciales de los autosomas, no clasificadas en otra parte"
+Q93,"Monosomías y supresiones de los autosomas, no  clasificadas en otra parte"
+Q96,Síndrome de Turner
+Q97,"Otras anomalías de los cromosomas sexuales, con fenotipo femenino, no clasificadas en otra parte"
+Q98,"Otras anomalías de los cromosomas sexuales, con fenotipo masculino, no clasificadas en otra parte"
+Q99,"Otras anomalías cromosómicas, no clasificadas en otra parte"
+R00,Anormalidades del latido cardíaco
+R01,Soplos y otros sonidos cardíacos
+R02,"Gangrena, no clasificada en otra parte"
+R04,Hemorragia de las vías respiratorias
+R06,Anormalidades de la respiración
+R07,Dolor de garganta y en el pecho
+R09,Otros síntomas y signos que involucran los sistemas circulatorio y respiratorio
+R10,Dolor abdominal y pélvico
+R11,Náusea y vómito
+R13,Disfagia
+R14,Flatulencia y afecciones afines
+R16,"Hepatomegalia y esplenomegalia, no clasificadas en otra parte"
+R17,Ictericia no especificada
+R18,Ascitis
+R19,Otros síntomas y signos que involucran el sistema digestivo y el abdomen
+R20,Alteraciones de la sensibilidad cutánea
+R22,"Tumefacción, masa  o prominencia de la piel y del tejido subcutáneo localizados"
+R23,Otros cambios en la piel
+R25,Movimientos involuntarios anormales
+R26,Anormalidades de la marcha y de la movilidad
+R27,Otras fallas de coordinación
+R29,Otros síntomas y signos que involucran los sistemas nervioso y osteomuscular
+R30,Dolor asociado con la micción
+R31,"Hematuria, no especificada"
+R33,Retención de orina
+R34,Anuria y oliguria
+R35,Poliuria
+R39,Otros síntomas y signos que involucran el sistema urinario
+R40,"Somnolencia, estupor y coma"
+R41,Otros síntomas y signos que involucran la función cognoscitiva y la conciencia
+R42,Mareo y desvanecimiento
+R43,Trastornos del olfato y del gusto
+R45,Síntomas y signos que involucran el estado emocional
+R46,Síntomas y signos que involucran la apariencia y el comportamiento
+R47,"Alteraciones del habla, no clasificadas en otra parte"
+R48,"Dislexia y otras disfunciones simbólicas, no clasificadas en otra parte"
+R50,Fiebre de otro origen y de origen desconocido
+R51,Cefalea
+R52,"Dolor, no clasificado en otra parte"
+R53,Malestar y fatiga
+R54,Senilidad
+R55,Síncope y colapso
+R56,"Convulsiones, no clasificadas en otra parte"
+R57,"Choque, no clasificado en otra parte"
+R58,"Hemorragia, no clasificada en otra parte"
+R59,Adenomegalia
+R60,"Edema, no clasificado en otra parte"
+R61,Hiperhidrosis
+R62,Falta del desarrollo fisiológico normal esperado
+R63,Síntomas y signos concernientes a la alimentación y a la ingestión de líquidos
+R64,Caquexia
+R65,Síndrome de respuesta inflamatoria sistémica
+R68,Otros síntomas y signos generales
+R70,Velocidad de eritrosedimentación elevada y otras anormalidades de la viscosidad del plasma
+R71,Anormalidad de los eritrocitos
+R72,"Anormalidades de los leucocitos, no clasificadas en otra parte"
+R73,Nivel elevado de glucosa en sangre
+R74,Nivel anormal de enzimas en suero
+R76,Otros hallazgos inmunológicos anormales en suero
+R77,Otras anormalidades de las proteínas plasmáticas
+R78,Hallazgo de drogas y otras sustancias que normalmente no se encuentran en la sangre
+R79,Otros hallazgos anormales en la química sanguínea
+R80,Proteinuria aislada
+R81,Glucosuria
+R82,Otros hallazgos anormales en la orina
+R83,Hallazgos anormales en el líquido cefalorraquídeo
+R84,Hallazgos anormales en muestras tomadas de órganos respiratorios y torácicos
+R85,Hallazgos anormales en muestras tomadas de órganos digestivos y de la cavidad abdominal
+R86,Hallazgos anormales en muestras tomadas de órganos genitales masculinos
+R87,Hallazgos anormales en muestras tomadas de órganos genitales femeninos
+R89,"Hallazgos anormales en muestras tomadas de otros órganos, sistemas y tejidos"
+R90,Hallazgos anormales en diagnóstico por imagen del sistema nervioso central
+R91,Hallazgos anormales en diagnóstico por imagen del pulmón
+R92,Hallazgos anormales en diagnóstico por imagen de la mama
+R93,Hallazgos anormales en diagnóstico por imagen de otras estructuras del cuerpo
+R94,Resultados anormales de estudios funcionales
+R95,Síndrome de la muerte súbita infantil
+R96,Otras muertes súbitas de causa desconocida
+R98,Muerte sin asistencia
+R99,Otras causas mal definidas y las no especificadas de mortalidad
+V01,Peatón lesionado por colisión con vehículo de pedal
+V02,Peatón lesionado por colisión con vehículo de motor de dos o tres ruedas
+V03,"Peatón lesionado por colisión con automóvil, camioneta o furgoneta"
+V04,Peatón lesionado por colisión con vehículo de transporte pesado o autobús
+V05,Peatón lesionado por colisión con tren o vehículo de rieles
+V06,Peatón lesionado por colisión con otros vehículos sin motor
+V09,"Peatón lesionado en otros accidentes de transporte, y en los no especificados"
+V10,Ciclista lesionado por colisión con peatón o animal
+V11,Ciclista lesionado por colisión con otro ciclista
+V12,Ciclista lesionado por colisión con vehículo de motor de dos o tres ruedas.
+V13,"Ciclista lesionado por colisión con automóvil, camioneta o furgoneta"
+V14,Ciclista lesionado por colisión con vehículo de transporte pesado o autobús
+V15,Ciclista lesionado por colisión con tren o vehículo de rieles
+V16,Ciclista lesionado por colisión con otros vehículos sin motor
+V17,Ciclista lesionado por colisión con objeto estacionado o fijo
+V18,Ciclista lesionado en accidente de transporte sin colisión
+V19,"Ciclista lesionado en otros accidentes de transporte, y en los no especificados."
+V20,Motociclista lesionado por colisión con peatón o animal
+V21,Motociclista lesionado por colisión con vehículo de pedal
+V22,Motociclista lesionado por colisión con vehículo de motor de dos o tres ruedas
+V23,"Motociclista lesionado por colisión con automóvil, camioneta o furgoneta"
+V24,Motociclista lesionado por colisión con vehículo de transporte pesado o autobús
+V25,Motociclista lesionado por colisión con tren o vehículo de rieles
+V26,Motociclista lesionado por colisión con otros vehículos sin motor
+V27,Motociclista lesionado por colisión con objeto fijo o estacionado
+V28,Motociclista lesionado en accidente de transporte sin colisión
+V29,"Motociclista lesionado en otros accidentes de transporte, y en los no especificados"
+V30,Ocupante de vehículo de motor de tres ruedas lesionado por colisión con peatón o animal
+V31,Ocupante de vehículo de motor de tres ruedas lesionado por colisión con vehículo de pedal
+V32,Ocupante de vehículo de motor de tres ruedas lesionado por colisión con otro vehículo de motor de dos o tres ruedas
+V33,"Ocupante de vehículo de motor de tres ruedas lesionado por colisión con automóvil, camioneta o furgoneta"
+V34,Ocupante de vehículo de motor de tres ruedas lesionado por colisión con vehículo de transporte pesado o autobús
+V37,Ocupante de vehículo de motor de tres ruedas lesionado por  colisión con objeto fijo o estacionado
+V38,Ocupante de vehículo de motor de tres ruedas lesionado en accidente de transporte sin colisión
+V39,"Ocupante de vehículo de motor de tres ruedas lesionado en otros accidentes de transporte, y en los no especificados"
+V40,Ocupante de automóvil lesionado por colisión con peatón o animal
+V41,Ocupante de automóvil lesionado por colisión con vehículo de pedal
+V42,Ocupante de automóvil lesionado por colisión con vehículo de motor de dos o tres ruedas
+V43,"Ocupante de automóvil lesionado por colisión con otro automóvil, camioneta o furgoneta"
+V44,Ocupante de automóvil lesionado por colisión con  vehículo de transporte pesado o autobús
+V45,Ocupante de automóvil lesionado por colisión con tren o vehículo de rieles
+V46,Ocupante de automóvil lesionado por colisión con otros vehículos sin motor
+V47,Ocupante de automóvil lesionado por colisión con objeto fijo o estacionado
+V48,Ocupante de automóvil lesionado en accidente de transporte sin colisión
+V49,"Ocupante de automóvil lesionado en otros accidentes de transporte, y en los no especificados"
+V50,Ocupante de camioneta o furgoneta lesionado por colisión con peatón o animal
+V51,Ocupante de camioneta o furgoneta lesionado por colisión con vehículo de pedal
+V52,Ocupante de camioneta  o furgoneta lesionado por colisión con vehículo de motor de dos o tres ruedas
+V53,"Ocupante de camioneta o furgoneta lesionado por colisión con automóvil, camioneta o furgoneta"
+V54,Ocupante de camioneta o furgoneta lesionado por colisión con vehículo de transporte pesado o autobús
+V55,Ocupante de camioneta o furgoneta lesionado por colisión con tren o vehículo de rieles
+V56,Ocupante de camioneta o furgoneta lesionado por colisión con otros vehículos sin motor
+V57,Ocupante de camioneta o furgoneta lesionado por colisión objeto fijo o estacionado
+V58,Ocupante de camioneta o furgoneta lesionado en accidente de transporte sin colisión
+V59,"Ocupante de camioneta o furgoneta lesionado en otros accidentes de transporte, y en los no especificados"
+V60,Ocupante de vehículo de transporte pesado lesionado por colisión con peatón o animal
+V61,Ocupante de vehículo de transporte pesado lesionado por colisión con vehículo de pedal
+V62,Ocupante de vehículo de transporte pesado lesionado por colisión con vehículo de motor de dos o tres ruedas
+V63,"Ocupante de vehículo de transporte pesado lesionado por colisión con automóvil, camioneta o furgoneta"
+V64,Ocupante de vehículo de transporte pesado lesionado por colisión con otro vehículo de transporte pesado o autobús
+V65,Ocupante de vehículo de transporte pesado lesionado por colisión con tren o vehículo de rieles
+V66,Ocupante de vehículo de transporte pesado lesionado por colisión con otros vehículos sin motor
+V67,Ocupante de vehículo de transporte pesado lesionado por colisión con objeto fijo o estacionado
+V68,Ocupante de vehículo de transporte pesado lesionado en accidente de transporte sin colisión
+V69,"Ocupante de vehículo de transporte pesado lesionado en otros accidentes de transporte, y en los no especificados"
+V70,Ocupante de autobús lesionado por colisión con peatón o animal
+V71,Ocupante de autobús lesionado por colisión con vehículo de pedal
+V72,Ocupante de autobús lesionado por colisión con vehículo de motor de dos o tres ruedas
+V73,"Ocupante de autobús lesionado por colisión con automóvil, camioneta o furgoneta"
+V74,Ocupante de autobús lesionado por colisión con vehículo de transporte pesado o autobús
+V75,Ocupante de autobús lesionado por colisión con tren o vehículo de rieles
+V76,Ocupante de autobús lesionado por colisión con otros vehículos sin motor
+V77,Ocupante de autobús lesionado por colisión con objeto fijo o estacionado
+V78,Ocupante de autobús lesionado en accidente de transporte sin colisión
+V79,"Ocupante de autobús lesionado en otros accidentes de transporte, y en los no especificados"
+V80,Jinete u ocupante de vehículo de tracción animal lesionado en accidente de transporte
+V81,Ocupante de tren o vehículo de rieles lesionado en accidente de transporte
+V82,Ocupante de tranvía lesionado en accidente de transporte
+V83,Ocupante de vehículo especial (de motor) para uso principalmente en plantas industriales lesionado en accidente de transporte
+V84,Ocupante de vehículo especial (de motor) para uso principalmente en agricultura lesionado en accidente de transporte
+V85,Ocupante de vehículo especial (de motor) para construcción lesionado en accidente de transporte
+V86,Ocupante de vehículo especial para todo terreno o de otro vehículo de motor para uso fuera de la carretera lesionado en accidente de transporte
+V87,Accidente de tránsito de tipo especificado pero donde se desconoce el modo de transporte de la víctima
+V88,"Accidente no de tránsito de tipo especificado, pero donde se desconoce el modo de transporte de la víctima"
+V89,"Accidente de vehículo de motor o sin motor, tipo de vehículo no especificado"
+V90,Accidente de embarcación que causa ahogamiento y sumersión
+V91,Accidente de embarcación que causa otros tipos de traumatismo
+V92,"Ahogamiento y sumersión relacionados con transporte por agua, sin accidente a la embarcación"
+V93,"Accidente en una embarcación, sin accidente a la embarcación, que no causa ahogamiento o sumersión"
+V94,"Otros accidentes de transporte por agua, y los no especificados"
+V95,"Accidente de aeronave de motor, con ocupante lesionado"
+V96,"Accidente de aeronave sin motor, con ocupante lesionado"
+V97,Otros accidentes de transporte aéreo especificados
+V98,Otros accidentes de transporte especificados
+V99,Accidente de transporte no especificado
+W00,Caída en el mismo nivel por hielo o nieve
+W01,"Caída en el mismo nivel por deslizamiento, tropezón y traspié"
+W02,"Caída por patines para hielo, esquís, patines de ruedas o patineta"
+W03,Otras caídas en el mismo nivel por colisión con o por empujón de otra persona
+W04,Caída al ser trasladado o sostenido por otras personas
+W05,Caída que implica silla de ruedas
+W06,Caída que implica cama
+W07,Caída que implica silla
+W08,Caída que implica otro mueble
+W09,Caída que implica equipos para juegos infantiles
+W10,Caída en o desde escalera o escalones
+W11,Caída en o desde escalera manuales
+W12,Caída en o desde andamio
+W13,"Caída desde, fuera o a través de un edificio u otra construcción"
+W14,Caída desde un árbol
+W15,Caída desde peñasco
+W16,Salto o zambullida dentro del agua que causa otro traumatismo sin sumersión o ahogamiento
+W17,Otras caídas de un nivel a otro
+W18,Otras caídas en el mismo nivel
+W19,Caída no especificada
+W20,"Golpe por objeto arrojado, proyectado o que cae"
+W21,Golpe contra o golpeado por equipo para deportes
+W22,Golpe contra o golpeado por otros objetos
+W23,"Atrapado, aplastado, trabado o apretado en o entre objetos"
+W24,"Contacto traumático con dispositivos de elevación o transmisión, no clasificado en otra parte"
+W25,Contacto traumático con vidrio cortante
+W26,"Contacto traumático con cuchillo, espada, daga o puñal"
+W27,Contacto traumático con herramientas manuales sin motor
+W28,"Contacto traumático con cortadora de césped, con motor"
+W29,"Contacto traumático con otras herramientas manuales y artefactos del hogar, con motor"
+W30,Contacto traumático con maquinaria agrícola
+W31,"Contacto traumático con otras maquinarias, y las no especificadas"
+W32,Disparo de arma corta
+W33,"Disparo de rifle, escopeta y arma larga"
+W34,"Disparo de otras armas de fuego, y las no especificadas"
+W35,Explosión y rotura de caldera
+W36,Explosión y rotura de cilindro con gas
+W37,"Explosión y rotura de neumático, tubo o manguera de goma presurizada"
+W38,Explosión y rotura de otros dispositivos presurizados especificado
+W39,Explosión de fueros artificiales
+W40,Explosión de otros materiales
+W41,Exposición a chorro de alta presión
+W43,Exposición a vibraciones
+W44,Cuerpo extraño que penetra por el ojo u orificio natural
+W45,Cuerpo extraño que penetra a través de la piel
+W49,"Exposición a otras fuerzas mecánicas inanimadas, y las no especificadas"
+W50,"Aporreo, golpe, mordedura, patada, rasguño o torcedura infligidos por otra persona"
+W51,Choque o empellón contra otra persona
+W52,"Persona aplastada, empujada o pisoteada por una multitud o estampida humana"
+W54,Mordedura o ataque de perro
+W55,Mordedura o ataque de otros mamíferos
+W57,Mordedura o picadura de insectos y otros artrópodos no venenosos
+W58,Mordedura o ataque de cocodrilo o caimán
+W59,Mordedura o aplastamiento por otros reptiles
+W60,"Contacto traumático con aguijones, espinas u hojas cortantes de plantas"
+W64,"Exposición a otras fuerzas mecánicas animadas, y las no especificadas"
+W65,Ahogamiento y sumersión mientras se está en la bañera
+W66,Ahogamiento y sumersión consecutivos a caída en la bañera
+W67,Ahogamiento y sumersión mientras se está en una piscina
+W68,Ahogamiento y sumersión consecutivos a caída en una piscina
+W69,Ahogamiento y sumersión mientras se está en aguas naturales
+W70,Ahogamiento y sumersión posterior a caída en aguas naturales
+W73,Otros ahogamientos y sumersiones especificados
+W74,Ahogamiento y sumersión no especificados
+W75,Sofocación y estrangulamiento accidental en la cama
+W76,Otros estrangulamientos y ahorcamientos accidentales
+W77,"Obstrucción de la respiración debida a hundimiento, caída de tierra u otras sustancias"
+W78,Inhalación de contenidos gástricos
+W79,Inhalación e ingestión de alimento que causa obstrucción de las vías respiratorias
+W80,Inhalación e ingestión de otros objetos que causan obstrucción de las vías respiratorias
+W81,Confinado o atrapado en un ambiente con bajo contenido de oxígeno
+W83,Otras obstrucciones especificadas de la respiración
+W84,Obstrucción no especificada de la respiración
+W85,Exposición a líneas de transmisión eléctrica
+W86,Exposición a otras corrientes eléctricas especificadas
+W87,Exposición a corriente eléctrica no especificada
+W88,Exposición a radiación ionizante
+W89,"Exposición a fuente de luz visible y ultravioleta, de origen artificial"
+W91,Exposición a radiación de tipo no especificado
+W92,Exposición a calor excesivo de origen artificial
+W93,Exposición a frío excesivo de origen artificial
+W94,Exposición a presión de aire alta y baja y a cambios en la presión del aire
+X00,Exposición a fuego no controlado en edificio u otra construcción
+X01,Exposición a fuego no controlado en lugar que no es edificio u otra construcción
+X02,Exposición a fuego controlado en edificio u otra construcción
+X03,Exposición a fuego controlado en lugar que no es edificio u otra construcción
+X04,Exposición a ignición de material altamente inflamable
+X05,Exposición a ignición o fusión de ropas de dormir
+X06,Exposición a ignición o fusión de otras ropas y accesorios
+X08,"Exposición a otros humos, fuegos o llamas especificados"
+X09,"Exposición a humos, fuegos o llamas no especificados"
+X10,"Contacto con bebidas, alimentos, grasas y aceites para cocinar, calientes"
+X11,Contacto con agua caliente corriente
+X12,Contacto con otros líquidos calientes
+X13,Contacto con vapor de agua y otros vapores calientes
+X14,Contacto con aire y gases calientes
+X15,Contacto con utensilios domésticos calientes
+X16,"Contacto con radiadores, cañerías y artefactos para calefacción, calientes"
+X17,"Contacto con máquinas, motores y herramientas calientes"
+X18,Contacto con otros metales calientes
+X19,"Contacto con otras sustancias calientes, y las no especificadas"
+X20,Contacto traumático con serpientes y lagartos venenosos
+X21,Contacto traumático con arañas venenosas
+X22,Contacto traumático con escorpión
+X23,"Contacto traumático con avispones, avispas y abejas"
+X24,Contacto traumático con centípodos y miriápodos venenosos (tropicales)
+X25,Contacto traumático con otros artrópodos venenosos
+X26,Contacto traumático con animales y plantas marinas venenosos
+X27,Contacto traumático con otros animales venenosos especificados
+X28,Contacto traumático con otras plantas venenosas especificadas
+X29,Contacto traumático con animales y plantas venenosos no especificados
+X30,Exposición al calor natural excesivo
+X31,Exposición al frío natural excesivo
+X32,Exposición a rayos solares
+X33,Víctima de rayo
+X34,Víctima de terremoto
+X35,Víctima de erupción volcánica
+X36,"Víctima de avalancha, derrumbe y otros movimientos de tierra"
+X37,Víctima de tormenta cataclísmica
+X38,Víctima de inundación
+X39,"Exposición a otras fuerzas de la naturaleza, y las no especificadas"
+X40,"Envenenamiento accidental por, y exposición a analgésicos no narcóticos, antipiréticos y antirreumáticos"
+X41,"Envenenamiento accidental por, y exposición a drogas antiepilépticas, sedantes, hipnóticas, antiparkinsonianas y psicotrópicas, no clasificadas en otra parte"
+X42,"Envenenamiento accidental por, y exposición a narcóticos y psicodislépticos [alucinógenos], no clasificados en otra parte"
+X43,"Envenenamiento accidental por, y exposición a otras drogas que actúan sobre el sistema nervioso autónomo"
+X44,"Envenenamiento accidental por, y exposición a otras drogas, medicamentos y sustancias biológicas, y los no especificados"
+X45,"Envenenamiento accidental por, y exposición al alcohol"
+X46,"Envenenamiento accidental por, y exposición a disolventes orgánicos e hidrocarburos halogenados y sus vapores"
+X47,"Envenenamiento accidental por, y exposición a otros gases y vapores"
+X48,"Envenenamiento accidental por, y exposición a plaguicidas"
+X49,"Envenenamiento accidental por, y exposición a otros productos químicos y sustancias nocivas, y los no especificados"
+X50,Exceso de esfuerzo y movimientos extenuantes y repetitivos
+X51,Viajes y desplazamientos
+X52,Permanencia prolongada en ambiente sin gravedad
+X53,Privación de alimentos
+X54,Privación de agua
+X57,Privación no especificada
+X58,Exposición a otros factores especificados
+X59,Exposición a factores no especificados
+X60,"Envenenamiento autoinfligido intencionalmente por, y exposición a analgésicos no narcóticos, antipiréticos y antirreumáticos"
+X61,"Envenenamiento autoinfligido intencionalmente por, y exposición a drogas antiepilépticas, sedantes, hipnóticas, antiparkinsonianas y psicotrópicas, no clasificadas en otra parte"
+X62,"Envenenamiento autoinfligido intencionalmente por, y exposición a narcóticos y psicodislépticos [alucinógenos], no clasificados en otra parte"
+X63,"Envenenamiento autoinfligido intencionalmente por, y exposición a otras drogas que actúan sobre el sistema nervioso autónomo"
+X64,"Envenenamiento autoinfligido intencionalmente por, y exposición a otras drogas, medicamentos y sustancias biológicas, y los no especificados"
+X65,"Envenenamiento autoinfligido intencionalmente por, y exposición al alcohol"
+X66,"Envenenamiento autoinfligido intencionalmente por, y exposición a disolventes orgánicos e hidrocarburos halogenados y sus vapores"
+X67,"Envenenamiento autoinfligido intencionalmente por, y exposición a otros gases y vapores"
+X68,"Envenenamiento autoinfligido intencionalmente por, y exposición a plaguicidas"
+X69,"Envenenamiento autoinfligido intencionalmente por, y exposición a otros productos químicos y sustancias nocivas, y los no especificados"
+X70,"Lesión autoinfligida intencionalmente por ahorcamiento, estrangulamiento o sofocación"
+X71,Lesión autoinfligida intencionalmente por ahogamiento y sumersión
+X72,Lesión autoinfligida intencionalmente por disparo de arma corta
+X73,"Lesión autoinfligida intencionalmente por disparo de rifle, escopeta y arma larga"
+X74,"Lesión autoinfligida intencionalmente por disparo de otras armas de fuego, y las no especificadas"
+X75,Lesión autoinfligida intencionalmente por material explosivo
+X76,"Lesión autoinfligida intencionalmente por humo, fuego y llamas"
+X77,"Lesión autoinfligida intencionalmente por vapor de agua, vapores y objetos calientes"
+X78,Lesión autoinfligida intencionalmente por objeto cortante
+X79,Lesión autoinfligida intencionalmente por objeto romo o sin filo
+X80,Lesión autoinfligida intencionalmente al saltar desde un lugar elevado
+X81,Lesión autoinfligida intencionalmente por arrojarse o colocarse delante de objeto en movimiento
+X82,Lesión autoinfligida intencionalmente por colisión de vehículo de motor
+X83,Lesión autoinfligida intencionalmente por otros medios especificados
+X84,Lesión autoinfligida intencionalmente por medios no especificados
+X85,"Agresión con drogas, medicamentos y sustancias biológicas"
+X86,Agresión con sustancia corrosiva
+X87,Agresión con plaguicidas
+X88,Agresión con gases y vapores
+X89,Agresión con otros productos químicos y sustancias nocivas especificadas
+X90,Agresión con productos químicos y sustancias nocivas no especificadas
+X91,"Agresión por ahorcamiento, estrangulamiento y sofocación"
+X92,Agresión por ahogamiento y sumersión
+X93,Agresión con disparo de arma corta
+X94,"Agresión con disparo de rifle, escopeta y arma larga"
+X95,"Agresión con disparo de otras armas de fuego, y las no especificadas"
+X96,Agresión con material explosivo
+X97,"Agresión con humo, fuego y llamas"
+X98,"Agresión con vapor de agua, vapores y objetos calientes"
+X99,Agresión con objeto cortante
+Y00,Agresión con objeto romo o sin filo
+Y01,Agresión por empujón desde un lugar elevado
+Y02,Agresión por empujar o colocar a la víctima delante de objeto en movimiento
+Y03,Agresión por colisión de vehículo de motor
+Y04,Agresión con fuerza corporal
+Y05,Agresión sexual con fuerza corporal
+Y06,Negligencia y abandono
+Y07,Otros maltratos
+Y08,Agresión por otros medios especificados
+Y09,Agresión por medios no especificados
+Y10,"Envenenamiento por, y exposición a analgésicos no narcóticos, antipiréticos y antirreumáticos, de intención no determinada"
+Y11,"Envenenamiento por, y exposición a drogas antiepilépticas, sedantes, hipnóticas, antiparkinsonianas y psicotrópicas, no clasificadas en otra parte, de intención no determinada"
+Y12,"Envenenamiento por, y exposición a narcóticos y psicodislépticos [alucinógenos], no clasificados en otra parte, de intención no determinada"
+Y13,"Envenenamiento por, y exposición a otras drogas que actúan sobre el sistema nervioso autónomo, de intención no determinada"
+Y14,"Envenenamiento por, y exposición a otras drogas, medicamentos y sustancias biológicas, y las no especificadas, de intención no determinada"
+Y15,"Envenenamiento por, y exposición al alcohol, de intención no determinada"
+Y16,"Envenenamiento por, y exposición a disolventes orgánicos e hidrocarburos halogenados y sus vapores, de intención no determinada"
+Y17,"Envenenamiento por, y  exposición a otros gases y vapores, de intención no determinada"
+Y18,"Envenenamiento por, y exposición a plaguicidas, de intención no determinada"
+Y19,"Envenenamiento por, y exposición a otros productos químicos y sustancias nocivas, y los no especificados, de intención no determinada"
+Y20,"Ahorcamiento, estrangulamiento y sofocación, de intención no determinada"
+Y21,"Ahogamiento y sumersión, de intención no determinada"
+Y22,"Disparo de arma corta, de intención no determinada"
+Y23,"Disparo de rifle, escopeta y arma larga, de intención no determinada"
+Y24,"Disparo de otras armas de fuego, y las no especificadas, de intención no determinada"
+Y25,"Contacto traumático con material explosivo, de intención no determinada"
+Y26,"Exposición al humo, fuego y llamas, de intención no determinada"
+Y27,"Contacto con vapor de agua, vapores y objetos calientes, de intención no determinada"
+Y28,"Contacto traumático con objeto cortante, de intención no determinada"
+Y29,"Contacto traumático con objeto romo o sin filo, de intención no determinada"
+Y30,"Caída, salto o empujón desde lugar elevado, de intención no determinada"
+Y31,"Caída, permanencia o carrera delante o hacia objeto en movimiento, de intención no determinada"
+Y32,"Colisión de vehículo de motor, de intención no determinada"
+Y33,"Otros eventos especificados, de intención no determinada"
+Y34,"Evento no especificado, de intención no determinada"
+Y35,Intervención legal
+Y36,Operaciones de guerra
+Y40,Efectos adversos de antibióticos sistémicos
+Y41,Efectos adversos de otros antiinfecciosos y antiparasitarios sistémicos
+Y42,"Efectos adversos de hormonas y sus sustitutos sintéticos y antagonistas, no clasificados en otra parte"
+Y43,Efectos adversos de agentes sistémicos primarios
+Y44,Efectos adversos de agentes que afectan primariamente los constituyentes de la sangre
+Y45,"Efectos adversos de drogas analgésicas, antipiréticas y antiinflamatorias"
+Y46,Efectos adversos de drogas antiepilépticas y antiparkinsonianas
+Y47,"Efectos adversos de drogas sedantes, hipnóticas y ansiolíticas"
+Y48,Efectos adversos de gases anestésicos y terapéuticos
+Y49,Efectos adversos de drogas psicotrópicas no especificadas en otra parte
+Y50,"Efectos adversos de estimulantes del sistema nervioso central, no clasificados en otra parte"
+Y51,Efectos adversos de drogas que afectan primariamente el sistema nervioso autónomo
+Y52,Efectos adversos de agentes que afectan primariamente el sistema cardiovascular
+Y53,Efectos adversos de agentes que afectan primariamente el sistema gastrointestinal
+Y54,Efectos adversos de agentes que afectan primariamente el equilibrio hídrico y el metabolismo mineral y del ácido úrico
+Y55,Efectos adversos de agentes que actúan primariamente sobre los músculos lisos y estriados y sobre el sistema respiratorio
+Y56,"Efectos adversos de agentes tópicos que afectan primariamente la piel y las membranas mucosas, y drogas oftalmológicas, otorrinolaringológicas y dentales"
+Y57,"Efectos adversos de otras drogas y medicamentos, y los no especificados"
+Y59,"Efectos adversos de otras vacunas y sustancias biológicas, y las no especificadas"
+Y60,"Corte, punción, perforación o hemorragia no intencional durante la atención médica y quirúrgica"
+Y61,Objeto extraño dejado accidentalmente en el cuerpo durante la atención médica y quirúrgica
+Y62,Fallas en la esterilización durante la atención médica y quirúrgica
+Y63,Falla en la dosificación durante la atención médica y quirúrgica
+Y64,Medicamentos o sustancias biológicas contaminados
+Y65,Otros incidentes durante la atención médica y quirúrgica
+Y69,Incidentes no especificados durante la atención médica y quirúrgica
+Y70,Dispositivos de anestesiología asociados con incidentes adversos
+Y71,Dispositivos cardiovasculares asociados con incidentes adversos
+Y72,Dispositivos otorrinolaringológicos asociados con incidentes adversos
+Y73,Dispositivos de gastroenterología y urología asociados con incidentes adversos
+Y74,Dispositivos para uso hospitalario general y personal asociados con incidentes adversos
+Y75,Dispositivos neurológicos asociados con incidentes adversos
+Y76,Dispositivos ginecológicos y obstétricos asociados con incidentes adversos
+Y79,Dispositivos ortopédicos asociados con incidentes adversos
+Y80,Aparatos de medicina física asociados con incidentes adversos
+Y81,Dispositivos de cirugía general y plástica asociados con incidentes adversos
+Y82,"Otros dispositivos médicos, y los no especificados, asociados con incidentes adversos"
+Y83,"Cirugía y otros procedimientos quirúrgicos como la causa de reacción anormal del paciente o de complicación posterior, sin mención de incidente en el momento de efectuar el procedimiento"
+Y84,"Otros procedimientos médicos como la causa de reacción anormal del paciente o de complicación posterior, sin mención de incidente en el momento de efectuar el procedimiento"
+Y85,Secuelas de accidentes de transporte
+Y86,Secuelas de otros accidentes
+Y87,"Secuelas de lesiones autoinfligidas intencionalmente, agresiones y eventos de intención no determinada"
+Y88,Secuelas con atención médica y quirúrgica como causa externa
+Y89,Secuelas de otras causas externas
