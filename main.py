@@ -120,7 +120,6 @@ def recolectar_datos(censo, anio):
         varon = 0 if fila['varon'] == '-' else fila['varon']
         mujer = 0 if fila['mujer'] == '-' else fila['mujer']
         
-        # Hombres GOD
         datos['anio'].append(anio)
         datos['provincia'].append(provincia)
         datos['sexo'].append("Varón")
@@ -128,7 +127,6 @@ def recolectar_datos(censo, anio):
         datos['cobertura_medica'].append(cobertura)
         datos['cantidad'].append(varon)
         
-        # Muejeres ZZZ
         datos['anio'].append(anio)
         datos['provincia'].append(provincia)
         datos['sexo'].append("Mujer")
@@ -188,7 +186,7 @@ def limpieza_establecimientos():
     
     ids_establecimientos = establecimientos['establecimiento_id'].tolist()
     nombres = establecimientos['establecimiento_nombre'].tolist()
-    ids_departamentos = (establecimientos['provincia_id'].astype(str) + 
+    ids_departamentos = (establecimientos['provincia_id'].astype(str) + '_' + 
                         establecimientos['departamento_id'].astype(str)).tolist()
     
     establecimientos_datos['id'].extend(ids_establecimientos)
@@ -223,7 +221,7 @@ def crear_departamento():
     consultaSQL = """
             SELECT DISTINCT 
                 
-                CONCAT(provincia_id, departamento_id) AS id, 
+                CONCAT(provincia_id, '_',departamento_id) AS id, 
                 provincia_id,
                 departamento_nombre AS nombre
             
