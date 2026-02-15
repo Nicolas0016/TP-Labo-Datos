@@ -399,6 +399,216 @@ res = dd.query("""
 
 """).df()
     
+
+#%% PUNTO 3: Causas de muerte
+#TOP HOMBRES
+masculino_mas_frecuente_0_14 = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '01.De a 0  a 14 anios' AND sexo = 'masculino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total DESC
+        LIMIT 5
+    """).df()
+
+masculino_mas_frecuente_15_34 = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '02.De 15 a 34 anios' AND sexo = 'masculino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total DESC
+        LIMIT 5
+    """).df()
+
+masculino_mas_frecuente_35_54 = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '03.De 35 a 54 anios' AND sexo = 'masculino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total DESC
+        LIMIT 5
+    """).df()
+
+masculino_mas_frecuente_55_74 = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '04.De 55 a 74 anios' AND sexo = 'masculino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total DESC
+        LIMIT 5
+    """).df()
+
+masculino_mas_frecuente_75_omas = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '05.De 75 anios y mas' AND sexo = 'masculino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total DESC
+        LIMIT 5
+    """).df()
+
+#TOP MUJERES
+femenino_mas_frecuente_0_14 = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '01.De a 0  a 14 anios' AND sexo = 'femenino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total DESC
+        LIMIT 5
+    """).df()
+
+femenino_mas_frecuente_15_34 = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '02.De 15 a 34 anios' AND sexo = 'femenino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total DESC
+        LIMIT 5
+    """).df()
+
+femenino_mas_frecuente_35_54 = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '03.De 35 a 54 anios' AND sexo = 'femenino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total DESC
+        LIMIT 5
+    """).df()
+
+femenino_mas_frecuente_55_74 = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '04.De 55 a 74 anios' AND sexo = 'femenino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total DESC
+        LIMIT 5
+    """).df()
+
+femenino_mas_frecuente_75_omas = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '05.De 75 anios y mas' AND sexo = 'femenino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total DESC
+        LIMIT 5
+    """).df()
+
+#BOTTOM HOMBRES
+masculino_menos_frecuente_0_14 = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '01.De a 0  a 14 anios' AND sexo = 'masculino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total ASC
+        LIMIT 5
+    """).df()
+
+masculino_menos_frecuente_15_34 = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '02.De 15 a 34 anios' AND sexo = 'masculino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total ASC
+        LIMIT 5
+    """).df()
+
+masculino_menos_frecuente_35_54 = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '03.De 35 a 54 anios' AND sexo = 'masculino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total ASC
+        LIMIT 5
+    """).df()
+
+masculino_menos_frecuente_55_74 = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '04.De 55 a 74 anios' AND sexo = 'masculino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total ASC
+        LIMIT 5
+    """).df()
+
+masculino_menos_frecuente_75_omas = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '05.De 75 anios y mas' AND sexo = 'masculino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total ASC
+        LIMIT 5
+    """).df()
+
+#BOTTOM MUJERES
+femenino_menos_frecuente_0_14 = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '01.De a 0  a 14 anios' AND sexo = 'femenino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total ASC
+        LIMIT 5
+    """).df()
+
+femenino_menos_frecuente_15_34 = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '02.De 15 a 34 anios' AND sexo = 'femenino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total ASC
+        LIMIT 5
+    """).df()
+
+femenino_menos_frecuente_35_54 = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '03.De 35 a 54 anios' AND sexo = 'femenino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total ASC
+        LIMIT 5
+    """).df()
+
+femenino_menos_frecuente_55_74 = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '04.De 55 a 74 anios' AND sexo = 'femenino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total ASC
+        LIMIT 5
+    """).df()
+
+femenino_menos_frecuente_75_omas = dd.query(
+    """
+        SELECT grupo_edad,codigo_defuncion, SUM(cantidad) AS total
+        FROM defunciones
+        WHERE grupo_edad = '05.De 75 anios y mas' AND sexo = 'femenino'
+        GROUP BY codigo_defuncion,grupo_edad 
+        ORDER BY total ASC
+        LIMIT 5
+    """).df()
+
+#JUNTO TOD0
+#la idea es juntar todos estos df en una tabla, en la que esten las columnas grupo_edad, masculino_mas_frec, femenino_mas_frecuente, masculino_menos_frecuente y femenino_menos_frecuente. 
+#En cada columna solo aparece el nombre de la defuncion
+
 # %% PUNTO 5: Cambios en las causas de defunción
 cantidad_defunciones_2010_2022 = dd.query(
     """
