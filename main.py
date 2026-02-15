@@ -562,21 +562,20 @@ habitantes_por_provincia = habitantes_por_provincia.pivot(index='nombre', column
 
 fig, ax = plt.subplots()
 
-x = habitantes_por_provincia['provincia']
-datos_2010 = habitantes_por_provincia['anio'] == 2010
 
-x = np.arange(len(habitantes_por_provincia.index))
+y = np.arange(len(habitantes_por_provincia.index))
 habitantes_2010 = habitantes_por_provincia[2010]
 habitantes_2022 = habitantes_por_provincia[2022]
 
 width = 0.4
 
-ax.bar(x - width/2, habitantes_2010, width=width, label='Habitantes 2010')
-ax.bar(x + width/2, habitantes_2022, width=width, label='Habitantes 2022')
+ax.barh(y - width/2, habitantes_2010, height=width, label='Habitantes 2010')
+ax.barh(y + width/2, habitantes_2022, height=width, label='Habitantes 2022')
 
 ax.set_title('Población Argentina por provincia 2010 vs 2022')
-ax.set_xlabel('Provincias')
-ax.set_xticks(x, labels=habitantes_por_provincia.index, rotation=45, ha='right')
+ax.set_ylabel('Provincias')
+ax.set_xlabel('Cantidad de habitantes (en millones)')
+ax.set_yticks(y, labels=habitantes_por_provincia.index, ha='right')
 ax.legend()
 
 plt.show()
