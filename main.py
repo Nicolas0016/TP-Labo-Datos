@@ -708,7 +708,7 @@ tasa_de_mortalidad_vis = dd.query("""
         ORDER BY tasa DESC
 """).df()
 
-#GRAFICO
+#GRAFICO 1
 fig, ax = plt.subplots()
 ax.barh(data=tasa_de_mortalidad_vis, y='provincia', width='tasa')
 
@@ -719,4 +719,61 @@ ax.set_ylabel('Provincia', fontsize='medium')
 #achico los nombres de las provincias
 ax.tick_params(axis = 'y',labelsize = 8)
 
+#--------parte 2
 
+muertes_totales_vis2 = dd.query(
+    """
+        SELECT p.nombre AS provincia, sum(d.cantidad) AS muertes, sexo
+        FROM defunciones d
+        LEFT OUTER JOIN provincias p
+        ON d.provincia_id = p.id
+        WHERE anio = 2022
+        GROUP BY provincia, sexo        
+        ORDER BY muertes DESC
+        
+    """).df()
+
+#calculo la cantidad de habitantes por provincia
+habitantes_por_provincia_vis2 = dd.query(
+    """
+        SELECT p.nombre AS provincia, sum(c.cantidad) AS habitantes, 
+        CASE
+            WHEN c.sexo = 'Varón' THEN 'masculino'
+            WHEN c.sexo = 'Mujer' THEN 'femenino'
+            ELSE 'desconocido'
+        END AS sexo
+        FROM censos c
+        LEFT OUTER JOIN provincias p
+            ON c.provincia = p.id
+        WHERE c.anio = 2022
+        GROUP BY p.nombre, sexo
+        ORDER BY habitantes DESC
+""").df()
+
+#calculo la tasa de mortalidad
+tasa_de_mortalidad_vis2 = dd.query("""
+        SELECT h.provincia, ROUND((m.muertes/h.habitantes)*1000,2) AS tasa, m.sexo
+        FROM habitantes_por_provincia_vis2 h
+        LEFT OUTER JOIN muertes_totales_vis2 m                              
+            ON h.provincia = m.provincia AND h.sexo = m.sexo                              
+        ORDER BY tasa ASC
+""").df()
+
+
+#GRAFICO 2
+fig, ax = plt.subplots(figsize = (8,6))
+sns.barplot(data = tasa_de_mortalidad_vis2, y='provincia', x = 'tasa',hue = 'sexo',orient='h',ax=ax,
+            palette={'femenino':'#e851cc', 'masculino':'#026cb8'})
+
+
+ax.set_title('Tasa de mortalidad por provincia')
+ax.set_xlabel('Tasa (cada 1000 habitantes)', fontsize='medium')                       
+ax.set_ylabel('Provincia', fontsize='medium')
+
+#achico los nombres de las provincias
+ax.tick_params(axis = 'y',labelsize = 8)
+ax.legend(title = 'sexo')
+
+
+
+# %%
