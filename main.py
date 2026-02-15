@@ -880,4 +880,50 @@ juntada = dd.query(
         ORDER BY grupo_edad, sexo, total ASC
     """    
 ).df()
+# %% VISUALIZACION PUNTO 3 - Tasa de mortalidad por provincia
+
+muertes_totales_vis = dd.query(
+    """
+        SELECT p.nombre AS provincia, sum(d.cantidad) AS muertes
+        FROM defunciones d
+        LEFT OUTER JOIN provincias p
+        ON d.provincia_id = p.id
+        WHERE anio = 2022
+        GROUP BY provincia        
+        ORDER BY muertes DESC
+        
+    """).df()
+
+#calculo la cantidad de habitantes por provincia
+habitantes_por_provincia_vis = dd.query(
+    """
+        SELECT p.nombre AS provincia, sum(c.cantidad) AS habitantes
+        FROM censos c
+        LEFT OUTER JOIN provincias p
+            ON c.provincia = p.id
+        WHERE c.anio = 2022
+        GROUP BY p.nombre
+        ORDER BY habitantes DESC
+""").df()
+
+#calculo la tasa de mortalidad
+tasa_de_mortalidad_vis = dd.query("""
+        SELECT h.provincia, ROUND((m.muertes/h.habitantes)*1000,2) AS tasa
+        FROM habitantes_por_provincia_vis h
+        LEFT OUTER JOIN muertes_totales_vis m                              
+            ON h.provincia = m.provincia                              
+        ORDER BY tasa DESC
+""").df()
+
+#GRAFICO
+fig, ax = plt.subplots()
+ax.barh(data=tasa_de_mortalidad_vis, y='provincia', width='tasa')
+
+ax.set_title('Tasa de mortalidad por provincia')
+ax.set_xlabel('Tasa (cada 1000 habitantes)', fontsize='medium')                       
+ax.set_ylabel('Provincia', fontsize='medium')
+
+#achico los nombres de las provincias
+ax.tick_params(axis = 'y',labelsize = 8)
+
 
