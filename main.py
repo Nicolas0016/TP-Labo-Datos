@@ -812,6 +812,10 @@ def graficar_grupo(grupo, titulo):
                  x='anio', y='cantidad', 
                  hue='categoria_defuncion', 
                  marker='o')
+    años_unicos = sorted(datos_grupo['anio'])
+    
+    ax.set_xticks(años_unicos)
+    ax.set_xticklabels(años_unicos)
     
     ax.set_xlabel('Año', fontsize=12)
     ax.set_ylabel('Cantidad de defunciones', fontsize=12)
@@ -827,3 +831,53 @@ graficar_grupo(grupo1, f"GRUPO 1 (0 - {corte_grupo1})")
 graficar_grupo(grupo2, f"GRUPO 2 ({corte_grupo1} - {corte_grupo2})")
 graficar_grupo(grupo3, f"GRUPO 3 ({corte_grupo2} - {corte_grupo3})")
 graficar_grupo(grupo4, f"GRUPO 4 ({corte_grupo3} - ...)")
+
+# %% PUNTO 3 CAUSAS MUERTE
+jutanda_defunciones = dd.query(
+    """
+        SELECT categoria_defuncion, grupo_edad, sexo, SUM(cantidad) as total
+        FROM defunciones
+        WHERE sexo IN ('masculino', 'femenino')
+        GROUP BY categoria_defuncion, grupo_edad, sexo
+    """    
+).df()
+
+defunciones_mas_frecuentes = dd.query("""
+    SELECT d1.grupo_edad, d1.sexo, d1.categoria_defuncion, d1.total
+    FROM jutanda_defunciones d1
+    WHERE  5 >= ( 
+        SELECT COUNT(*) 
+        FROM jutanda_defunciones d2 
+        WHERE d2.grupo_edad = d1.grupo_edad 
+          AND d2.sexo = d1.sexo 
+          AND d2.total >= d1.total
+    ) 
+    ORDER BY d1.grupo_edad, d1.sexo, d1.total DESC
+""").df()
+
+defunciones_menos_frecuentes = dd.query(
+    """
+        SELECT d1.grupo_edad, d1.sexo, d1.categoria_defuncion, d1.total
+        FROM jutanda_defunciones d1
+        WHERE  5 >= ( 
+            SELECT COUNT(*) 
+            FROM jutanda_defunciones d2 
+            WHERE d2.grupo_edad = d1.grupo_edad 
+              AND d2.sexo = d1.sexo 
+              AND d2.total <= d1.total
+        ) 
+        ORDER BY d1.grupo_edad, d1.sexo, d1.total ASC
+    """    
+).df()
+
+juntada = dd.query(
+    """
+        SELECT *
+        FROM defunciones_mas_frecuentes
+        UNION ALL
+        SELECT *
+        FROM defunciones_menos_frecuentes
+        ORDER BY grupo_edad, sexo, total ASC
+    """    
+).df()
+
