@@ -742,9 +742,9 @@ ax.legend()
 plt.show()
 
 # %% VISUALIZACION PUNTO 2 - DIVISIÓN OPTIMIZADA SEGÚN PERCENTILES
-def percentil_manual(datos, p):
+def percentil_manual(datos, percentil):
         datos_ordenados = sorted(datos)
-        posicion = (len(datos_ordenados) - 1) * (p / 100)
+        posicion = (len(datos_ordenados) - 1) * (percentil / 100)
         i = int(posicion)  # posicion entera
         
         return datos_ordenados[i] + (posicion-i) * (datos_ordenados[i + 1] - datos_ordenados[i])
@@ -762,7 +762,6 @@ def calcular_percentiles_de_corte(medianas_df):
         int(round(q3))
     )
 
-# 1. Obtener los datos
 cantidad_defunciones_por_tiempo = dd.query(
     """
         SELECT anio, categoria_defuncion, sum(cantidad) as cantidad
@@ -772,7 +771,6 @@ cantidad_defunciones_por_tiempo = dd.query(
     """    
 ).df()
 
-# 2. Calcular las medianas por categoría
 categorias_df = dd.query(
     """
         SELECT DISTINCT categoria_defuncion
@@ -798,10 +796,10 @@ medianas_df = pd.DataFrame(res)
 
 (corte_grupo1,corte_grupo2,corte_grupo3) = calcular_percentiles_de_corte(medianas_df)
 
-grupo1 = medianas_df[medianas_df['mediana'] <= corte_grupo1]['categoria'].tolist()  # Muy bajas
-grupo2 = medianas_df[(medianas_df['mediana'] > corte_grupo1) & (medianas_df['mediana'] <= corte_grupo2)]['categoria'].tolist()  # Bajas
-grupo3 = medianas_df[(medianas_df['mediana'] > corte_grupo2) & (medianas_df['mediana'] <= corte_grupo3)]['categoria'].tolist()  # Medias
-grupo4 = medianas_df[medianas_df['mediana'] > corte_grupo3]['categoria'].tolist()  # Altas + outliers
+grupo1 = medianas_df[medianas_df['mediana'] <= corte_grupo1]['categoria'].tolist()  
+grupo2 = medianas_df[(medianas_df['mediana'] > corte_grupo1) & (medianas_df['mediana'] <= corte_grupo2)]['categoria'].tolist()
+grupo3 = medianas_df[(medianas_df['mediana'] > corte_grupo2) & (medianas_df['mediana'] <= corte_grupo3)]['categoria'].tolist()
+grupo4 = medianas_df[medianas_df['mediana'] > corte_grupo3]['categoria'].tolist()
 
 
 def graficar_grupo(grupo, titulo):
