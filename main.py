@@ -274,7 +274,7 @@ for codigo in codigos_null:
 
 
 
-nueva_fila = pd.DataFrame({'codigo':'A00','clasificacion':["Sin Información"]})
+nueva_fila = pd.DataFrame({'codigo_def':['A00'],'clasificacion':["Sin Información"]})
 clasificacion_defunciones = dd.query(
     """
         SELECT * FROM clasificacion_defunciones
@@ -286,7 +286,7 @@ clasificacion_defunciones = dd.query(
 defunciones_tuneado = dd.query(
     """
         SELECT 
-            d.anio	, 
+            d.anio, 
             d.provincia_id, 
             c.categorias, 
             d.sexo, 

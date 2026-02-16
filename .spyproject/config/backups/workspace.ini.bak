@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['main.py', 'consultas_sql.py', 'visualizacion.py', '../../.local/lib/python3.14/site-packages/pandas/compat/numpy/__init__.py']
+recent_files = ['main.py', 'consultas_sql.py', 'visualizacion.py']
 
 [main]
 version = 0.2.0

@@ -93,13 +93,6 @@ establecientos_con_terapia_intensiva = dd.query(
         ORDER BY provincias.nombre, financiamiento
     """).df()
 
-res = dd.query("""
-        SELECT *
-        FROM establecientos_con_terapia_intensiva
-        WHERE provincia = 'Buenos Aires' OR provincia = 'Ciudad Autónoma de Buenos Aires' OR provincia = 'Santa Fe' 
-        ORDER BY provincia 
-
-""").df()
     
 
 
