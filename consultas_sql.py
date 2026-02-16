@@ -199,7 +199,7 @@ tasa_de_mortalidad = dd.query("""
 cantidad_defunciones_2010_2022 = dd.query(
     """
         SELECT 
-            clasificacion_de_defunciones.clasificacion_defuncion,
+            categorias,
             SUM(CASE 
                 WHEN anio = 2010 THEN cantidad 
                 ELSE 0 END
@@ -209,19 +209,14 @@ cantidad_defunciones_2010_2022 = dd.query(
                 ELSE 0 END
                 ) AS def_2022
         FROM defunciones
-        INNER JOIN clasificacion_de_defunciones
-            ON defunciones.codigo_defuncion = clasificacion_de_defunciones.codigo_defuncion
-        WHERE anio = 2010 OR anio = 2022
-        GROUP BY clasificacion_de_defunciones.clasificacion_defuncion
+        GROUP BY categorias
     """).df()
 
 
 diferencia_entre_2010_2022 = dd.query(
     """
         SELECT 
-            clasificacion_defuncion,
-            def_2010,
-            def_2022,
+            *,
             def_2022 - def_2010 AS diferencia
         FROM cantidad_defunciones_2010_2022
         ORDER BY diferencia DESC

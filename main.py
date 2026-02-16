@@ -245,11 +245,8 @@ defunciones_tuneado = dd.query(
                 THEN 99
                 ELSE jurisdiccion_de_residencia_id
                 END as provincia_id,
-            cie10_causa_id, 
-            CASE
-                WHEN Sexo = 'indeterminado' THEN 'desconocido'
-                ELSE Sexo
-            END AS sexo, 
+            defunciones.cie10_causa_id AS cie10_causa_id, 
+            Sexo AS sexo, 
             CASE
                 WHEN grupo_edad = '01.De a 0  a 14 anios' THEN '0-14'
                 WHEN grupo_edad = '02.De 15 a 34 anios' THEN '15-34'
@@ -297,11 +294,4 @@ defunciones_tuneado = dd.query(
         INNER JOIN clasificacion_defunciones AS c
             ON d.cie10_causa_id = c.codigo_def
     """).df()
-defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, encoding='utf-8')
-
-
-
-
-
-
-# %%
+#defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, encoding='utf-8')
