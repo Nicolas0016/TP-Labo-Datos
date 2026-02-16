@@ -342,8 +342,10 @@ grupo4 = ['San Juan', 'Salta', 'Mendoza', 'Tierra del Fuego']
 
 grupo5 = ['Buenos Aires', 'Tucumán', 'Neuquén','Córdoba', 'Santa Fe']
 
-grupo_axel = ['CABA', 'Buenos Aires','La Pampa', 'Córdoba','Chubut','Neuquén','Santa Fe','Santa Cruz']
-for i, grupo in enumerate([grupo1,grupo2,grupo3,grupo4, grupo5], 1):
+grupo_axel1 = ['CABA','Formosa','La Rioja', 'Catamarca','Santa Cruz','Buenos Aires', 'Tucumán', 'Neuquén','Córdoba', 'Entre Ríos','Santa Fe', 'Río negro']
+grupo_axel2 = ['Jujuy', 'Misiones', 'Chubut', 'La Pampa','Corrientes', 'San Luis', 'Chaco', 'Santiago del Estero','San Juan', 'Salta', 'Mendoza', 'Tierra del Fuego']
+
+for i, grupo in enumerate([grupo_axel1,grupo_axel2], 1):
     # Filtrar datos para este grupo
     datos_grupo = establecimientos_por_departamento[
         establecimientos_por_departamento['provincia'].isin(grupo)
@@ -355,7 +357,8 @@ for i, grupo in enumerate([grupo1,grupo2,grupo3,grupo4, grupo5], 1):
     sns.boxplot(data=datos_grupo, 
                 x='provincia', 
                 y='cantidad',
-                gap=0)
+                gap=0,
+                showfliers = False) #IGNORO LOS OUTLIERS (los puntos alejados)
     
     plt.title(f'Grupo {i}: Distribución de establecimientos de salud por departamento', 
               fontsize=14)
@@ -366,41 +369,6 @@ for i, grupo in enumerate([grupo1,grupo2,grupo3,grupo4, grupo5], 1):
     plt.show()
 
 
-plt.figure(figsize=(25, 10))
-
-
-sns.boxplot(data=establecimientos_por_departamento, 
-            x='provincia', 
-            y='cantidad',
-            gap=0)
-
-plt.title(f'Grupo {i}: Distribución de establecimientos de salud por departamento', 
-          fontsize=14)
-plt.xlabel('Provincia')
-plt.ylabel('Cantidad de establecimientos por departamento')
-plt.xticks(rotation=45, ha='right')
-plt.tight_layout()
-plt.show()
-
-datos_grupo = establecimientos_por_departamento[
-    establecimientos_por_departamento['provincia'].isin(grupo_axel)
-]
-
-plt.figure(figsize=(11, 9))
-
-
-sns.boxplot(data=datos_grupo, 
-            x='provincia', 
-            y='cantidad',
-            gap=0)
-
-plt.title(f'Grupo {i}: Distribución de establecimientos de salud por departamento', 
-          fontsize=14)
-plt.xlabel('Provincia')
-plt.ylabel('Cantidad de establecimientos por departamento')
-plt.xticks(rotation=45, ha='right')
-plt.tight_layout()
-plt.show()
 # %% VISUALIZACION PUNTO 6
 
 establecimientos_por_provincia = dd.query(
