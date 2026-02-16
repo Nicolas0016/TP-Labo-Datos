@@ -249,9 +249,66 @@ ax.set_ylabel('Provincia', fontsize='medium')
 
 #achico los nombres de las provincias
 ax.tick_params(axis = 'y',labelsize = 8)
-ax.legend(title = 'sexo')
+ax.legend(title = 'Sexo')
+
+# %% PUNTO 4 - Defunciones por grupo etario y sexo en 2022
+
+#voy a ignorar los sexos que son desconocidos porque son muy pocos
+#tambien voy a ignorar los grupos etarios desconocidos
+muertes_totales_grupo_etario = dd.query(
+    """
+        SELECT grupo_edad, sexo, sum(d.cantidad) AS muertes
+        FROM defunciones d
+        WHERE anio = 2022 
+            AND sexo != 'desconocido'
+            AND grupo_edad != 'Sin Información' 
+        GROUP BY grupo_edad, sexo        
+        ORDER BY grupo_edad, sexo,muertes DESC
+        
+    """).df()
+
+#las defunciones las normalizo a muerte cada 1000 habitantes
+defuncion_por_grupo_etario = dd.query(
+    """
+        SELECT c2.grupo_edad, c2.sexo,(m.muertes/sum(c2.cantidad))*1000 AS defunciones 
+        FROM(SELECT
+            CASE 
+                WHEN c.edad >= 0 AND c.edad <= 14 THEN '0-14'
+                WHEN c.edad >= 15 AND c.edad <= 34 THEN '15-34'
+                WHEN c.edad >= 35 AND c.edad <= 54 THEN '35-54'
+                WHEN c.edad >= 55 AND c.edad <= 74 THEN '55-74'
+                ELSE '75 o mas'
+                END AS grupo_edad,
+            CASE
+                WHEN c.sexo = 'Varón' THEN 'masculino'
+                WHEN c.sexo = 'Mujer' THEN 'femenino'
+                ELSE c.sexo
+            END AS sexo,
+            c.cantidad
+            FROM censos c
+            WHERE c.anio = 2022
+        ) AS c2
+        
+        LEFT OUTER JOIN muertes_totales_grupo_etario m
+            ON m.grupo_edad = c2.grupo_edad AND m.sexo = c2.sexo
+        
+        GROUP BY c2.grupo_edad,c2.sexo,muertes
+        ORDER BY c2.grupo_edad,c2.sexo,muertes
+""").df()
+
+#GRAFICO
+fig, ax = plt.subplots(figsize = (8,6))
+sns.barplot(data = defuncion_por_grupo_etario, y='grupo_edad', x = 'defunciones',hue = 'sexo',orient='h',ax=ax,
+            palette={'femenino':'#e851cc', 'masculino':'#026cb8'})
 
 
+ax.set_title('Defunciones por grupo etario y sexo en 2022')
+ax.set_xlabel('muertes (cada 1000 habitantes de grupo etario)', fontsize='medium')                       
+ax.set_ylabel('Grupo etario', fontsize='medium')
+
+#achico los nombres de las provincias
+ax.tick_params(axis = 'y',labelsize = 8)
+ax.legend(title = 'Sexo')
 
 # %% VISUALIZACION PUNTO 5
 
@@ -285,8 +342,10 @@ grupo4 = ['San Juan', 'Salta', 'Mendoza', 'Tierra del Fuego']
 
 grupo5 = ['Buenos Aires', 'Tucumán', 'Neuquén','Córdoba', 'Santa Fe']
 
-grupo_axel = ['CABA', 'Buenos Aires','La Pampa', 'Córdoba','Chubut','Neuquén','Santa Fe','Santa Cruz']
-for i, grupo in enumerate([grupo1,grupo2,grupo3,grupo4, grupo5], 1):
+grupo_axel1 = ['CABA','Formosa','La Rioja', 'Catamarca','Santa Cruz','Buenos Aires', 'Tucumán', 'Neuquén','Córdoba', 'Entre Ríos','Santa Fe', 'Río negro']
+grupo_axel2 = ['Jujuy', 'Misiones', 'Chubut', 'La Pampa','Corrientes', 'San Luis', 'Chaco', 'Santiago del Estero','San Juan', 'Salta', 'Mendoza', 'Tierra del Fuego']
+
+for i, grupo in enumerate([grupo_axel1,grupo_axel2], 1):
     # Filtrar datos para este grupo
     datos_grupo = establecimientos_por_departamento[
         establecimientos_por_departamento['provincia'].isin(grupo)
@@ -298,7 +357,8 @@ for i, grupo in enumerate([grupo1,grupo2,grupo3,grupo4, grupo5], 1):
     sns.boxplot(data=datos_grupo, 
                 x='provincia', 
                 y='cantidad',
-                gap=0)
+                gap=0,
+                showfliers = False) #IGNORO LOS OUTLIERS (los puntos alejados)
     
     plt.title(f'Grupo {i}: Distribución de establecimientos de salud por departamento', 
               fontsize=14)
@@ -309,41 +369,6 @@ for i, grupo in enumerate([grupo1,grupo2,grupo3,grupo4, grupo5], 1):
     plt.show()
 
 
-plt.figure(figsize=(25, 10))
-
-
-sns.boxplot(data=establecimientos_por_departamento, 
-            x='provincia', 
-            y='cantidad',
-            gap=0)
-
-plt.title(f'Grupo {i}: Distribución de establecimientos de salud por departamento', 
-          fontsize=14)
-plt.xlabel('Provincia')
-plt.ylabel('Cantidad de establecimientos por departamento')
-plt.xticks(rotation=45, ha='right')
-plt.tight_layout()
-plt.show()
-
-datos_grupo = establecimientos_por_departamento[
-    establecimientos_por_departamento['provincia'].isin(grupo_axel)
-]
-
-plt.figure(figsize=(11, 9))
-
-
-sns.boxplot(data=datos_grupo, 
-            x='provincia', 
-            y='cantidad',
-            gap=0)
-
-plt.title(f'Grupo {i}: Distribución de establecimientos de salud por departamento', 
-          fontsize=14)
-plt.xlabel('Provincia')
-plt.ylabel('Cantidad de establecimientos por departamento')
-plt.xticks(rotation=45, ha='right')
-plt.tight_layout()
-plt.show()
 # %% VISUALIZACION PUNTO 6
 
 establecimientos_por_provincia = dd.query(
