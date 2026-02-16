@@ -8,18 +8,16 @@ Created on Sun Feb  8 07:40:51 2026
 
 #%% Importar librerias y archivos
 
-import numpy as np
 import pandas as pd
 import duckdb as dd
-import matplotlib.pyplot as plt
-from matplotlib import ticker
-import seaborn as sns
+
 carpeta = './Archivos-TP/' 
 censo2010 = pd.read_excel(carpeta + 'censo2010.xlsX') 
 censo2022 = pd.read_excel(carpeta + 'censo2022.xlsX')
 defunciones = pd.read_csv(carpeta + 'defunciones.csv')
 establecimientos = pd.read_excel(carpeta + 'instituciones_de_salud.xlsx')
 clasificacion_defunciones = pd.read_csv(carpeta + 'categoriasDefunciones.csv')
+clasificacion_defunciones = clasificacion_defunciones.iloc[:, 1:]
 
 #%% CENSOS
 def obtener_index_provincias(anio=0):
@@ -238,7 +236,8 @@ df_departamentos.to_csv('Archivos_Propios/departamentos.csv', index= False, enco
 #%% DEFUNCIONES
 #Creacion del DataFrame principal de 'defunciones'
 #cambio los id de 98 a 99 (de null a 'Sin Informacion')
-consulta = """
+defunciones_tuneado = dd.query(
+    """
         SELECT 
             defunciones.anio, 
             CASE 
@@ -246,7 +245,7 @@ consulta = """
                 THEN 99
                 ELSE jurisdiccion_de_residencia_id
                 END as provincia_id,
-            clasificacion_defunciones.categorias AS categoria_defuncion, 
+            cie10_causa_id, 
             CASE
                 WHEN Sexo = 'indeterminado' THEN 'desconocido'
                 ELSE Sexo
@@ -261,65 +260,47 @@ consulta = """
             END AS grupo_edad, 
         cantidad,
         FROM defunciones
-        INNER JOIN clasificacion_defunciones
-        ON clasificacion_defunciones.codigo_def = defunciones.cie10_causa_id
-        ORDER BY clasificacion_defunciones.codigo_def 
-            """
-defunciones_tuneado = dd.query(consulta).df()
-
-
-#Creacion del Dataframe 'clasificacion_de_defunciones'
-
-consulta = """
-        SELECT DISTINCT cie10_causa_id AS codigo, cie10_clasificacion AS clasificacion
-        FROM defunciones
-        WHERE clasificacion IS NOT NULL
-"""
-clasificacion_de_defunciones = dd.query(consulta).df()
-
-#Ahora voy a renombrar los nulls de defunciones por 'sin informacion' y su codigo por A00
-#obtengo los codigos cuya clasificacion es null
+        ORDER BY cie10_causa_id
+            """).df()
 consulta = """
         SELECT DISTINCT cie10_causa_id AS codigo
         FROM defunciones
         WHERE cie10_clasificacion IS NULL
 """
-codigos_null = (dd.query(consulta).df())["codigo"]
-dicc_nulls = {}
 
-#creo el diccionario que se va a usar para reemplazar los codigos por A00
+codigos_null = (dd.query(consulta).df())["codigo"].tolist()
+
 for codigo in codigos_null:
-    dicc_nulls[codigo] = "A00"
-    
-defunciones_tuneado['categoria_defuncion'].replace(dicc_nulls,inplace=True)
+    defunciones_tuneado.loc[defunciones_tuneado['cie10_causa_id'] == codigo, 'cie10_causa_id'] = 'A00'
 
 
-#defunciones_tuneado.loc[defunciones_tuneado['codigo_defuncion'] == "A00",'clasificacion'] = "Sin Información"
+
 nueva_fila = pd.DataFrame({'codigo':'A00','clasificacion':["Sin Información"]})
-clasificacion_de_defunciones = pd.concat([clasificacion_de_defunciones,nueva_fila],ignore_index=True)
-
-
-#Creacion del DataFrame 'provincias_defunciones'
-#Ignoro el id 98 porque es null
-consulta = """
-        SELECT DISTINCT jurisdiccion_de_residencia_id AS id, jurisdicion_residencia_nombre AS nombre
-        FROM defunciones
-        WHERE id != 98
-        ORDER BY id
-"""
-
-clasificacion_de_defunciones = dd.query(
+clasificacion_defunciones = dd.query(
     """
-    SELECT * 
-    FROM clasificacion_de_defunciones
-    ORDER BY codigo
+        SELECT * FROM clasificacion_defunciones
+        UNION ALL
+        SELECT * FROM nueva_fila
+        ORDER BY codigo_def
     """).df()
 
-
-#ARCHIVOS
+defunciones_tuneado = dd.query(
+    """
+        SELECT 
+            d.anio	, 
+            d.provincia_id, 
+            c.categorias, 
+            d.sexo, 
+            d.grupo_edad, 
+            d.cantidad
+        FROM defunciones_tuneado AS d
+        INNER JOIN clasificacion_defunciones AS c
+            ON d.cie10_causa_id = c.codigo_def
+    """).df()
 defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, encoding='utf-8')
 
-clasificacion_de_defunciones.to_csv('Archivos_Propios/clasificacion_de_defunciones.csv', index=False, encoding='utf-8')
+
+
 
 
 
