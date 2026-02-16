@@ -429,5 +429,6 @@ for i, row in tasas_por_provincia.iterrows():
 ax.set_title('Tasas por provincias argentinas en 2022')
 ax.set_xlabel('Tasa de cantidad de establecimientos de salud')
 ax.set_ylabel('Tasa de mortalidad')
- 
+
+ax.legend(title='Región', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.show()
