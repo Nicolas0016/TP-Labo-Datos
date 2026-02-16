@@ -6,7 +6,7 @@ Created on Mon Feb 16 09:38:12 2026
 @author: nicolas
 """
 
-
+#%% Importar librerias y archivos
 import numpy as np
 import pandas as pd
 import duckdb as dd
@@ -242,7 +242,7 @@ sns.barplot(data = tasa_de_mortalidad_vis2, y='provincia', x = 'tasa',hue = 'sex
             palette={'femenino':'#e851cc', 'masculino':'#026cb8'})
 
 
-ax.set_title('Tasa de mortalidad por provincia')
+ax.set_title('Tasa de mortalidad por provincia y sexo')
 ax.set_xlabel('Tasa (cada 1000 habitantes)', fontsize='medium')                       
 ax.set_ylabel('Provincia', fontsize='medium')
 

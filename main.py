@@ -6,7 +6,7 @@ Created on Sun Feb  8 07:40:51 2026
 @author: nicolas
 """
 
-# %%
+#%% Importar librerias y archivos
 
 import numpy as np
 import pandas as pd
@@ -14,7 +14,6 @@ import duckdb as dd
 import matplotlib.pyplot as plt
 from matplotlib import ticker
 import seaborn as sns
-#%%
 carpeta = './Archivos-TP/' 
 censo2010 = pd.read_excel(carpeta + 'censo2010.xlsX') 
 censo2022 = pd.read_excel(carpeta + 'censo2022.xlsX')

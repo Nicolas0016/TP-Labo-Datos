@@ -5,6 +5,7 @@ Created on Mon Feb 16 09:40:42 2026
 
 @author: nicolas
 """
+#%% Importar librerias y archivos
 
 import pandas as pd
 import duckdb as dd
