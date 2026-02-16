@@ -250,7 +250,17 @@ ax.set_ylabel('Provincia', fontsize='medium')
 ax.tick_params(axis = 'y',labelsize = 8)
 ax.legend(title = 'sexo')
 
+# %% PUNTO 4 - Defunciones por grupo etario y sexo
 
+muertes_totales_grupo_etario = dd.query(
+    """
+        SELECT grupo_edad, sexo, sum(d.cantidad) AS muertes
+        FROM defunciones d
+        WHERE anio = 2022
+        GROUP BY grupo_edad, sexo        
+        ORDER BY grupo_edad, sexo,muertes DESC
+        
+    """).df()
 
 # %% VISUALIZACION PUNTO 5
 

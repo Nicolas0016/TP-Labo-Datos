@@ -247,7 +247,10 @@ consulta = """
                 ELSE jurisdiccion_de_residencia_id
                 END as provincia_id,
             clasificacion_defunciones.categorias AS categoria_defuncion, 
-            Sexo AS sexo, 
+            CASE
+                WHEN Sexo = 'indeterminado' THEN 'desconocido'
+                ELSE Sexo
+            END AS sexo, 
             CASE
                 WHEN grupo_edad = '01.De a 0  a 14 anios' THEN '0-14'
                 WHEN grupo_edad = '02.De 15 a 34 anios' THEN '15-34'
@@ -319,3 +322,5 @@ defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, enco
 clasificacion_de_defunciones.to_csv('Archivos_Propios/clasificacion_de_defunciones.csv', index=False, encoding='utf-8')
 
 
+
+# %%
