@@ -6,12 +6,8 @@ Created on Mon Feb 16 09:40:42 2026
 @author: nicolas
 """
 
-import numpy as np
 import pandas as pd
 import duckdb as dd
-import matplotlib.pyplot as plt
-from matplotlib import ticker
-import seaborn as sns
 
 # INICIALIZACION DE DATAFRAMES:
 nuestra_carpeta = 'Archivos_Propios/'
@@ -48,30 +44,30 @@ tabla_intermedia = dd.query(
     """).df()
     
 cobertura_de_salud = dd.query(
-        f"""
-    SELECT 
-    Provincia,
-    Rango_etario,
-    SUM(CASE WHEN (Año = 2010 AND tiene_cobertura = 1) 
-        THEN cantidad 
-        ELSE 0 END)
-        AS Habitantes_con_cobertura_en_2010,
-    SUM(CASE WHEN (Año = 2010 AND tiene_cobertura = 0) 
-        THEN cantidad 
-        ELSE 0 END)
-        AS Habitantes_sin_cobertura_en_2010,  
-    SUM(CASE WHEN (Año = 2022 AND tiene_cobertura = 1)
-        THEN cantidad 
-        ELSE 0 END)
-        AS Habitantes_con_cobertura_en_2022,
-    SUM(CASE WHEN Año = 2022 AND tiene_cobertura = 0 
-        THEN cantidad 
-        ELSE 0 END)
-        AS Habitantes_sin_cobertura_en_2022
-    
-    FROM tabla_intermedia
-    GROUP BY Provincia, Rango_etario
-    ORDER BY Provincia, Rango_etario
+    """
+        SELECT 
+        Provincia,
+        Rango_etario,
+        SUM(CASE WHEN (Año = 2010 AND tiene_cobertura = 1) 
+            THEN cantidad 
+            ELSE 0 END)
+            AS Habitantes_con_cobertura_en_2010,
+        SUM(CASE WHEN (Año = 2010 AND tiene_cobertura = 0) 
+            THEN cantidad 
+            ELSE 0 END)
+            AS Habitantes_sin_cobertura_en_2010,  
+        SUM(CASE WHEN (Año = 2022 AND tiene_cobertura = 1)
+            THEN cantidad 
+            ELSE 0 END)
+            AS Habitantes_con_cobertura_en_2022,
+        SUM(CASE WHEN Año = 2022 AND tiene_cobertura = 0 
+            THEN cantidad 
+            ELSE 0 END)
+            AS Habitantes_sin_cobertura_en_2022
+        
+        FROM tabla_intermedia
+        GROUP BY Provincia, Rango_etario
+        ORDER BY Provincia, Rango_etario
     """).df()
 
 
@@ -155,7 +151,7 @@ juntada = dd.query(
     """    
 ).df()
 
-#%% Punto 4: Tasa de mortalidad por provincia
+#%% PUNTO 4: TASA DE MORTALIDAD POR PROVINCIA
 
 muertes_totales = dd.query(
     """

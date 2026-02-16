@@ -11,7 +11,6 @@ import numpy as np
 import pandas as pd
 import duckdb as dd
 import matplotlib.pyplot as plt
-from matplotlib import ticker
 import seaborn as sns
 
 nuestra_carpeta = 'Archivos_Propios/'
@@ -21,7 +20,7 @@ clasificacion_de_defunciones = pd.read_csv(nuestra_carpeta + 'clasificacion_de_d
 departamentos = pd.read_csv(nuestra_carpeta + 'departamentos.csv')
 establecimientos = pd.read_csv(nuestra_carpeta + 'establecimiento.csv')
 provincias = pd.read_csv(nuestra_carpeta + 'provincias.csv')
-#%%
+#%% VISUALIZACION PUNTO 1 - Cantidad de habitantes por provincia
 habitantes_por_provincia = dd.query(
     """
         SELECT c.anio, p.nombre, SUM(c.cantidad) AS cantidad_habitantes
@@ -57,8 +56,9 @@ ax.legend()
 
 plt.show()
 
-# %% VISUALIZACION PUNTO 2 - DIVISIÓN OPTIMIZADA SEGÚN PERCENTILES
-def percentil_manual(datos, percentil):
+# %% VISUALIZACION PUNTO 2 
+
+def percentil(datos, percentil):
         datos_ordenados = sorted(datos)
         posicion = (len(datos_ordenados) - 1) * (percentil / 100)
         i = int(posicion)  # posicion entera
@@ -68,9 +68,9 @@ def percentil_manual(datos, percentil):
 def calcular_percentiles_de_corte(medianas_df):
     valores = medianas_df['mediana'].tolist()
     
-    q1 = percentil_manual(valores, 25)
-    q2 = percentil_manual(valores, 50)
-    q3 = percentil_manual(valores, 75)
+    q1 = percentil(valores, 25)
+    q2 = percentil(valores, 50)
+    q3 = percentil(valores, 75)
     
     return (
         int(round(q1)),
@@ -252,7 +252,7 @@ ax.legend(title = 'sexo')
 
 
 
-# %%
+# %% VISUALIZACION PUNTO 5
 
 establecimientos_por_depto = dd.query("""
     SELECT id_departamento, COUNT(*) as cantidad
@@ -272,50 +272,31 @@ establecimientos_por_departamento = dd.query("""
 """).df()
 
 def calcular_percentiles_de_corte(df, columna='mediana'):
-    """
-    Calcula los percentiles 25, 50 y 75 para crear 4 grupos
-    """
     p25 = df[columna].quantile(0.25)
     p50 = df[columna].quantile(0.50)
     p75 = df[columna].quantile(0.75)
     return p25, p50, p75
 
-res = []
-provincias_unicas = establecimientos_por_departamento['provincia'].unique()
+grupo1 = ['Jujuy', 'Misiones', 'Chubut', 'La Pampa', 'Río negro']
+grupo2 = ['CABA','Formosa','La Rioja', 'Catamarca','Santa Cruz']
+grupo3 = ['Corrientes', 'Entre Ríos', 'San Luis', 'Chaco', 'Santiago del Estero']
+grupo4 = ['San Juan', 'Salta', 'Mendoza', 'Tierra del Fuego']
+grupo5 = ['Buenos Aires', 'Tucumán', 'Neuquén','Córdoba', 'Santa Fe']
 
-for provincia in provincias_unicas:
-    datos_provincia = establecimientos_por_departamento[
-        establecimientos_por_departamento['provincia'] == provincia
-    ]
-    
-    mediana = datos_provincia['cantidad'].median()
-    res.append({'provincia': provincia, 'mediana': mediana})
-
-medianas_provincias_df = pd.DataFrame(res)
-(corte_grupo1, corte_grupo2, corte_grupo3) = calcular_percentiles_de_corte(medianas_provincias_df)
-
-grupo1 = medianas_provincias_df[medianas_provincias_df['mediana'] <= corte_grupo1]['provincia'].tolist()
-grupo2 = medianas_provincias_df[(medianas_provincias_df['mediana'] > corte_grupo1) & 
-                                (medianas_provincias_df['mediana'] <= corte_grupo2)]['provincia'].tolist()
-grupo3 = medianas_provincias_df[(medianas_provincias_df['mediana'] > corte_grupo2) & 
-                                (medianas_provincias_df['mediana'] <= corte_grupo3)]['provincia'].tolist()
-grupo4 = medianas_provincias_df[medianas_provincias_df['mediana'] > corte_grupo3]['provincia'].tolist()
-
-for i, grupo in enumerate([grupo1,grupo2,grupo3,grupo4], 1):
+for i, grupo in enumerate([grupo1,grupo2,grupo3,grupo4, grupo5], 1):
     # Filtrar datos para este grupo
     datos_grupo = establecimientos_por_departamento[
         establecimientos_por_departamento['provincia'].isin(grupo)
     ]
     
-    # Crear figura
-    plt.figure(figsize=(14, 8))
+    plt.figure(figsize=(11, 9))
+
     
-    # Crear boxplot
     sns.boxplot(data=datos_grupo, 
                 x='provincia', 
-                y='cantidad')
+                y='cantidad',
+                gap=0)
     
-    # Personalizar
     plt.title(f'Grupo {i}: Distribución de establecimientos de salud por departamento', 
               fontsize=14)
     plt.xlabel('Provincia')
@@ -323,6 +304,23 @@ for i, grupo in enumerate([grupo1,grupo2,grupo3,grupo4], 1):
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
     plt.show()
+
+
+plt.figure(figsize=(20, 14))
+
+
+sns.boxplot(data=establecimientos_por_departamento, 
+            x='provincia', 
+            y='cantidad',
+            gap=0)
+
+plt.title(f'Grupo {i}: Distribución de establecimientos de salud por departamento', 
+          fontsize=14)
+plt.xlabel('Provincia')
+plt.ylabel('Cantidad de establecimientos por departamento')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
     
 # %% VISUALIZACION PUNTO 6
 
