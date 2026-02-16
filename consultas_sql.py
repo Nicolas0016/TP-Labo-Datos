@@ -106,15 +106,15 @@ res = dd.query("""
 # %% PUNTO 3 CAUSAS MUERTE
 jutanda_defunciones = dd.query(
     """
-        SELECT categoria_defuncion, grupo_edad, sexo, SUM(cantidad) as total
+        SELECT categorias, grupo_edad, sexo, SUM(cantidad) as total
         FROM defunciones
         WHERE sexo IN ('masculino', 'femenino')
-        GROUP BY categoria_defuncion, grupo_edad, sexo
+        GROUP BY categorias, grupo_edad, sexo
     """    
 ).df()
 
 defunciones_mas_frecuentes = dd.query("""
-    SELECT d1.grupo_edad, d1.sexo, d1.categoria_defuncion, d1.total
+    SELECT d1.grupo_edad, d1.sexo, d1.categorias, d1.total
     FROM jutanda_defunciones d1
     WHERE  5 >= ( 
         SELECT COUNT(*) 
@@ -128,7 +128,7 @@ defunciones_mas_frecuentes = dd.query("""
 
 defunciones_menos_frecuentes = dd.query(
     """
-        SELECT d1.grupo_edad, d1.sexo, d1.categoria_defuncion, d1.total
+        SELECT d1.grupo_edad, d1.sexo, d1.categorias, d1.total
         FROM jutanda_defunciones d1
         WHERE  5 >= ( 
             SELECT COUNT(*) 
