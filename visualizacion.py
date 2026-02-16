@@ -32,9 +32,9 @@ habitantes_por_provincia = dd.query(
     """).df()
 habitantes_por_provincia = habitantes_por_provincia.pivot(index='nombre', columns='anio', values='cantidad_habitantes')
 
-habitantes_por_provincia = habitantes_por_provincia.sort_values(2022, ascending=False)
+habitantes_por_provincia = habitantes_por_provincia.sort_values(2022, ascending=True)
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(7, 8))
 
 
 y = np.arange(len(habitantes_por_provincia.index))
@@ -44,7 +44,7 @@ habitantes_2010 = habitantes_por_provincia[2010]
 habitantes_2022 = habitantes_por_provincia[2022]
 
 width = 0.4
-
+gap = 0.3
 ax.barh(y - width/2, habitantes_2010, height=width, label='Habitantes 2010')
 ax.barh(y + width/2, habitantes_2022, height=width, label='Habitantes 2022')
 
@@ -53,7 +53,8 @@ ax.set_ylabel('Provincias')
 ax.set_xlabel('Cantidad de habitantes (en millones)')
 ax.set_yticks(y, labels=habitantes_por_provincia.index, ha='right')
 ax.legend()
-
+ax.grid(axis='x', alpha=0.3)
+plt.tight_layout(rect=[0, 0.03, 1, 0.98])
 plt.show()
 
 # %% VISUALIZACION PUNTO 2 
@@ -301,7 +302,7 @@ for i, grupo in enumerate([grupo1,grupo2,grupo3,grupo4, grupo5], 1):
         establecimientos_por_departamento['provincia'].isin(grupo)
     ]
     
-    plt.figure(figsize=(11, 9))
+    plt.figure(figsize=(8.27, 8.27))
 
     
     sns.boxplot(data=datos_grupo, 
@@ -318,7 +319,7 @@ for i, grupo in enumerate([grupo1,grupo2,grupo3,grupo4, grupo5], 1):
     plt.show()
 
 
-plt.figure(figsize=(20, 14))
+plt.figure(figsize=(25, 10))
 
 
 sns.boxplot(data=establecimientos_por_departamento, 
