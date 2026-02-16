@@ -411,7 +411,7 @@ regiones = dict(zip(
 
 tasas_por_provincia['Regiones'] = tasas_por_provincia['provincia'].map(regiones)
 
-fig, ax = plt.subplots(figsize=(9,6))
+fig, ax = plt.subplots(figsize=(10.5,6))
 
 sns.scatterplot(data=tasas_por_provincia,
            x='tasa_establecimientos',
@@ -422,12 +422,7 @@ sns.scatterplot(data=tasas_por_provincia,
 
 indices_a_etiquetar = []
 
-ax.set_title('Tasas por provincias argentinas en 2022')
-ax.set_xlabel('Tasa de cantidad de establecimientos de salud')
-ax.set_ylabel('Tasa de mortalidad')
-
-ax.legend(title='Región', bbox_to_anchor=(1.05, 1), loc='upper left')
-plt.show()
+ax.legend(title='Región')
 
 # busco los índices de las provincias límites de cada región
 for region, datos_grupo in tasas_por_provincia.groupby('Regiones'):
@@ -440,7 +435,7 @@ df_etiquetas = tasas_por_provincia.loc[indices_a_etiquetar]
 
 for i, row in df_etiquetas.iterrows():
     ax.text(x = row['tasa_establecimientos'] - 1.2,
-            y = row['tasa_mortalidad']-0.3,             
+            y = row['tasa_mortalidad'] - 0.3,             
             s = row['provincia'],                   
             fontsize = 12)
 
