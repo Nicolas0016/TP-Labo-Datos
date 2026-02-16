@@ -44,8 +44,10 @@ def obtener_dataFrameProvincias(censo):
         id_provincia = int(censo.iloc[i, 1].split()[2])
         nombre_provincia = censo.iloc[i, 2]
         
-        if(nombre_provincia == 'Caba'): 
-            provincias.append((id_provincia,'Ciudad Autónoma de Buenos Aires'))
+        if(nombre_provincia == 'Ciudad Autónoma de Buenos Aires'): 
+            provincias.append((id_provincia,'CABA'))
+        elif(nombre_provincia == 'Tierra del Fuego, Antártida e Islas del Atlántico Sur'): 
+            provincias.append((id_provincia,'Tierra  del Fuego'))
         else:
             provincias.append((id_provincia,nombre_provincia))
     
@@ -303,22 +305,6 @@ consulta = """
         WHERE id != 98
         ORDER BY id
 """
-provincias_defunciones = dd.query(consulta).df()
-
-#dejo los datos un poco mas lindos
-def quitar_comillas(lista):
-    res = lista.copy()
-
-    for i in range(len(lista)):
-        elem = lista[i]
-        if elem[0] == '"' and elem[len(elem)] == '"':
-            reemplazo = elem[1:len(elem)-1]
-            res[i] = reemplazo
-
-    return res
-
-provincias_defunciones["nombre"] = quitar_comillas(provincias_defunciones["nombre"])
-clasificacion_de_defunciones["clasificacion"] = quitar_comillas(clasificacion_de_defunciones['clasificacion'])
 
 clasificacion_de_defunciones = dd.query(
     """
@@ -332,8 +318,6 @@ clasificacion_de_defunciones = dd.query(
 defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, encoding='utf-8')
 
 clasificacion_de_defunciones.to_csv('Archivos_Propios/clasificacion_de_defunciones.csv', index=False, encoding='utf-8')
-
-provincias_defunciones.to_csv('Archivos_Propios/provincias.csv', index=False, encoding='utf-8')
 
 
 # %% INICIALIZACION DE DATAFRAMES:
@@ -777,3 +761,73 @@ ax.legend(title = 'sexo')
 
 
 # %%
+
+establecimientos_por_depto = dd.query("""
+    SELECT id_departamento, COUNT(*) as cantidad
+    FROM establecimientos
+    GROUP BY id_departamento
+    ORDER BY id_departamento
+""").df()
+
+establecimientos_por_departamento = dd.query("""
+    SELECT  e.id_departamento, d.nombre,p.nombre as provincia,e.cantidad
+    FROM establecimientos_por_depto AS e
+    INNER JOIN departamentos as d
+    ON e.id_departamento = d.id
+    INNER JOIN provincias AS p
+    ON d.provincia_id = p.id
+    ORDER BY d.provincia_id, e.cantidad DESC
+""").df()
+
+def calcular_percentiles_de_corte(df, columna='mediana'):
+    """
+    Calcula los percentiles 25, 50 y 75 para crear 4 grupos
+    """
+    p25 = df[columna].quantile(0.25)
+    p50 = df[columna].quantile(0.50)
+    p75 = df[columna].quantile(0.75)
+    return p25, p50, p75
+
+res = []
+provincias_unicas = establecimientos_por_departamento['provincia'].unique()
+
+for provincia in provincias_unicas:
+    datos_provincia = establecimientos_por_departamento[
+        establecimientos_por_departamento['provincia'] == provincia
+    ]
+    
+    mediana = datos_provincia['cantidad'].median()
+    res.append({'provincia': provincia, 'mediana': mediana})
+
+medianas_provincias_df = pd.DataFrame(res)
+(corte_grupo1, corte_grupo2, corte_grupo3) = calcular_percentiles_de_corte(medianas_provincias_df)
+
+grupo1 = medianas_provincias_df[medianas_provincias_df['mediana'] <= corte_grupo1]['provincia'].tolist()
+grupo2 = medianas_provincias_df[(medianas_provincias_df['mediana'] > corte_grupo1) & 
+                                (medianas_provincias_df['mediana'] <= corte_grupo2)]['provincia'].tolist()
+grupo3 = medianas_provincias_df[(medianas_provincias_df['mediana'] > corte_grupo2) & 
+                                (medianas_provincias_df['mediana'] <= corte_grupo3)]['provincia'].tolist()
+grupo4 = medianas_provincias_df[medianas_provincias_df['mediana'] > corte_grupo3]['provincia'].tolist()
+
+for i, grupo in enumerate([grupo1,grupo2,grupo3,grupo4], 1):
+    # Filtrar datos para este grupo
+    datos_grupo = establecimientos_por_departamento[
+        establecimientos_por_departamento['provincia'].isin(grupo)
+    ]
+    
+    # Crear figura
+    plt.figure(figsize=(14, 8))
+    
+    # Crear boxplot
+    sns.boxplot(data=datos_grupo, 
+                x='provincia', 
+                y='cantidad')
+    
+    # Personalizar
+    plt.title(f'Grupo {i}: Distribución de establecimientos de salud por departamento', 
+              fontsize=14)
+    plt.xlabel('Provincia')
+    plt.ylabel('Cantidad de establecimientos por departamento')
+    plt.xticks(rotation=45, ha='right')
+    plt.tight_layout()
+    plt.show()
