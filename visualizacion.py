@@ -57,7 +57,7 @@ ax.grid(axis='x', alpha=0.3)
 plt.tight_layout(rect=[0, 0.03, 1, 0.98])
 plt.show()
 
-# %% VISUALIZACION PUNTO 2 
+# %% VISUALIZACION PUNTO 2 - Defunciones por categoria a lo largo del tiempo
 
 def percentil(datos, percentil):
         datos_ordenados = sorted(datos)
@@ -310,7 +310,7 @@ ax.set_ylabel('Grupo etario', fontsize='medium')
 ax.tick_params(axis = 'y',labelsize = 8)
 ax.legend(title = 'Sexo')
 
-# %% VISUALIZACION PUNTO 5
+# %% VISUALIZACION PUNTO 5 - Distribucion de departamentos de salud
 
 establecimientos_por_depto = dd.query("""
     SELECT id_departamento, COUNT(*) as cantidad
@@ -351,7 +351,7 @@ for i, grupo in enumerate([grupo_axel1,grupo_axel2], 1):
         establecimientos_por_departamento['provincia'].isin(grupo)
     ]
     
-    plt.figure(figsize=(8.27, 8.27))
+    plt.figure(figsize=(8.27, 6.27))
 
     
     sns.boxplot(data=datos_grupo, 
@@ -369,7 +369,7 @@ for i, grupo in enumerate([grupo_axel1,grupo_axel2], 1):
     plt.show()
 
 
-# %% VISUALIZACION PUNTO 6
+# %% VISUALIZACION PUNTO 6 - Grafico a eleccion
 
 establecimientos_por_provincia = dd.query(
     """
