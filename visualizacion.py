@@ -409,26 +409,43 @@ regiones = dict(zip(
      'Noroeste (NOA)', 'Noroeste (NOA)', 'Patagonia',
      'Patagonia', 'Patagonia', 'Patagonia', 'Patagonia']))
 
-tasas_por_provincia['region'] = tasas_por_provincia['provincia'].map(regiones)
+tasas_por_provincia['Regiones'] = tasas_por_provincia['provincia'].map(regiones)
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(9,6))
 
 sns.scatterplot(data=tasas_por_provincia,
            x='tasa_establecimientos',
            y='tasa_mortalidad',
-           hue='region',
-           s=75,
+           hue='Regiones',
+           s=170,
            ax=ax)
 
-for i, row in tasas_por_provincia.iterrows():
-    ax.text(row['tasa_establecimientos'] + 0.2,  
-            row['tasa_mortalidad'],        
-            row['provincia'],              
-            fontsize=9)
+indices_a_etiquetar = []
 
 ax.set_title('Tasas por provincias argentinas en 2022')
 ax.set_xlabel('Tasa de cantidad de establecimientos de salud')
 ax.set_ylabel('Tasa de mortalidad')
 
 ax.legend(title='Región', bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.show()
+
+# busco los índices de las provincias límites de cada región
+for region, datos_grupo in tasas_por_provincia.groupby('Regiones'):
+    id_max = datos_grupo['tasa_establecimientos'].idxmax()
+    id_min = datos_grupo['tasa_establecimientos'].idxmin()
+    indices_a_etiquetar.append(id_max)
+    indices_a_etiquetar.append(id_min)
+
+df_etiquetas = tasas_por_provincia.loc[indices_a_etiquetar]
+
+for i, row in df_etiquetas.iterrows():
+    ax.text(x = row['tasa_establecimientos'] - 1.2,
+            y = row['tasa_mortalidad']-0.3,             
+            s = row['provincia'],                   
+            fontsize = 12)
+
+ax.set_title('Relación entre la oferta sanitaria Argentina y la mortalidad general', fontsize = 'xx-large')
+ax.set_xlabel('Establecimientos de salud (cada 10.000 hab.)', fontsize = 'x-large')
+ax.set_ylabel('Tasa de mortalidad (%)', fontsize = 'x-large')
+ 
 plt.show()
