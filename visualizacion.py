@@ -374,9 +374,9 @@ for i, grupo in enumerate([grupo_axel1,grupo_axel2], 1):
 establecimientos_por_provincia = dd.query(
     """
         SELECT p.nombre AS provincia, COUNT(*) AS cant_establecimientos
-        FROM df_establecimientos e
-        INNER JOIN df_departamentos d ON e.id_departamento = d.id
-        INNER JOIN df_provincias p ON d.provincia_id = p.id
+        FROM establecimientos e
+        INNER JOIN departamentos d ON e.id_departamento = d.id
+        INNER JOIN provincias p ON d.provincia_id = p.id
         GROUP BY p.nombre
         ORDER BY cant_establecimientos DESC
     """).df()
@@ -392,22 +392,42 @@ tasas_por_provincia = dd.query(
             ON m.provincia = h.provincia
     """).df()
 
+
+# agrego columna 'region'
+
+regiones = dict(zip(
+    ['CABA', 'Buenos Aires', 'Córdoba',
+     'Entre Ríos', 'Santa Fe', 'La Pampa', 'Mendoza', 'San Juan',
+     'San Luis', 'Corrientes', 'Chaco', 'Formosa', 'Misiones',
+     'Catamarca', 'Jujuy', 'La Rioja', 'Salta', 'Santiago del Estero',
+     'Tucumán', 'Chubut', 'Neuquén', 'Río negro', 'Santa Cruz',
+     'Tierra del Fuego'],
+    ['Pampeana', 'Pampeana', 'Pampeana', 'Pampeana', 'Pampeana', 'Pampeana',
+     'Cuyo', 'Cuyo', 'Cuyo', 'Noreste (NEA)', 'Noreste (NEA)',
+     'Noreste (NEA)', 'Noreste (NEA)', 'Noroeste (NOA)',
+     'Noroeste (NOA)', 'Noroeste (NOA)', 'Noroeste (NOA)',
+     'Noroeste (NOA)', 'Noroeste (NOA)', 'Patagonia',
+     'Patagonia', 'Patagonia', 'Patagonia', 'Patagonia']))
+
+tasas_por_provincia['region'] = tasas_por_provincia['provincia'].map(regiones)
+
 fig, ax = plt.subplots()
 
-ax.scatter(data=tasas_por_provincia,
+sns.scatterplot(data=tasas_por_provincia,
            x='tasa_establecimientos',
            y='tasa_mortalidad',
-           s=12,
-           color='red')
+           hue='region',
+           s=75,
+           ax=ax)
 
 for i, row in tasas_por_provincia.iterrows():
-    ax.text(row['tasa_establecimientos'],  
+    ax.text(row['tasa_establecimientos'] + 0.2,  
             row['tasa_mortalidad'],        
             row['provincia'],              
             fontsize=9)
 
-ax.set_title('Tasas por provincias')
-ax.set_xlabel('Tasa de cantidad de establecimientos')
+ax.set_title('Tasas por provincias argentinas en 2022')
+ax.set_xlabel('Tasa de cantidad de establecimientos de salud')
 ax.set_ylabel('Tasa de mortalidad')
  
 plt.show()

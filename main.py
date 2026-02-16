@@ -260,9 +260,11 @@ defunciones_tuneado = dd.query(
         ORDER BY cie10_causa_id
             """).df()
 consulta = """
-        SELECT DISTINCT cie10_causa_id AS codigo
-        FROM defunciones
-        WHERE cie10_clasificacion IS NULL
+        SELECT DISTINCT d.cie10_causa_id AS codigo
+        FROM defunciones_tuneado AS d
+        LEFT JOIN clasificacion_defunciones AS c 
+            ON d.cie10_causa_id = c.codigo_def
+        WHERE c.codigo_def IS NULL
 """
 
 codigos_null = (dd.query(consulta).df())["codigo"].tolist()
@@ -294,4 +296,4 @@ defunciones_tuneado = dd.query(
         INNER JOIN clasificacion_defunciones AS c
             ON d.cie10_causa_id = c.codigo_def
     """).df()
-#defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, encoding='utf-8')
+defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, encoding='utf-8')
