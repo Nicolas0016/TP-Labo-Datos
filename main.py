@@ -831,3 +831,26 @@ for i, grupo in enumerate([grupo1,grupo2,grupo3,grupo4], 1):
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
     plt.show()
+    
+# %% VISUALIZACION PUNTO 6
+
+establecimientos_por_provincia = dd.query(
+    """
+        SELECT p.nombre AS provincia, COUNT(*) AS cant_establecimientos
+        FROM df_establecimientos e
+        INNER JOIN df_departamentos d ON e.id_departamento = d.id
+        INNER JOIN df_provincias p ON d.provincia_id = p.id
+        GROUP BY p.nombre
+        ORDER BY cant_establecimientos DESC
+    """).df()
+    
+tasas_por_provincia = dd.query(
+    """
+        SELECT m.provincia, m.tasa AS tasa_mortalidad,
+            ROUND((e.cant_establecimientos/h.habitantes)*10000,2) AS tasa_establecimientos
+        FROM tasa_de_mortalidad_vis m
+        INNER JOIN establecimientos_por_provincia e
+            ON m.provincia = e.provincia
+        INNER JOIN habitantes_por_provincia_vis h
+            ON m.provincia = h.provincia
+    """).df()
