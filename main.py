@@ -296,4 +296,18 @@ defunciones_tuneado = dd.query(
         INNER JOIN clasificacion_defunciones AS c
             ON d.cie10_causa_id = c.codigo_def
     """).df()
+'''
+defunciones_tuneado = dd.query(
+    """
+        SELECT 
+            anio	, 
+            provincia_id, 
+            categorias, 
+            sexo, 
+            grupo_edad, 
+            SUM(cantidad)
+        FROM defunciones_tuneado 
+        GROUP BY  anio,provincia_id, categorias,sexo, grupo_edad 
+    """).df()
+'''
 defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, encoding='utf-8')
