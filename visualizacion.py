@@ -81,28 +81,28 @@ def calcular_percentiles_de_corte(medianas_df):
 
 cantidad_defunciones_por_tiempo = dd.query(
     """
-        SELECT anio, categoria_defuncion, sum(cantidad) as cantidad
+        SELECT anio, categorias, sum(cantidad) as cantidad
         FROM defunciones
-        GROUP BY anio, categoria_defuncion
+        GROUP BY anio, categorias
         ORDER BY cantidad DESC
     """    
 ).df()
 
 categorias_df = dd.query(
     """
-        SELECT DISTINCT categoria_defuncion
+        SELECT DISTINCT categorias
         FROM cantidad_defunciones_por_tiempo
     """    
 ).df()
 
 res = []
 for _, row in categorias_df.iterrows():
-    categoria = row['categoria_defuncion']
+    categoria = row['categorias']
     df = dd.query(
         f"""
             SELECT sum(cantidad) as cantidad
             FROM defunciones
-            WHERE categoria_defuncion = '{categoria}'
+            WHERE categorias = '{categoria}'
             GROUP BY anio
         """
     ).df()
@@ -121,13 +121,13 @@ grupo4 = medianas_df[medianas_df['mediana'] > corte_grupo3]['categoria'].tolist(
 
 def graficar_grupo(grupo, titulo):
     
-    datos_grupo = cantidad_defunciones_por_tiempo[cantidad_defunciones_por_tiempo['categoria_defuncion'].isin(grupo)]
+    datos_grupo = cantidad_defunciones_por_tiempo[cantidad_defunciones_por_tiempo['categorias'].isin(grupo)]
     
     fig, ax = plt.subplots(figsize=(20, 8))
     
     sns.lineplot(data=datos_grupo, 
                  x='anio', y='cantidad', 
-                 hue='categoria_defuncion', 
+                 hue='categorias', 
                  marker='o')
     años_unicos = sorted(datos_grupo['anio'])
     
