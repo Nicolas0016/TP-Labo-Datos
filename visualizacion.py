@@ -249,19 +249,66 @@ ax.set_ylabel('Provincia', fontsize='medium')
 
 #achico los nombres de las provincias
 ax.tick_params(axis = 'y',labelsize = 8)
-ax.legend(title = 'sexo')
+ax.legend(title = 'Sexo')
 
-# %% PUNTO 4 - Defunciones por grupo etario y sexo
+# %% PUNTO 4 - Defunciones por grupo etario y sexo en 2022
 
+#voy a ignorar los sexos que son desconocidos porque son muy pocos
+#tambien voy a ignorar los grupos etarios desconocidos
 muertes_totales_grupo_etario = dd.query(
     """
         SELECT grupo_edad, sexo, sum(d.cantidad) AS muertes
         FROM defunciones d
-        WHERE anio = 2022
+        WHERE anio = 2022 
+            AND sexo != 'desconocido'
+            AND grupo_edad != 'Sin Información' 
         GROUP BY grupo_edad, sexo        
         ORDER BY grupo_edad, sexo,muertes DESC
         
     """).df()
+
+#las defunciones las normalizo a muerte cada 1000 habitantes
+defuncion_por_grupo_etario = dd.query(
+    """
+        SELECT c2.grupo_edad, c2.sexo,(m.muertes/sum(c2.cantidad))*1000 AS defunciones 
+        FROM(SELECT
+            CASE 
+                WHEN c.edad >= 0 AND c.edad <= 14 THEN '0-14'
+                WHEN c.edad >= 15 AND c.edad <= 34 THEN '15-34'
+                WHEN c.edad >= 35 AND c.edad <= 54 THEN '35-54'
+                WHEN c.edad >= 55 AND c.edad <= 74 THEN '55-74'
+                ELSE '75 o mas'
+                END AS grupo_edad,
+            CASE
+                WHEN c.sexo = 'Varón' THEN 'masculino'
+                WHEN c.sexo = 'Mujer' THEN 'femenino'
+                ELSE c.sexo
+            END AS sexo,
+            c.cantidad
+            FROM censos c
+            WHERE c.anio = 2022
+        ) AS c2
+        
+        LEFT OUTER JOIN muertes_totales_grupo_etario m
+            ON m.grupo_edad = c2.grupo_edad AND m.sexo = c2.sexo
+        
+        GROUP BY c2.grupo_edad,c2.sexo,muertes
+        ORDER BY c2.grupo_edad,c2.sexo,muertes
+""").df()
+
+#GRAFICO
+fig, ax = plt.subplots(figsize = (8,6))
+sns.barplot(data = defuncion_por_grupo_etario, y='grupo_edad', x = 'defunciones',hue = 'sexo',orient='h',ax=ax,
+            palette={'femenino':'#e851cc', 'masculino':'#026cb8'})
+
+
+ax.set_title('Defunciones por grupo etario y sexo en 2022')
+ax.set_xlabel('muertes (cada 1000 habitantes de grupo etario)', fontsize='medium')                       
+ax.set_ylabel('Grupo etario', fontsize='medium')
+
+#achico los nombres de las provincias
+ax.tick_params(axis = 'y',labelsize = 8)
+ax.legend(title = 'Sexo')
 
 # %% VISUALIZACION PUNTO 5
 
