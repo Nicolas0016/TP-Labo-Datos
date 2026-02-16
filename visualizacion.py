@@ -359,9 +359,9 @@ plt.show()
 establecimientos_por_provincia = dd.query(
     """
         SELECT p.nombre AS provincia, COUNT(*) AS cant_establecimientos
-        FROM df_establecimientos e
-        INNER JOIN df_departamentos d ON e.id_departamento = d.id
-        INNER JOIN df_provincias p ON d.provincia_id = p.id
+        FROM establecimientos e
+        INNER JOIN departamentos d ON e.id_departamento = d.id
+        INNER JOIN provincias p ON d.provincia_id = p.id
         GROUP BY p.nombre
         ORDER BY cant_establecimientos DESC
     """).df()
