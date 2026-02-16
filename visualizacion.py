@@ -439,7 +439,7 @@ for i, row in df_etiquetas.iterrows():
             s = row['provincia'],                   
             fontsize = 12)
 
-ax.set_title('Relación entre la oferta sanitaria Argentina y la mortalidad general', fontsize = 'xx-large')
+ax.set_title('Relación entre la oferta sanitaria Argentina y la mortalidad general (2022)', fontsize = 'xx-large')
 ax.set_xlabel('Establecimientos de salud (cada 10.000 hab.)', fontsize = 'x-large')
 ax.set_ylabel('Tasa de mortalidad (%)', fontsize = 'x-large')
  
