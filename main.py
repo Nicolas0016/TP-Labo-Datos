@@ -864,9 +864,9 @@ ax.scatter(data=tasas_por_provincia,
            color='red')
 
 for i, row in tasas_por_provincia.iterrows():
-    ax.text(row['tasa_establecimientos'],  # Coordenada X donde va el texto
-            row['tasa_mortalidad'],        # Coordenada Y donde va el texto
-            row['provincia'],              # El texto que querés mostrar
+    ax.text(row['tasa_establecimientos'],  
+            row['tasa_mortalidad'],        
+            row['provincia'],              
             fontsize=9)
 
 ax.set_title('Tasas por provincias')
