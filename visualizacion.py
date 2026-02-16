@@ -297,7 +297,7 @@ defuncion_por_grupo_etario = dd.query(
 """).df()
 
 #GRAFICO
-fig, ax = plt.subplots(figsize = (8,6))
+fig, ax = plt.subplots(figsize = (7,3))
 sns.barplot(data = defuncion_por_grupo_etario, y='grupo_edad', x = 'defunciones',hue = 'sexo',orient='h',ax=ax,
             palette={'femenino':'#e851cc', 'masculino':'#026cb8'})
 
