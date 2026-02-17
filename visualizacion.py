@@ -16,7 +16,6 @@ import seaborn as sns
 nuestra_carpeta = 'Archivos_Propios/'
 censos = pd.read_csv(nuestra_carpeta + 'censo2010-2022.csv')
 defunciones = pd.read_csv(nuestra_carpeta + 'defunciones.csv')
-clasificacion_de_defunciones = pd.read_csv(nuestra_carpeta + 'clasificacion_de_defunciones.csv')
 departamentos = pd.read_csv(nuestra_carpeta + 'departamentos.csv')
 establecimientos = pd.read_csv(nuestra_carpeta + 'establecimiento.csv')
 provincias = pd.read_csv(nuestra_carpeta + 'provincias.csv')
@@ -443,3 +442,5 @@ ax.set_xlabel('Establecimientos de salud (cada 10.000 hab.)', fontsize = 'x-larg
 ax.set_ylabel('Tasa de mortalidad (%)', fontsize = 'x-large')
  
 plt.show()
+
+# %%
