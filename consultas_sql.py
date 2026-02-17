@@ -14,7 +14,6 @@ import duckdb as dd
 nuestra_carpeta = 'Archivos_Propios/'
 censos = pd.read_csv(nuestra_carpeta + 'censo2010-2022.csv')
 defunciones = pd.read_csv(nuestra_carpeta + 'defunciones.csv')
-clasificacion_de_defunciones = pd.read_csv(nuestra_carpeta + 'clasificacion_de_defunciones.csv')
 departamentos = pd.read_csv(nuestra_carpeta + 'departamentos.csv')
 establecimientos = pd.read_csv(nuestra_carpeta + 'establecimiento.csv')
 provincias = pd.read_csv(nuestra_carpeta + 'provincias.csv')
@@ -101,7 +100,7 @@ jutanda_defunciones = dd.query(
     """
         SELECT categorias, grupo_edad, sexo, SUM(cantidad) as total
         FROM defunciones
-        WHERE sexo IN ('masculino', 'femenino')
+        WHERE sexo IN ('masculino', 'femenino') AND categorias != 'Sin Información'
         GROUP BY categorias, grupo_edad, sexo
     """    
 ).df()
@@ -202,6 +201,7 @@ cantidad_defunciones_2010_2022 = dd.query(
                 ELSE 0 END
                 ) AS def_2022
         FROM defunciones
+        WHERE categorias != 'Sin Información'
         GROUP BY categorias
     """).df()
 
@@ -214,3 +214,4 @@ diferencia_entre_2010_2022 = dd.query(
         FROM cantidad_defunciones_2010_2022
         ORDER BY diferencia DESC
     """).df()
+# %%
