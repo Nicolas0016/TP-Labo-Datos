@@ -83,6 +83,7 @@ cantidad_defunciones_por_tiempo = dd.query(
     """
         SELECT anio, categorias, sum(cantidad) as cantidad
         FROM defunciones
+        WHERE categorias <> 'Sin Información'
         GROUP BY anio, categorias
         ORDER BY cantidad DESC
     """    
@@ -118,17 +119,17 @@ grupo2 = medianas_df[(medianas_df['mediana'] > corte_grupo1) & (medianas_df['med
 grupo3 = medianas_df[(medianas_df['mediana'] > corte_grupo2) & (medianas_df['mediana'] <= corte_grupo3)]['categoria'].tolist()
 grupo4 = medianas_df[medianas_df['mediana'] > corte_grupo3]['categoria'].tolist()
 
-
 def graficar_grupo(grupo, titulo):
     
     datos_grupo = cantidad_defunciones_por_tiempo[cantidad_defunciones_por_tiempo['categorias'].isin(grupo)]
     
-    fig, ax = plt.subplots(figsize=(20, 8))
+    fig, ax = plt.subplots(figsize=(11, 8))
     
     sns.lineplot(data=datos_grupo, 
                  x='anio', y='cantidad', 
                  hue='categorias', 
-                 marker='o')
+                 marker='o', legend=False)
+    
     años_unicos = sorted(datos_grupo['anio'])
     
     ax.set_xticks(años_unicos)
@@ -139,15 +140,13 @@ def graficar_grupo(grupo, titulo):
     
     ax.set_title(f'{titulo}', fontsize=14, fontweight='bold')
     
-    ax.legend(title='Categoría', loc='upper left')
-    plt.tight_layout()
     plt.show()
 
 
-graficar_grupo(grupo1, f"GRUPO 1 (0 - {corte_grupo1})")
-graficar_grupo(grupo2, f"GRUPO 2 ({corte_grupo1} - {corte_grupo2})")
-graficar_grupo(grupo3, f"GRUPO 3 ({corte_grupo2} - {corte_grupo3})")
-graficar_grupo(grupo4, f"GRUPO 4 ({corte_grupo3} - ...)")
+graficar_grupo(grupo1, "GRUPO 1")
+graficar_grupo(grupo2, "GRUPO 2")
+graficar_grupo(grupo3, "GRUPO 3")
+graficar_grupo(grupo4, "GRUPO 4")
 
 
 # %% VISUALIZACION PUNTO 3 - Tasa de mortalidad por provincia
