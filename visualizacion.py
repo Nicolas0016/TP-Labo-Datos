@@ -176,7 +176,7 @@ habitantes_por_provincia_vis = dd.query(
 
 #calculo la tasa de mortalidad
 tasa_de_mortalidad_vis = dd.query("""
-        SELECT h.provincia, ROUND((m.muertes/h.habitantes)*1000,2) AS tasa
+        SELECT h.provincia, ROUND((m.muertes/h.habitantes)*10000,2) AS tasa
         FROM habitantes_por_provincia_vis h
         LEFT OUTER JOIN muertes_totales_vis m                              
             ON h.provincia = m.provincia                              
@@ -188,7 +188,7 @@ fig, ax = plt.subplots()
 ax.barh(data=tasa_de_mortalidad_vis, y='provincia', width='tasa')
 
 ax.set_title('Tasa de mortalidad por provincia')
-ax.set_xlabel('Tasa (cada 1000 habitantes)', fontsize='medium')                       
+ax.set_xlabel('Muertes (cada 10000 habitantes)', fontsize='medium')                       
 ax.set_ylabel('Provincia', fontsize='medium')
 
 #achico los nombres de las provincias
@@ -203,6 +203,7 @@ muertes_totales_vis2 = dd.query(
         LEFT OUTER JOIN provincias p
         ON d.provincia_id = p.id
         WHERE anio = 2022
+        AND d.categorias = 'Accidentes y causas externas'
         GROUP BY provincia, sexo        
         ORDER BY muertes DESC
         
@@ -227,7 +228,7 @@ habitantes_por_provincia_vis2 = dd.query(
 
 #calculo la tasa de mortalidad
 tasa_de_mortalidad_vis2 = dd.query("""
-        SELECT h.provincia, ROUND((m.muertes/h.habitantes)*1000,2) AS tasa, m.sexo
+        SELECT h.provincia, ROUND((m.muertes/h.habitantes)*10000,2) AS tasa, m.sexo
         FROM habitantes_por_provincia_vis2 h
         LEFT OUTER JOIN muertes_totales_vis2 m                              
             ON h.provincia = m.provincia AND h.sexo = m.sexo                              
@@ -241,8 +242,8 @@ sns.barplot(data = tasa_de_mortalidad_vis2, y='provincia', x = 'tasa',hue = 'sex
             palette={'femenino':'#e851cc', 'masculino':'#026cb8'})
 
 
-ax.set_title('Tasa de mortalidad por provincia y sexo')
-ax.set_xlabel('Tasa (cada 1000 habitantes)', fontsize='medium')                       
+ax.set_title('Tasa de mortalidad por accidentes y causas externas')
+ax.set_xlabel('Muertes (cada 10000 habitantes)', fontsize='medium')                       
 ax.set_ylabel('Provincia', fontsize='medium')
 
 #achico los nombres de las provincias
