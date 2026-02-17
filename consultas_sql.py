@@ -1,11 +1,6 @@
+#%% Importar librerias y archivos
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Feb 16 09:40:42 2026
-
-@author: nicolas
-"""
-#%% Importar librerias y archivos
 
 import pandas as pd
 import duckdb as dd
@@ -25,19 +20,21 @@ obras_sociales = ('Obra social o prepaga (incluye PAMI)',
 
 tabla_intermedia = dd.query(
     f"""
-        SELECT p.nombre AS Provincia,
-        CASE WHEN c.edad < 15 THEN '0 a 14'
-             WHEN c.edad < 35 THEN '15 a 34'
-             WHEN c.edad < 55 THEN '35 a 54'
-             WHEN c.edad < 75 THEN '55 a 74'
-             WHEN c.edad > 74 THEN '75 o más'
-        END AS Rango_etario,
-        c.anio AS Año,
-        c.cantidad AS Cantidad,
-        CASE WHEN c.cobertura_medica IN {obras_sociales} THEN 1
-            ELSE 0 
-        END AS Tiene_cobertura
-        
+        SELECT 
+            p.nombre AS Provincia,
+            CASE WHEN c.edad < 15 THEN '0 a 14'
+                 WHEN c.edad < 35 THEN '15 a 34'
+                 WHEN c.edad < 55 THEN '35 a 54'
+                 WHEN c.edad < 75 THEN '55 a 74'
+                 WHEN c.edad > 74 THEN '75 o más'
+            END AS Rango_etario,
+            c.anio AS Año,
+            c.cantidad AS Cantidad,
+            CASE WHEN c.cobertura_medica IN {obras_sociales} 
+                THEN 1
+                ELSE 0 
+            END AS Tiene_cobertura
+
         FROM censos AS c
         INNER JOIN provincias AS p
             ON c.provincia = p.id                            
@@ -96,7 +93,9 @@ establecientos_con_terapia_intensiva = dd.query(
 
 
 # %% PUNTO 3 CAUSAS MUERTE
-jutanda_defunciones = dd.query(
+
+# Agrupo la cantidad de funciones dependiendo su categoria, edad y sexo
+defunciones_agrupadas = dd.query(
     """
         SELECT categorias, grupo_edad, sexo, SUM(cantidad) as total
         FROM defunciones
@@ -104,7 +103,7 @@ jutanda_defunciones = dd.query(
         GROUP BY categorias, grupo_edad, sexo
     """    
 ).df()
-
+# Busco el top 5 defunciones más comunes
 defunciones_mas_frecuentes = dd.query("""
     SELECT d1.grupo_edad, d1.sexo, d1.categorias, d1.total
     FROM jutanda_defunciones d1
@@ -118,6 +117,7 @@ defunciones_mas_frecuentes = dd.query("""
     ORDER BY d1.grupo_edad, d1.sexo, d1.total DESC
 """).df()
 
+# Busco el top 5 defunciones menos comunes
 defunciones_menos_frecuentes = dd.query(
     """
         SELECT d1.grupo_edad, d1.sexo, d1.categorias, d1.total
@@ -133,7 +133,7 @@ defunciones_menos_frecuentes = dd.query(
     """    
 ).df()
 
-juntada = dd.query(
+extremos_def_grupo = dd.query(
     """
         SELECT *
         FROM defunciones_mas_frecuentes
@@ -214,4 +214,3 @@ diferencia_entre_2010_2022 = dd.query(
         FROM cantidad_defunciones_2010_2022
         ORDER BY diferencia DESC
     """).df()
-# %%

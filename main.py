@@ -1,13 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Feb  8 07:40:51 2026
-
-@author: nicolas
-"""
-
-#%% Importar librerias y archivos
-
 import pandas as pd
 import duckdb as dd
 
@@ -34,34 +26,25 @@ def obtener_index_provincias(anio=0):
     if (anio==2010): return celdas[0]
     if (anio==2022): return celdas[1]
 
-def obtener_dataFrameProvincias(censo):
-    provincias_filas = obtener_index_provincias(2010)
-    provincias = []
-    for i in provincias_filas:
-        id_provincia = int(censo.iloc[i, 1].split()[2])
-        nombre_provincia = censo.iloc[i, 2]
-        
-        if(nombre_provincia == 'Ciudad Autónoma de Buenos Aires'): 
-            provincias.append((id_provincia,'CABA'))
-        elif(nombre_provincia == 'Tierra del Fuego, Antártida e Islas del Atlántico Sur'): 
-            provincias.append((id_provincia,'Tierra  del Fuego'))
-        else:
-            provincias.append((id_provincia,nombre_provincia))
 
-    provincias.append((99,'Sin Información')) #Agrego el id faltante que usa defunciones
-    
-    df_provincias = pd.DataFrame(data=provincias, columns=['id', 'nombre'])  # CORREGIDO
-    return df_provincias
-
-    
-def recolectar_datos(censo, anio):
-    if(anio == 2010):
-        cobertura_filas = [17, 130, 239, 349, 453]
+def obtener_index_coberturas(anio):
+    if(anio == '2010'): 
+        censo = censo2010
     else:
-        cobertura_filas = [17, 130, 238]
+        censo = censo2022
+    indices = []
+    columna_interes = censo.iloc[17:,1]
+    for indice, celda in enumerate(columna_interes):
+        if(celda == 'Total'):
+            break
+        if(str(celda) != 'nan'):
+            indices.append(indice + 17)
+    return 
+
+def recolectar_datos(censo, anio):
     
     provincias_filas = obtener_index_provincias(anio)
-    
+    cobertura_filas = obtener_index_provincias(anio)
     datos = {
         'anio': [],
         'provincia': [],
@@ -142,30 +125,53 @@ def recolectar_datos(censo, anio):
 df2010 = recolectar_datos(censo2010, 2010)
 df2022 = recolectar_datos(censo2022, 2022)
 
-df_final = pd.concat([df2010, df2022], ignore_index=True)
+df_censos = pd.concat([df2010, df2022], ignore_index=True)
 
-# Reemplazar las posibles coberturas medicas con los otros.
 
-df_final['cobertura_medica'] = df_final['cobertura_medica'].replace(
+df_censos['cobertura_medica'] = df_censos['cobertura_medica'].replace(
    {'Obra social (incluye PAMI)': 'Obra social o prepaga (incluye PAMI)', 
     'Prepaga a través de obra social': 'Obra social o prepaga (incluye PAMI)', 
     'Prepaga sólo por contratación voluntaria': 'Obra social o prepaga (incluye PAMI)'}
 )
-consulta = """
-        SELECT anio, provincia, sexo, edad, cobertura_medica, sum(cantidad) as cantidad
-        FROM df_final
+
+df_censos = dd.query( 
+    """
+        SELECT 
+            anio, 
+            provincia, 
+            sexo, 
+            edad, 
+            cobertura_medica, 
+            sum(cantidad) AS cantidad
+        FROM df_censos
         GROUP BY anio, provincia, sexo, edad, cobertura_medica
         ORDER BY anio, provincia, edad, cobertura_medica
-"""
+    """).df()
+df_censos.to_csv('Archivos_Propios/censo2010-2022.csv', index=False, encoding='utf-8')
+#%% Provincias
+def obtener_dataFrameProvincias(censo):
+    provincias_filas = obtener_index_provincias(2010)
+    provincias = []
+    for i in provincias_filas:
+        id_provincia = int(censo.iloc[i, 1].split()[2])
+        nombre_provincia = censo.iloc[i, 2]
+        
+        if(nombre_provincia == 'Ciudad Autónoma de Buenos Aires'): 
+            provincias.append((id_provincia,'CABA'))
+        elif(nombre_provincia == 'Tierra del Fuego, Antártida e Islas del Atlántico Sur'): 
+            provincias.append((id_provincia,'Tierra  del Fuego'))
+        else:
+            provincias.append((id_provincia,nombre_provincia))
 
-resultado = dd.query(consulta).df()
-resultado.to_csv('Archivos_Propios/censo2010-2022.csv', index=False, encoding='utf-8')
+    provincias.append((99,'Sin Información')) #Agrego el id faltante que usa defunciones
+    
+    df_provincias = pd.DataFrame(data=provincias, columns=['id', 'nombre'])  # CORREGIDO
+    return df_provincias
 
-df_provincias = obtener_dataFrameProvincias(censo2010)
-df_provincias.to_csv('Archivos_Propios/provincias.csv', index=False, encoding='utf-8')
+df_provincia = obtener_dataFrameProvincias(censo2010)
+df_provincia.to_csv('Archivos_Propios/provincias.csv', index= False, encoding='utf-8')
 
 # %% LIMPIEZA DEL DATAFRAME 'ESTABLECIMIENTOS'
-
 def limpieza_establecimientos():
 
     # ver que hacer con 'obra social' y 'otros'
@@ -261,15 +267,15 @@ defunciones_tuneado = dd.query(
         FROM defunciones
         ORDER BY cie10_causa_id
             """).df()
-consulta = """
-        SELECT DISTINCT d.cie10_causa_id AS codigo
+
+codigos_null = (dd.query("""
+        SELECT DISTINCT 
+            d.cie10_causa_id AS codigo
         FROM defunciones_tuneado AS d
         LEFT JOIN clasificacion_defunciones AS c 
             ON d.cie10_causa_id = c.codigo_def
         WHERE c.codigo_def IS NULL
-"""
-
-codigos_null = (dd.query(consulta).df())["codigo"].tolist()
+""").df())["codigo"].tolist()
 
 for codigo in codigos_null:
     defunciones_tuneado.loc[defunciones_tuneado['cie10_causa_id'] == codigo, 'cie10_causa_id'] = 'A00'
@@ -298,7 +304,6 @@ defunciones_tuneado = dd.query(
         INNER JOIN clasificacion_defunciones AS c
             ON d.cie10_causa_id = c.codigo_def
     """).df()
-'''
 defunciones_tuneado = dd.query(
     """
         SELECT 
@@ -311,5 +316,4 @@ defunciones_tuneado = dd.query(
         FROM defunciones_tuneado 
         GROUP BY  anio,provincia_id, categorias,sexo, grupo_edad 
     """).df()
-'''
 defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, encoding='utf-8')
