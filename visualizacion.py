@@ -359,10 +359,9 @@ for i, grupo in enumerate([grupo_axel1,grupo_axel2], 1):
                 gap=0,
                 showfliers = False) #IGNORO LOS OUTLIERS (los puntos alejados)
     
-    plt.title(f'Grupo {i}: Distribución de establecimientos de salud por departamento', 
-              fontsize=14)
     plt.xlabel('Provincia')
-    plt.ylabel('Cantidad de establecimientos por departamento')
+    if(i==0):
+        plt.ylabel('Cantidad de establecimientos por departamento')
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
     plt.show()
@@ -428,7 +427,7 @@ for region, datos_grupo in tasas_por_provincia.groupby('Regiones'):
     id_max = datos_grupo['tasa_establecimientos'].idxmax()
     id_min = datos_grupo['tasa_establecimientos'].idxmin()
     indices_a_etiquetar.append(id_max)
-    indices_a_etiquetar.append(id_min)
+    indices_a_etiquetar.append(id_min)  
 
 df_etiquetas = tasas_por_provincia.loc[indices_a_etiquetar]
 
@@ -441,5 +440,83 @@ for i, row in df_etiquetas.iterrows():
 ax.set_title('Relación entre la oferta sanitaria Argentina y la mortalidad general (2022)', fontsize = 'xx-large')
 ax.set_xlabel('Establecimientos de salud (cada 10.000 hab.)', fontsize = 'x-large')
 ax.set_ylabel('Tasa de mortalidad (%)', fontsize = 'x-large')
- 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+plt.show()
+# %% VISUALIZACION NATALIDAD 
+
+poblacion_total_por_provincia = dd.query(
+    """
+        SELECT 
+            c.anio,
+            p.nombre AS provincia,
+            SUM(c.cantidad) AS poblacion_total
+        FROM censos AS c
+        INNER JOIN provincias AS p
+            ON c.provincia = p.id
+        GROUP BY c.anio, p.nombre
+    """).df()
+
+ninos_por_provincia = dd.query(
+    """
+        SELECT c.anio, p.nombre AS provincia, SUM(c.cantidad) AS cantidad_ninos
+        FROM censos AS c
+        INNER JOIN provincias AS p
+            ON c.provincia = p.id
+        WHERE c.edad = 0
+        GROUP BY c.anio, p.nombre
+        ORDER BY c.anio, cantidad_ninos
+    """).df()
+
+natalidad_df = dd.query("""
+    SELECT 
+        n.anio,
+        n.provincia,
+        n.cantidad_ninos,
+        p.poblacion_total,
+        ROUND((n.cantidad_ninos / p.poblacion_total) * 1000, 2) AS ninos_por_mil_habitantes
+    FROM ninos_por_provincia n
+    INNER JOIN poblacion_total_por_provincia p
+        ON n.anio = p.anio AND n.provincia = p.provincia
+    ORDER BY n.anio, n.provincia
+""").df()
+
+ninos_pivot = ninos_por_provincia.pivot(index='provincia', columns='anio', values='cantidad_ninos')
+provincias_orden = ninos_pivot.sort_values(2010, ascending=False).index.tolist()
+
+provincias_orden_ratio = natalidad_df[natalidad_df['anio'] == 2010].sort_values('ninos_por_mil_habitantes', ascending=False)['provincia'].tolist()
+
+fig, ax = plt.subplots(figsize=(15, 10))
+y = np.arange(len(provincias_orden_ratio))
+
+ratios_2010 = []
+ratios_2022 = []
+
+for provincia in provincias_orden_ratio:
+    row_2010 = natalidad_df[(natalidad_df['anio'] == 2010) & (natalidad_df['provincia'] == provincia)].iloc[0]
+    row_2022 = natalidad_df[(natalidad_df['anio'] == 2022) & (natalidad_df['provincia'] == provincia)].iloc[0]
+    
+    ratios_2010.append(row_2010['ninos_por_mil_habitantes'])
+    ratios_2022.append(row_2022['ninos_por_mil_habitantes'])
+
+ax.barh(y - width/2, ratios_2010, height=width, label='2010', 
+        color='#3498db', alpha=0.8, edgecolor='black', linewidth=0.5)
+ax.barh(y + width/2, ratios_2022, height=width, label='2022', 
+        color='#e74c3c', alpha=0.8, edgecolor='black', linewidth=0.5)
+
+ax.set_yticks(y)
+ax.set_yticklabels(provincias_orden_ratio, fontsize=10)
+ax.invert_yaxis()
+
+ax.set_xlabel('Niños menores de 5 años cada 1000 habitantes', fontsize=12, fontweight='bold')
+ax.set_title('Tasa de niños menores de 5 años por provincia\n2010 vs 2022', fontsize=14, fontweight='bold')
+ax.grid(True, alpha=0.3, axis='x')
+
+# Valores en las barras
+for i, (r2010, r2022) in enumerate(zip(ratios_2010, ratios_2022)):
+    ax.text(r2010 + 0.2, i - width/2, f'{r2010:.1f}', 
+            va='center', fontsize=8, fontweight='bold')
+    ax.text(r2022 + 0.2, i + width/2, f'{r2022:.1f}', 
+            va='center', fontsize=8, fontweight='bold')
+
+plt.tight_layout()
 plt.show()
