@@ -47,6 +47,8 @@ def obtener_dataFrameProvincias(censo):
             provincias.append((id_provincia,'Tierra  del Fuego'))
         else:
             provincias.append((id_provincia,nombre_provincia))
+
+    provincias.append((99,'Sin Información')) #Agrego el id faltante que usa defunciones
     
     df_provincias = pd.DataFrame(data=provincias, columns=['id', 'nombre'])  # CORREGIDO
     return df_provincias
