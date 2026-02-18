@@ -47,11 +47,12 @@ ax.set_ylabel('Provincias')
 ax.set_xlabel('Cantidad de habitantes (en millones)')
 ax.set_yticks(y, labels=habitantes_por_provincia.index, ha='right')
 ax.legend()
+plt.figtext(.5, 0, "FIGURA 1",fontweight="bold")
 ax.grid(axis='x', alpha=0.3)
 plt.tight_layout(rect=[0, 0.03, 1, 0.98])
 plt.show()
 
-# %% VISUALIZACION PUNTO 2 - Defunciones por categoria a lo largo del tiempo
+# %% VISUALIZACION PUNTO 2 -     
 
 def percentil(datos, percentil):
         datos_ordenados = sorted(datos)
@@ -133,9 +134,8 @@ def graficar_grupo(grupo, titulo):
     ax.set_ylabel('Cantidad de defunciones', fontsize=12)
     
     ax.set_title(f'{titulo}', fontsize=14, fontweight='bold')
-    
+    plt.figtext(.5, 0, f"FIGURA {int(titulo.split(' ')[1]) + 1}",fontweight="bold")
     plt.show()
-
 
 graficar_grupo(grupo1, "GRUPO 1")
 graficar_grupo(grupo2, "GRUPO 2")
@@ -179,7 +179,7 @@ tasa_de_mortalidad_vis = dd.query("""
 """).df()
 
 #GRAFICO 1
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(10,9))
 ax.barh(data=tasa_de_mortalidad_vis, y='provincia', width='tasa')
 
 ax.set_title('Tasa de mortalidad por provincia')
@@ -189,6 +189,7 @@ ax.set_ylabel('Provincia', fontsize='medium')
 #achico los nombres de las provincias
 ax.tick_params(axis = 'y',labelsize = 8)
 
+plt.figtext(.5, 0, f"FIGURA 6",fontweight="bold")
 #--------parte 2
 
 muertes_totales_vis2 = dd.query(
@@ -240,10 +241,10 @@ sns.barplot(data = tasa_de_mortalidad_vis2, y='provincia', x = 'tasa',hue = 'sex
 ax.set_title('Tasa de mortalidad por accidentes y causas externas')
 ax.set_xlabel('Muertes (cada 10000 habitantes)', fontsize='medium')                       
 ax.set_ylabel('Provincia', fontsize='medium')
-
 #achico los nombres de las provincias
 ax.tick_params(axis = 'y',labelsize = 8)
 ax.legend(title = 'Sexo')
+plt.figtext(.40, -0, f"FIGURA 7",fontweight="bold") 
 
 # %% PUNTO 4 - Defunciones por grupo etario y sexo en 2022
 
@@ -300,6 +301,7 @@ ax.set_title('Defunciones por grupo etario y sexo en 2022')
 ax.set_xlabel('muertes (cada 1000 habitantes de grupo etario)', fontsize='medium')                       
 ax.set_ylabel('Grupo etario', fontsize='medium')
 
+plt.figtext(.43, -.1, f"FIGURA 8",fontweight="bold")
 #achico los nombres de las provincias
 ax.tick_params(axis = 'y',labelsize = 8)
 ax.legend(title = 'Sexo')
@@ -329,13 +331,7 @@ def calcular_percentiles_de_corte(df, columna='mediana'):
     p75 = df[columna].quantile(0.75)
     return p25, p50, p75
 
-grupo1 = ['Jujuy', 'Misiones', 'Chubut', 'La Pampa', 'Río negro']
-grupo2 = ['CABA','Formosa','La Rioja', 'Catamarca','Santa Cruz']
-grupo3 = ['Corrientes', 'Entre Ríos', 'San Luis', 'Chaco', 'Santiago del Estero']
-grupo4 = ['San Juan', 'Salta', 'Mendoza', 'Tierra del Fuego']
-
-grupo5 = ['Buenos Aires', 'Tucumán', 'Neuquén','Córdoba', 'Santa Fe']
-
+# este grupo lo hizo Axel Frontera Castillo 
 grupo_axel1 = ['CABA','Formosa','La Rioja', 'Catamarca','Santa Cruz','Buenos Aires', 'Tucumán', 'Neuquén','Córdoba', 'Entre Ríos','Santa Fe', 'Río negro']
 grupo_axel2 = ['Jujuy', 'Misiones', 'Chubut', 'La Pampa','Corrientes', 'San Luis', 'Chaco', 'Santiago del Estero','San Juan', 'Salta', 'Mendoza', 'Tierra del Fuego']
 
@@ -358,6 +354,8 @@ for i, grupo in enumerate([grupo_axel1,grupo_axel2], 1):
     if(i==0):
         plt.ylabel('Cantidad de establecimientos por departamento')
     plt.xticks(rotation=45, ha='right')
+    
+    plt.figtext(.43, -.1, f"FIGURA {i + 8}",fontweight="bold")
     plt.tight_layout()
     plt.show()
 
@@ -430,12 +428,12 @@ for i, row in df_etiquetas.iterrows():
     ax.text(x = row['tasa_establecimientos'] - 1.2,
             y = row['tasa_mortalidad'] - 0.3,             
             s = row['provincia'],                   
-            fontsize = 12)
+            fontsize = 12)  
 
 ax.set_title('Relación entre la oferta sanitaria Argentina y la mortalidad general (2022)', fontsize = 'xx-large')
 ax.set_xlabel('Establecimientos de salud (cada 10.000 hab.)', fontsize = 'x-large')
 ax.set_ylabel('Tasa de mortalidad (%)', fontsize = 'x-large')
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+plt.figtext(.50, -0, f"FIGURA 11",fontweight="bold")                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 plt.show()
 # %% VISUALIZACION NATALIDAD 
 
