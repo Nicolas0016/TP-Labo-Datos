@@ -22,14 +22,19 @@ tabla_intermedia = dd.query(
     f"""
         SELECT 
             p.nombre AS Provincia,
+            
+            --- AGRUPAMOS LAS EDADES
             CASE WHEN c.edad < 15 THEN '0 a 14'
                  WHEN c.edad < 35 THEN '15 a 34'
                  WHEN c.edad < 55 THEN '35 a 54'
                  WHEN c.edad < 75 THEN '55 a 74'
                  WHEN c.edad > 74 THEN '75 o más'
             END AS Rango_etario,
+            
             c.anio AS Año,
             c.cantidad AS Cantidad,
+            
+            --- VEMOS SI CUENTA CON OBRA SOCIAL, PERO NO LOS DESCARTAMOS
             CASE WHEN c.cobertura_medica IN {obras_sociales} 
                 THEN 1
                 ELSE 0 
@@ -45,18 +50,25 @@ cobertura_de_salud = dd.query(
         SELECT 
         Provincia,
         Rango_etario,
+        --- SUMAMOS TODOS LOS DATOS DEL CENSO-2010, LOS CUALES TIENEN COBERTURA
         SUM(CASE WHEN (Año = 2010 AND tiene_cobertura = 1) 
             THEN cantidad 
             ELSE 0 END)
             AS Habitantes_con_cobertura_en_2010,
+            
+        --- SUMAMOS TODOS LOS DATOS DEL CENSO-2010, LOS CUALES NO TIENEN COBERTURA
         SUM(CASE WHEN (Año = 2010 AND tiene_cobertura = 0) 
             THEN cantidad 
             ELSE 0 END)
-            AS Habitantes_sin_cobertura_en_2010,  
+            AS Habitantes_sin_cobertura_en_2010,
+        
+        --- SUMAMOS TODOS LOS DATOS DEL CENSO-2022, LOS CUALES TIENEN COBERTURA
         SUM(CASE WHEN (Año = 2022 AND tiene_cobertura = 1)
             THEN cantidad 
             ELSE 0 END)
             AS Habitantes_con_cobertura_en_2022,
+        
+        --- SUMAMOS TODOS LOS DATOS DEL CENSO-2010, LOS CUALES NO TIENEN COBERTURA
         SUM(CASE WHEN Año = 2022 AND tiene_cobertura = 0 
             THEN cantidad 
             ELSE 0 END)
@@ -74,7 +86,11 @@ establecientos_con_terapia_intensiva = dd.query(
     """
         SELECT 
             provincias.nombre AS provincia, 
+            
+            --- GUARDAMOS EL TIPO DE ESTABLECIMIENTO
             IF(es_publico, 'estatal', 'privado') AS financiamiento,
+            
+            --- CONTAMOS CUANTOS ESTAN EN LA MISMA PROVINCIA Y TIENEN EL MISMO FINANIAMIENTO
             count(*) as cantidad,
         FROM establecimientos
         
@@ -83,14 +99,12 @@ establecientos_con_terapia_intensiva = dd.query(
             
         INNER JOIN provincias
             ON provincias.id = departamentos.provincia_id
-            
+        
+        --- ACA VEMOS SI TIENEN TERAPIA INTENSIVA.
         WHERE terapia_intensiva
         GROUP BY provincias.nombre, establecimientos.es_publico
         ORDER BY provincias.nombre, financiamiento
     """).df()
-
-    
-
 
 # %% PUNTO 3 CAUSAS MUERTE
 
@@ -108,6 +122,8 @@ defunciones_mas_frecuentes = dd.query("""
     SELECT d1.grupo_edad, d1.sexo, d1.categorias, d1.total
     FROM jutanda_defunciones d1
     WHERE  5 >= ( 
+        --- CUENTA SI EL TOTAL DE DEFUNCIONES PARA UN DETERMINADO GRUPO 
+        --- SUPERA AL RESTO DE REGISTROS, SI ESTE ESTA EN EL TOP 5 EL WHERE LOS TOMA
         SELECT COUNT(*) 
         FROM jutanda_defunciones d2 
         WHERE d2.grupo_edad = d1.grupo_edad 
@@ -122,7 +138,9 @@ defunciones_menos_frecuentes = dd.query(
     """
         SELECT d1.grupo_edad, d1.sexo, d1.categorias, d1.total
         FROM jutanda_defunciones d1
-        WHERE  5 >= ( 
+        WHERE  5 >= (
+            --- CUENTA SI EL TOTAL DE DEFUNCIONES PARA UN DETERMINADO GRUPO 
+            --- ES INFERIOR AL RESTO DE REGISTROS, SI ESTE ESTA EN EL TOP 5 EL WHERE LOS TOMA
             SELECT COUNT(*) 
             FROM jutanda_defunciones d2 
             WHERE d2.grupo_edad = d1.grupo_edad 
@@ -133,6 +151,7 @@ defunciones_menos_frecuentes = dd.query(
     """    
 ).df()
 
+# UNIMOS TODO EN UN SOLO DF
 extremos_def_grupo = dd.query(
     """
         SELECT *
@@ -161,14 +180,18 @@ muertes_totales = dd.query(
 #Ahora calculo la cantidad de habitantes por provincia y grupo etario
 habitantes_por_provincia = dd.query(
     """
-        SELECT p.nombre AS provincia, CASE 
-            WHEN c.edad >= 0 AND c.edad <= 14 THEN '0-14'
-            WHEN c.edad >= 15 AND c.edad <= 34 THEN '15-34'
-            WHEN c.edad >= 35 AND c.edad <= 54 THEN '35-54'
-            WHEN c.edad >= 55 AND c.edad <= 74 THEN '55-74'
-            ELSE '75 o mas'
-            END AS grupo_edad, 
-        sum(c.cantidad) AS habitantes
+        SELECT 
+            p.nombre AS provincia, 
+            
+            --- AGRUPAMOS LAS EDADES DEL CENSO
+            CASE 
+                WHEN c.edad >= 0 AND c.edad <= 14 THEN '0-14'
+                WHEN c.edad >= 15 AND c.edad <= 34 THEN '15-34'
+                WHEN c.edad >= 35 AND c.edad <= 54 THEN '35-54'
+                WHEN c.edad >= 55 AND c.edad <= 74 THEN '55-74'
+                WHEN c.edad >= 75 THEN '75 o mas'
+                END AS grupo_edad, 
+            sum(c.cantidad) AS habitantes
         FROM censos c
         LEFT OUTER JOIN provincias p
             ON c.provincia = p.id
@@ -178,7 +201,7 @@ habitantes_por_provincia = dd.query(
 """).df()
 
 #Finalmente calculo la tasa de mortalidad
-#AVISO: estamos ignorando los datos en los que no sabemos el grupo etario
+#AVISO: estamos ignorando los datos en los que no sabemos el grupo etario, SOS UN MENTI
 tasa_de_mortalidad = dd.query("""
         SELECT h.provincia, h.grupo_edad, ROUND((m.muertes/h.habitantes)*1000,2) AS tasa
         FROM habitantes_por_provincia h
@@ -192,20 +215,23 @@ cantidad_defunciones_2010_2022 = dd.query(
     """
         SELECT 
             categorias,
+            --- SUMAMOS TODAS LAS CANTIDADES DE DEFUNCIONES QUE PASARON EN 2010, AGRUPANDO POR CATEGORIAS
             SUM(CASE 
                 WHEN anio = 2010 THEN cantidad 
-                ELSE 0 END
-                ) AS def_2010,
+                ELSE 0 
+                END) AS def_2010,
+                
+            --- SUMAMOS TODAS LAS CANTIDADES DE DEFUNCIONES QUE PASARON EN 2022, AGRUPANDO POR CATEGORIAS
             SUM(
                 CASE WHEN anio = 2022 THEN cantidad 
-                ELSE 0 END
-                ) AS def_2022
+                ELSE 0 
+                END) AS def_2022
         FROM defunciones
         WHERE categorias != 'Sin Información'
         GROUP BY categorias
     """).df()
 
-
+# AGREGAMOS LA DIFERENCIA ENTRE LAS DEFUNCIONES ENTRE 2010 Y 2022
 diferencia_entre_2010_2022 = dd.query(
     """
         SELECT 
