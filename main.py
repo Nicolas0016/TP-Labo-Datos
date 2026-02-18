@@ -13,6 +13,10 @@ clasificacion_defunciones = clasificacion_defunciones.iloc[:, 1:]
 
 #%% CENSOS
 def obtener_index_provincias(anio=0):
+    """
+    A partir de los censos ya cargados, encuenta el índice 
+    en el que se encuentra la provincia.    
+    """
     celdas = ([],[])
     
     for (index_celdas, censo) in enumerate([censo2010, censo2022]):
@@ -20,7 +24,7 @@ def obtener_index_provincias(anio=0):
         cosas_de_interes = censo.iloc[:, 1]
         
         for (index, celda) in enumerate(cosas_de_interes):
-            if "AREA #" in str(celda):
+            if "AREA #" in str(celda): # Patron recurente en ambos censos.
                 celdas[index_celdas].append(index)
     
     if (anio==2010): return celdas[0]
@@ -28,6 +32,11 @@ def obtener_index_provincias(anio=0):
 
 
 def obtener_index_coberturas(anio):
+    """
+    A partir de los censos ya cargados, las coberturas médicas. 
+    En este caso como los censos tienen diferentes coberturas 
+    médicas debemos partir en casos.    
+    """
     if(anio == '2010'): 
         censo = censo2010
     else:
@@ -45,6 +54,7 @@ def recolectar_datos(censo, anio):
     
     provincias_filas = obtener_index_provincias(anio)
     cobertura_filas = obtener_index_provincias(anio)
+    # Datos que necesitamos.
     datos = {
         'anio': [],
         'provincia': [],
@@ -54,19 +64,19 @@ def recolectar_datos(censo, anio):
         'cantidad': []
     }
 
-    # --- provincias ---
+    # Buscamos las provincias asociadas a el censo
     provincias = []
     for i in provincias_filas:
         id_provincia = int(censo.iloc[i, 1].split()[2])
         provincias.append(id_provincia)
 
 
-    # --- coberturas ---
+    # Buscamos las cobertuas asociadas a el censo
     coberturas = []
     for i in cobertura_filas:
         coberturas.append(censo.iloc[i, 1])
 
-    # --- cosas de interes ---
+    # Solo nos interesa revisar esta parte de la tabla.
     df = censo.iloc[18:, 2:5].copy()
     df.columns = ['edad', 'varon', 'mujer']
 
@@ -101,9 +111,11 @@ def recolectar_datos(censo, anio):
         cobertura = coberturas[cobertura_idx]
 
         edad = fila['edad']
+        # Ternaria para que cada vez que no haya registo de la edad ponga un 0.
         varon = 0 if fila['varon'] == '-' else fila['varon']
         mujer = 0 if fila['mujer'] == '-' else fila['mujer']
         
+        # Como tenemos en el mismo registro Mujer y Varón hacemo añadimos los valores que recolectamos
         datos['anio'].append(anio)
         datos['provincia'].append(provincia)
         datos['sexo'].append("Varón")
@@ -128,12 +140,13 @@ df2022 = recolectar_datos(censo2022, 2022)
 df_censos = pd.concat([df2010, df2022], ignore_index=True)
 
 
+# como no nos interesa todas lascoberturas médicas, reemplazamo por las interes de estudio.
 df_censos['cobertura_medica'] = df_censos['cobertura_medica'].replace(
    {'Obra social (incluye PAMI)': 'Obra social o prepaga (incluye PAMI)', 
     'Prepaga a través de obra social': 'Obra social o prepaga (incluye PAMI)', 
     'Prepaga sólo por contratación voluntaria': 'Obra social o prepaga (incluye PAMI)'}
 )
-
+# Eliminamos registos repetidos.
 df_censos = dd.query( 
     """
         SELECT 
@@ -149,7 +162,11 @@ df_censos = dd.query(
     """).df()
 df_censos.to_csv('Archivos_Propios/censo2010-2022.csv', index=False, encoding='utf-8')
 #%% Provincias
+
 def obtener_dataFrameProvincias(censo):
+    """
+    A partir de censos creamos una tabla con id_provincia -> nombre
+    """
     provincias_filas = obtener_index_provincias(2010)
     provincias = []
     for i in provincias_filas:
@@ -173,7 +190,10 @@ df_provincia.to_csv('Archivos_Propios/provincias.csv', index= False, encoding='u
 
 # %% LIMPIEZA DEL DATAFRAME 'ESTABLECIMIENTOS'
 def limpieza_establecimientos():
-
+    """
+    Obtiene los datos de relvancia del dataFrame establecimientos
+    {id}->{nombre:str, id_departamento:int, es_publico:bool, terapia_intensiva:bool}
+    """
     # ver que hacer con 'obra social' y 'otros'
     origenes_publicos = ['FFAA/Seguridad','Mixta','Municipal',
                          'Servicio Penitenciario Federal',
@@ -227,7 +247,7 @@ df_establecimientos.to_csv('Archivos_Propios/establecimiento.csv', index= False,
 def crear_departamento():
     consultaSQL = """
             SELECT DISTINCT 
-                
+                -- Como el departamento_id no es unico, le concatenamos la provincia.
                 CONCAT(provincia_id, '_',departamento_id) AS id, 
                 provincia_id,
                 departamento_nombre AS nombre
@@ -243,11 +263,14 @@ df_departamentos.to_csv('Archivos_Propios/departamentos.csv', index= False, enco
 
 #%% DEFUNCIONES
 #Creacion del DataFrame principal de 'defunciones'
-#cambio los id de 98 a 99 (de null a 'Sin Informacion')
+
+# Cambiamos el jurisdiccion_de_residencia_id = 98 a 99 para tener un mejor menejo de nulls.
+# Formateamos grupo_edad.
 defunciones_tuneado = dd.query(
     """
         SELECT 
             defunciones.anio, 
+            --- RENAME A 98 -> 99
             CASE 
                 WHEN jurisdiccion_de_residencia_id = 98 
                 THEN 99
@@ -255,6 +278,8 @@ defunciones_tuneado = dd.query(
                 END as provincia_id,
             defunciones.cie10_causa_id AS cie10_causa_id, 
             Sexo AS sexo, 
+            
+            --- FORMATEO DE GRUPO_EDAD
             CASE
                 WHEN grupo_edad = '01.De a 0  a 14 anios' THEN '0-14'
                 WHEN grupo_edad = '02.De 15 a 34 anios' THEN '15-34'
@@ -263,10 +288,13 @@ defunciones_tuneado = dd.query(
                 WHEN grupo_edad = '05.De 75 anios y mas' THEN '75 o mas'
                 ELSE 'Sin Información'
             END AS grupo_edad, 
-        cantidad,
+            
+            cantidad,
         FROM defunciones
         ORDER BY cie10_causa_id
             """).df()
+
+# INICIANDO PROCESO PARA LAS TUPLAS QUE NO SE RELACIONAN CON NADA
 
 codigos_null = (dd.query("""
         SELECT DISTINCT 
@@ -277,14 +305,15 @@ codigos_null = (dd.query("""
         WHERE c.codigo_def IS NULL
 """).df())["codigo"].tolist()
 
+# Renombramos los codigos que no machean con nada a un código nuevo: A00
 for codigo in codigos_null:
     defunciones_tuneado.loc[defunciones_tuneado['cie10_causa_id'] == codigo, 'cie10_causa_id'] = 'A00'
 
-
-
+# AÑADIMOS el nuevo códig a clasificacion defunciones.
 nueva_fila = pd.DataFrame({'codigo_def':['A00'],'clasificacion':["Sin Información"]})
 clasificacion_defunciones = pd.concat([clasificacion_defunciones, nueva_fila])
 
+# Con la seguridad de que todos los codigos le corresponde una categoria hacemos un INNER JOIN.
 defunciones_tuneado = dd.query(
     """
         SELECT 
@@ -298,6 +327,7 @@ defunciones_tuneado = dd.query(
         INNER JOIN clasificacion_defunciones AS c
             ON d.cie10_causa_id = c.codigo_def
     """).df()
+# SUMAMOS filas semejantes.
 defunciones_tuneado = dd.query(
     """
         SELECT 
