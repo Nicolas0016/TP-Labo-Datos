@@ -55,11 +55,11 @@ plt.show()
 # %% VISUALIZACION PUNTO 2 -     
 
 def percentil(datos, percentil):
-        datos_ordenados = sorted(datos)
-        posicion = (len(datos_ordenados) - 1) * (percentil / 100)
-        i = int(posicion)  # posicion entera
+    datos_ordenados = sorted(datos)
+    posicion = (len(datos_ordenados) - 1) * (percentil / 100)
+    i = int(posicion)  # posicion entera
         
-        return datos_ordenados[i] + (posicion-i) * (datos_ordenados[i + 1] - datos_ordenados[i])
+    return datos_ordenados[i] + (posicion-i) * (datos_ordenados[i + 1] - datos_ordenados[i])
 
 def calcular_percentiles_de_corte(medianas_df):
     valores = medianas_df['mediana'].tolist()
@@ -91,7 +91,7 @@ categorias_df = dd.query(
     """    
 ).df()
 
-res = []
+medianas_de_categorias = []
 for _, row in categorias_df.iterrows():
     categoria = row['categorias']
     df = dd.query(
@@ -103,9 +103,9 @@ for _, row in categorias_df.iterrows():
         """
     ).df()
     mediana = df['cantidad'].median()
-    res.append({'categoria': categoria, 'mediana': mediana})
+    medianas_de_categorias.append({'categoria': categoria, 'mediana': mediana})
 
-medianas_df = pd.DataFrame(res)
+medianas_df = pd.DataFrame(medianas_de_categorias)
 
 (corte_grupo1,corte_grupo2,corte_grupo3) = calcular_percentiles_de_corte(medianas_df)
 
@@ -189,7 +189,7 @@ ax.set_ylabel('Provincia', fontsize='medium')
 #achico los nombres de las provincias
 ax.tick_params(axis = 'y',labelsize = 8)
 
-plt.figtext(.5, 0, f"FIGURA 6",fontweight="bold")
+plt.figtext(.5, 0, "FIGURA 6",fontweight="bold")
 #--------parte 2
 
 muertes_totales_vis2 = dd.query(
@@ -244,7 +244,7 @@ ax.set_ylabel('Provincia', fontsize='medium')
 #achico los nombres de las provincias
 ax.tick_params(axis = 'y',labelsize = 8)
 ax.legend(title = 'Sexo')
-plt.figtext(.40, -0, f"FIGURA 7",fontweight="bold") 
+plt.figtext(.40, -0, "FIGURA 7",fontweight="bold") 
 
 # %% PUNTO 4 - Defunciones por grupo etario y sexo en 2022
 
@@ -301,7 +301,7 @@ ax.set_title('Defunciones por grupo etario y sexo en 2022')
 ax.set_xlabel('muertes (cada 1000 habitantes de grupo etario)', fontsize='medium')                       
 ax.set_ylabel('Grupo etario', fontsize='medium')
 
-plt.figtext(.43, -.1, f"FIGURA 8",fontweight="bold")
+plt.figtext(.43, -.1, "FIGURA 8",fontweight="bold")
 #achico los nombres de las provincias
 ax.tick_params(axis = 'y',labelsize = 8)
 ax.legend(title = 'Sexo')
@@ -325,13 +325,7 @@ establecimientos_por_departamento = dd.query("""
     ORDER BY d.provincia_id, e.cantidad DESC
 """).df()
 
-def calcular_percentiles_de_corte(df, columna='mediana'):
-    p25 = df[columna].quantile(0.25)
-    p50 = df[columna].quantile(0.50)
-    p75 = df[columna].quantile(0.75)
-    return p25, p50, p75
 
-# este grupo lo hizo Axel Frontera Castillo 
 grupo_axel1 = ['CABA','Formosa','La Rioja', 'Catamarca','Santa Cruz','Buenos Aires', 'Tucumán', 'Neuquén','Córdoba', 'Entre Ríos','Santa Fe', 'Río negro']
 grupo_axel2 = ['Jujuy', 'Misiones', 'Chubut', 'La Pampa','Corrientes', 'San Luis', 'Chaco', 'Santiago del Estero','San Juan', 'Salta', 'Mendoza', 'Tierra del Fuego']
 
@@ -433,83 +427,6 @@ for i, row in df_etiquetas.iterrows():
 ax.set_title('Relación entre la oferta sanitaria Argentina y la mortalidad general (2022)', fontsize = 'xx-large')
 ax.set_xlabel('Establecimientos de salud (cada 10.000 hab.)', fontsize = 'x-large')
 ax.set_ylabel('Tasa de mortalidad (%)', fontsize = 'x-large')
-plt.figtext(.50, -0, f"FIGURA 11",fontweight="bold")                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+plt.figtext(.50, -0, "FIGURA 11",fontweight="bold")                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 plt.show()
-# %% VISUALIZACION NATALIDAD 
 
-poblacion_total_por_provincia = dd.query(
-    """
-        SELECT 
-            c.anio,
-            p.nombre AS provincia,
-            SUM(c.cantidad) AS poblacion_total
-        FROM censos AS c
-        INNER JOIN provincias AS p
-            ON c.provincia = p.id
-        GROUP BY c.anio, p.nombre
-    """).df()
-
-ninos_por_provincia = dd.query(
-    """
-        SELECT c.anio, p.nombre AS provincia, SUM(c.cantidad) AS cantidad_ninos
-        FROM censos AS c
-        INNER JOIN provincias AS p
-            ON c.provincia = p.id
-        WHERE c.edad = 0
-        GROUP BY c.anio, p.nombre
-        ORDER BY c.anio, cantidad_ninos
-    """).df()
-
-natalidad_df = dd.query("""
-    SELECT 
-        n.anio,
-        n.provincia,
-        n.cantidad_ninos,
-        p.poblacion_total,
-        ROUND((n.cantidad_ninos / p.poblacion_total) * 1000, 2) AS ninos_por_mil_habitantes
-    FROM ninos_por_provincia n
-    INNER JOIN poblacion_total_por_provincia p
-        ON n.anio = p.anio AND n.provincia = p.provincia
-    ORDER BY n.anio, n.provincia
-""").df()
-
-ninos_pivot = ninos_por_provincia.pivot(index='provincia', columns='anio', values='cantidad_ninos')
-provincias_orden = ninos_pivot.sort_values(2010, ascending=False).index.tolist()
-
-provincias_orden_ratio = natalidad_df[natalidad_df['anio'] == 2010].sort_values('ninos_por_mil_habitantes', ascending=False)['provincia'].tolist()
-
-fig, ax = plt.subplots(figsize=(15, 10))
-y = np.arange(len(provincias_orden_ratio))
-
-ratios_2010 = []
-ratios_2022 = []
-
-for provincia in provincias_orden_ratio:
-    row_2010 = natalidad_df[(natalidad_df['anio'] == 2010) & (natalidad_df['provincia'] == provincia)].iloc[0]
-    row_2022 = natalidad_df[(natalidad_df['anio'] == 2022) & (natalidad_df['provincia'] == provincia)].iloc[0]
-    
-    ratios_2010.append(row_2010['ninos_por_mil_habitantes'])
-    ratios_2022.append(row_2022['ninos_por_mil_habitantes'])
-
-ax.barh(y - width/2, ratios_2010, height=width, label='2010', 
-        color='#3498db', alpha=0.8, edgecolor='black', linewidth=0.5)
-ax.barh(y + width/2, ratios_2022, height=width, label='2022', 
-        color='#e74c3c', alpha=0.8, edgecolor='black', linewidth=0.5)
-
-ax.set_yticks(y)
-ax.set_yticklabels(provincias_orden_ratio, fontsize=10)
-ax.invert_yaxis()
-
-ax.set_xlabel('Niños menores de 5 años cada 1000 habitantes', fontsize=12, fontweight='bold')
-ax.set_title('Tasa de niños menores de 5 años por provincia\n2010 vs 2022', fontsize=14, fontweight='bold')
-ax.grid(True, alpha=0.3, axis='x')
-
-# Valores en las barras
-for i, (r2010, r2022) in enumerate(zip(ratios_2010, ratios_2022)):
-    ax.text(r2010 + 0.2, i - width/2, f'{r2010:.1f}', 
-            va='center', fontsize=8, fontweight='bold')
-    ax.text(r2022 + 0.2, i + width/2, f'{r2022:.1f}', 
-            va='center', fontsize=8, fontweight='bold')
-
-plt.tight_layout()
-plt.show()
