@@ -1,12 +1,7 @@
+#%% Importar librerias y archivos
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Feb 16 09:38:12 2026
 
-@author: nicolas
-"""
-
-#%% Importar librerias y archivos
 import numpy as np
 import pandas as pd
 import duckdb as dd
@@ -122,7 +117,7 @@ def graficar_grupo(grupo, titulo):
     
     datos_grupo = cantidad_defunciones_por_tiempo[cantidad_defunciones_por_tiempo['categorias'].isin(grupo)]
     
-    fig, ax = plt.subplots(figsize=(11, 8))
+    fig, ax = plt.subplots(figsize=(15, 8))
     
     sns.lineplot(data=datos_grupo, 
                  x='anio', y='cantidad', 

@@ -283,13 +283,7 @@ for codigo in codigos_null:
 
 
 nueva_fila = pd.DataFrame({'codigo_def':['A00'],'clasificacion':["Sin Información"]})
-clasificacion_defunciones = dd.query(
-    """
-        SELECT * FROM clasificacion_defunciones
-        UNION ALL
-        SELECT * FROM nueva_fila
-        ORDER BY codigo_def
-    """).df()
+clasificacion_defunciones = pd.concat([clasificacion_defunciones, nueva_fila])
 
 defunciones_tuneado = dd.query(
     """
@@ -312,7 +306,7 @@ defunciones_tuneado = dd.query(
             categorias, 
             sexo, 
             grupo_edad, 
-            SUM(cantidad)
+            SUM(cantidad) as cantidad
         FROM defunciones_tuneado 
         GROUP BY  anio,provincia_id, categorias,sexo, grupo_edad 
     """).df()
