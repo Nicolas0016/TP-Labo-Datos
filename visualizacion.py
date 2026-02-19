@@ -143,8 +143,8 @@ graficar_grupo(grupo3, "GRUPO 3")
 graficar_grupo(grupo4, "GRUPO 4")
 
 
-# %% VISUALIZACION PUNTO 3 - Tasa de mortalidad por provincia
-
+# %% VISUALIZACION PUNTO 3 - Tasa de mortalidad por provincia y gráfico a elección
+#Parte 1: Tasa de mortalidad por provincia
 muertes_totales_vis = dd.query(
     """
         SELECT p.nombre AS provincia, sum(d.cantidad) AS muertes
@@ -178,19 +178,8 @@ tasa_de_mortalidad_vis = dd.query("""
         ORDER BY tasa DESC
 """).df()
 
-#GRAFICO 1
-fig, ax = plt.subplots(figsize=(10,9))
-ax.barh(data=tasa_de_mortalidad_vis, y='provincia', width='tasa')
 
-ax.set_title('Tasa de mortalidad por provincia')
-ax.set_xlabel('Muertes (cada 10000 habitantes)', fontsize='medium')                       
-ax.set_ylabel('Provincia', fontsize='medium')
-
-#achico los nombres de las provincias
-ax.tick_params(axis = 'y',labelsize = 8)
-
-plt.figtext(.5, 0, "FIGURA 6",fontweight="bold")
-#--------parte 2
+#Parte 2: Tasa de mortalidad por accidentes y causas externas
 
 muertes_totales_vis2 = dd.query(
     """
@@ -231,6 +220,19 @@ tasa_de_mortalidad_vis2 = dd.query("""
         ORDER BY tasa ASC
 """).df()
 
+#----------------------
+#GRAFICO 1
+fig, ax = plt.subplots(figsize=(10,9))
+ax.barh(data=tasa_de_mortalidad_vis, y='provincia', width='tasa')
+
+ax.set_title('Tasa de mortalidad por provincia')
+ax.set_xlabel('Muertes (cada 10000 habitantes)', fontsize='medium')                       
+ax.set_ylabel('Provincia', fontsize='medium')
+
+#achico los nombres de las provincias
+ax.tick_params(axis = 'y',labelsize = 8)
+
+plt.figtext(.5, 0, "FIGURA 6",fontweight="bold")
 
 #GRAFICO 2
 fig, ax = plt.subplots(figsize = (8,6))

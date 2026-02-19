@@ -309,7 +309,7 @@ codigos_null = (dd.query("""
 for codigo in codigos_null:
     defunciones_tuneado.loc[defunciones_tuneado['cie10_causa_id'] == codigo, 'cie10_causa_id'] = 'A00'
 
-# AÑADIMOS el nuevo códig a clasificacion defunciones.
+# Añadimos el nuevo código a clasificacion defunciones.
 nueva_fila = pd.DataFrame({'codigo_def':['A00'],'clasificacion':["Sin Información"]})
 clasificacion_defunciones = pd.concat([clasificacion_defunciones, nueva_fila])
 
@@ -340,4 +340,5 @@ defunciones_tuneado = dd.query(
         FROM defunciones_tuneado 
         GROUP BY  anio,provincia_id, categorias,sexo, grupo_edad 
     """).df()
+
 defunciones_tuneado.to_csv('Archivos_Propios/defunciones.csv', index=False, encoding='utf-8')
