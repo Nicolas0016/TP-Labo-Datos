@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # GRUPO CRUD: Nicolás Argañaraz, Axel Gabriel Frontera Castillo y Emiliano Rojas.
-# En este archivo se encuentra todo lo correspondiente a la limpiea de los datos.
+# En este archivo se encuentra todo lo correspondiente a la limpieza de los datos.
 
 import pandas as pd
 import duckdb as dd
