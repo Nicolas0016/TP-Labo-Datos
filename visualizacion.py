@@ -1,6 +1,8 @@
 #%% Importar librerias y archivos
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# GRUPO CRUD: Nicolás Argañaraz, Axel Gabriel Frontera Castillo y Emiliano Rojas.
+# En este archivo se encuentra todo lo correspondiente a la visualización de los datos.
 
 import numpy as np
 import pandas as pd
