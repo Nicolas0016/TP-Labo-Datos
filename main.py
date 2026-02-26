@@ -15,49 +15,22 @@ clasificacion_defunciones = pd.read_csv(carpeta + 'categoriasDefunciones.csv')
 clasificacion_defunciones = clasificacion_defunciones.iloc[:, 1:]
 
 #%% CENSOS
-def obtener_index_provincias(anio=0):
-    """
-    A partir de los censos ya cargados, encuenta el índice 
-    en el que se encuentra la provincia.    
-    """
-    celdas = ([],[])
-    
-    for (index_celdas, censo) in enumerate([censo2010, censo2022]):
-        
-        cosas_de_interes = censo.iloc[:, 1]
-        
-        for (index, celda) in enumerate(cosas_de_interes):
-            if "AREA #" in str(celda): # Patron recurente en ambos censos.
-                celdas[index_celdas].append(index)
-    
-    if (anio==2010): return celdas[0]
-    if (anio==2022): return celdas[1]
-
-
-def obtener_index_coberturas(anio):
-    """
-    A partir de los censos ya cargados, las coberturas médicas. 
-    En este caso como los censos tienen diferentes coberturas 
-    médicas debemos partir en casos.    
-    """
-    if(anio == '2010'): 
-        censo = censo2010
-    else:
-        censo = censo2022
-    indices = []
-    columna_interes = censo.iloc[17:,1]
-    for indice, celda in enumerate(columna_interes):
-        if(celda == 'Total'):
-            break
-        if(str(celda) != 'nan'):
-            indices.append(indice + 17)
-    return 
 
 def recolectar_datos(censo, anio):
-    
-    provincias_filas = obtener_index_provincias(anio)
-    cobertura_filas = obtener_index_provincias(anio)
-    # Datos que necesitamos.
+    if(anio == 2010):
+        provincias_filas = [14, 674, 1341, 1961, 2608, 3237, 3851,
+                            4459, 5084, 5689, 6305, 6910, 7512, 8144,
+                            8777, 9402, 10023, 10653, 11267, 11878,
+                            12471, 13123, 13764, 14399]
+
+        cobertura_filas = [17, 130, 239, 349, 453]
+    else:
+        provincias_filas = [14, 461, 913, 1343, 1791, 2240, 2683,
+                            3107, 3550, 3984, 4424, 4851, 5288, 5727,
+                            6172, 6605, 7047, 7494, 7928, 8359,
+                            8779, 9230, 9676, 10122]
+
+        cobertura_filas = [17, 130, 238]
     datos = {
         'anio': [],
         'provincia': [],
@@ -67,28 +40,32 @@ def recolectar_datos(censo, anio):
         'cantidad': []
     }
 
-    # Buscamos las provincias asociadas a el censo
+    # --- provincias ---
     provincias = []
     for i in provincias_filas:
         id_provincia = int(censo.iloc[i, 1].split()[2])
+        print(id_provincia)
         provincias.append(id_provincia)
 
 
-    # Buscamos las cobertuas asociadas a el censo
+    # --- coberturas ---
     coberturas = []
     for i in cobertura_filas:
         coberturas.append(censo.iloc[i, 1])
 
-    # Solo nos interesa revisar esta parte de la tabla.
-    df = censo.iloc[18:, 2:5].copy()
-    df.columns = ['edad', 'varon', 'mujer']
-
-    ix = 0
+    # --- datos principales ---
+    df = censo.iloc[:, 2:5].copy()
+    
+    if(anio == 2010):
+        df.columns = ['edad', 'varon', 'mujer']
+    else: 
+        df.columns = ['edad', 'mujer', 'varon']
+    ix = 18
     provincia_idx = 0
     cobertura_idx = 0
     i = 0
 
-    while True:
+    while ix < len(df):
 
         fila = df.iloc[ix]
 
@@ -114,18 +91,16 @@ def recolectar_datos(censo, anio):
         cobertura = coberturas[cobertura_idx]
 
         edad = fila['edad']
-        # Ternaria para que cada vez que no haya registo de la edad ponga un 0.
         varon = 0 if fila['varon'] == '-' else fila['varon']
         mujer = 0 if fila['mujer'] == '-' else fila['mujer']
-        
-        # Como tenemos en el mismo registro Mujer y Varón hacemo añadimos los valores que recolectamos
+
         datos['anio'].append(anio)
         datos['provincia'].append(provincia)
         datos['sexo'].append("Varón")
         datos['edad'].append(edad)
         datos['cobertura_medica'].append(cobertura)
         datos['cantidad'].append(varon)
-        
+
         datos['anio'].append(anio)
         datos['provincia'].append(provincia)
         datos['sexo'].append("Mujer")
@@ -141,28 +116,16 @@ df2010 = recolectar_datos(censo2010, 2010)
 df2022 = recolectar_datos(censo2022, 2022)
 
 df_censos = pd.concat([df2010, df2022], ignore_index=True)
-
+df_censos.to_csv('borrar/prubve.csv', index=False, encoding='utf-8')
 
 # como no nos interesa todas lascoberturas médicas, reemplazamo por las interes de estudio.
 df_censos['cobertura_medica'] = df_censos['cobertura_medica'].replace(
    {'Obra social (incluye PAMI)': 'Obra social o prepaga (incluye PAMI)', 
     'Prepaga a través de obra social': 'Obra social o prepaga (incluye PAMI)', 
-    'Prepaga sólo por contratación voluntaria': 'Obra social o prepaga (incluye PAMI)'}
+    'Prepaga sólo por contratación voluntaria': 'Obra social o prepaga (incluye PAMI)',
+    'Programas o planes estatales de salud':'Obra social o prepaga (incluye PAMI)',
+    'No tiene obra social, prepaga ni plan estatal':'No tiene obra social, prepaga o plan estatal'}
 )
-# Eliminamos registos repetidos.
-df_censos = dd.query( 
-    """
-        SELECT 
-            anio, 
-            provincia, 
-            sexo, 
-            edad, 
-            cobertura_medica, 
-            sum(cantidad) AS cantidad
-        FROM df_censos
-        GROUP BY anio, provincia, sexo, edad, cobertura_medica
-        ORDER BY anio, provincia, edad, cobertura_medica
-    """).df()
 df_censos.to_csv('Archivos_Propios/censo2010-2022.csv', index=False, encoding='utf-8')
 #%% Provincias
 
@@ -170,7 +133,10 @@ def obtener_dataFrameProvincias(censo):
     """
     A partir de censos creamos una tabla con id_provincia -> nombre
     """
-    provincias_filas = obtener_index_provincias(2010)
+    provincias_filas = [14, 674, 1341, 1961, 2608, 3237, 3851,
+                        4459, 5084, 5689, 6305, 6910, 7512, 8144,
+                        8777, 9402, 10023, 10653, 11267, 11878,
+                        12471, 13123, 13764, 14399]
     provincias = []
     for i in provincias_filas:
         id_provincia = int(censo.iloc[i, 1].split()[2])

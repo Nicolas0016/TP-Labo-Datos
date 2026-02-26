@@ -46,7 +46,8 @@ tabla_intermedia = dd.query(
         INNER JOIN provincias AS p
             ON c.provincia = p.id                            
     """).df()
-    
+
+tabla_intermedia.to_csv('borrar/prubve.csv', index=False, encoding='utf-8')
 cobertura_de_salud = dd.query(
     """
         SELECT 
@@ -80,7 +81,7 @@ cobertura_de_salud = dd.query(
         GROUP BY Provincia, Rango_etario
         ORDER BY Provincia, Rango_etario
     """).df()
-
+cobertura_de_salud.to_csv('borrar/prubve.csv', index=False, encoding='utf-8')
 
 # %% PUNTO 2: Establecimientos de salud con terapia intensiva
 

@@ -29,7 +29,7 @@ habitantes_por_provincia = dd.query(
 habitantes_por_provincia = habitantes_por_provincia.pivot(index='nombre', columns='anio', values='cantidad_habitantes')
 
 habitantes_por_provincia = habitantes_por_provincia.sort_values(2022, ascending=True)
-
+habitantes_por_provincia.head()
 fig, ax = plt.subplots(figsize=(7, 8))
 
 
@@ -40,7 +40,6 @@ habitantes_2010 = habitantes_por_provincia[2010]
 habitantes_2022 = habitantes_por_provincia[2022]
 
 width = 0.4
-gap = 0.3
 ax.barh(y - width/2, habitantes_2010, height=width, label='Habitantes 2010')
 ax.barh(y + width/2, habitantes_2022, height=width, label='Habitantes 2022')
 
