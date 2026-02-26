@@ -35,9 +35,9 @@ fig, ax = plt.subplots(figsize=(7, 8))
 
 y = np.arange(len(habitantes_por_provincia.index))
 habitantes_2010 = habitantes_por_provincia[2010]
-
-    
 habitantes_2022 = habitantes_por_provincia[2022]
+habitantes_2010 = habitantes_2010 / 1_000_000
+habitantes_2022 = habitantes_2022 / 1_000_000
 
 width = 0.4
 ax.barh(y - width/2, habitantes_2010, height=width, label='Habitantes 2010')
