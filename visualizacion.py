@@ -218,37 +218,40 @@ tasa_de_mortalidad_vis2 = dd.query("""
         FROM habitantes_por_provincia_vis2 h
         LEFT OUTER JOIN muertes_totales_vis2 m                              
             ON h.provincia = m.provincia AND h.sexo = m.sexo                              
-        ORDER BY tasa ASC
+        ORDER BY tasa ASC, m.sexo ASC
 """).df()
 
 #----------------------
 #GRAFICO 1
-fig, ax = plt.subplots(figsize=(10,9))
-ax.barh(data=tasa_de_mortalidad_vis, y='provincia', width='tasa')
+fig, ax = plt.subplots(1, 2, figsize=(14, 5))
 
-ax.set_title('Tasa de mortalidad por provincia')
-ax.set_xlabel('Muertes (cada 10000 habitantes)', fontsize='medium')                       
-ax.set_ylabel('Provincia', fontsize='medium')
+ax[0].barh(data=tasa_de_mortalidad_vis, y='provincia', width='tasa')
+
+ax[0].set_title('Tasa de mortalidad por provincia')
+ax[0].set_xlabel('Muertes (cada 10000 habitantes)', fontsize='medium')                       
+ax[0].set_ylabel('Provincia', fontsize='medium')
 
 #achico los nombres de las provincias
-ax.tick_params(axis = 'y',labelsize = 8)
-
-plt.figtext(.5, 0, "FIGURA 6",fontweight="bold")
+ax[0].tick_params(axis = 'y',labelsize = 8)
 
 #GRAFICO 2
-fig, ax = plt.subplots(figsize = (8,6))
-sns.barplot(data = tasa_de_mortalidad_vis2, y='provincia', x = 'tasa',hue = 'sexo',orient='h',ax=ax,
+sns.barplot(data = tasa_de_mortalidad_vis2, y='provincia', x = 'tasa',hue = 'sexo',
+            order=tasa_de_mortalidad_vis2[tasa_de_mortalidad_vis2['sexo'] == 'masculino']
+            .sort_values('tasa', ascending=True)['provincia'],
+            orient='h',ax=ax[1],
             palette={'femenino':'#e851cc', 'masculino':'#026cb8'})
 
 
-ax.set_title('Tasa de mortalidad por accidentes y causas externas')
-ax.set_xlabel('Muertes (cada 10000 habitantes)', fontsize='medium')                       
-ax.set_ylabel('Provincia', fontsize='medium')
+ax[1].set_title('Tasa de mortalidad por accidentes y causas externas')
+ax[1].set_xlabel('Muertes (cada 10000 habitantes)', fontsize='medium')                       
+ax[1].set_ylabel('Provincia', fontsize='medium')
 #achico los nombres de las provincias
-ax.tick_params(axis = 'y',labelsize = 8)
-ax.legend(title = 'Sexo')
-plt.figtext(.40, -0, "FIGURA 7",fontweight="bold") 
+ax[1].tick_params(axis = 'y',labelsize = 8)
+ax[1].legend(title = 'Sexo')
 
+plt.tight_layout(rect=[0, 0.03, 1, 0.95])
+plt.figtext(.5, 0, "FIGURA 6",fontweight="bold")
+plt.show()
 # %% PUNTO 4 - Defunciones por grupo etario y sexo en 2022
 
 #voy a ignorar los sexos que son desconocidos porque son muy pocos
@@ -323,9 +326,10 @@ defuncion_por_grupo_etario_normalizado_total = dd.query(
         ORDER BY c2.grupo_edad,c2.sexo,muertes
 """).df()
 
-#grafico normalizado por grupo etario
+
 fig, ax = plt.subplots(1, 2, figsize=(14, 5))
 
+#grafico normalizado por grupo etario
 sns.barplot(data = defuncion_por_grupo_etario_normalizado_por_grupo, y='grupo_edad', x = 'defunciones',hue = 'sexo',orient='h',ax=ax[0],
             palette={'femenino':'#e851cc', 'masculino':'#026cb8'})
 
@@ -334,7 +338,7 @@ ax[0].set_title('Defunciones por grupo etario y sexo en 2022')
 ax[0].set_xlabel('muertes (cada 1000 habitantes de grupo etario)', fontsize='medium')                       
 ax[0].set_ylabel('Grupo etario', fontsize='medium')
 
-#achico los nombres de las provincias
+
 ax[0].tick_params(axis = 'y',labelsize = 8)
 ax[0].legend(title = 'Sexo')
 
@@ -347,7 +351,6 @@ ax[1].set_title('Defunciones por grupo etario y sexo en 2022')
 ax[1].set_xlabel('muertes (cada 1000 habitantes totales)', fontsize='medium')                       
 ax[1].set_ylabel('Grupo etario', fontsize='medium')
 
-#achico los nombres de las provincias
 ax[1].tick_params(axis = 'y',labelsize = 8)
 ax[1].legend(title = 'Sexo')
 
