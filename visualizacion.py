@@ -265,8 +265,8 @@ muertes_totales_grupo_etario = dd.query(
         
     """).df()
 
-#las defunciones las normalizo a muerte cada 1000 habitantes
-defuncion_por_grupo_etario = dd.query(
+#las defunciones las normalizo a muerte cada 1000 habitantes de ese grupo etario
+defuncion_por_grupo_etario_normalizado_por_grupo = dd.query(
     """
         SELECT c2.grupo_edad, c2.sexo,(m.muertes/sum(c2.cantidad))*1000 AS defunciones 
         FROM(SELECT
@@ -294,20 +294,71 @@ defuncion_por_grupo_etario = dd.query(
         ORDER BY c2.grupo_edad,c2.sexo,muertes
 """).df()
 
-#GRAFICO
-fig, ax = plt.subplots(figsize = (7,3))
-sns.barplot(data = defuncion_por_grupo_etario, y='grupo_edad', x = 'defunciones',hue = 'sexo',orient='h',ax=ax,
+#las defunciones las normalizo a muerte cada 1000 habitantes de TODA la poblacion
+defuncion_por_grupo_etario_normalizado_total = dd.query(
+    """
+        SELECT c2.grupo_edad, c2.sexo,(m.muertes/(SELECT sum(cantidad) FROM censos))*1000 AS defunciones 
+        FROM(SELECT
+            CASE 
+                WHEN c.edad >= 0 AND c.edad <= 14 THEN '0-14'
+                WHEN c.edad >= 15 AND c.edad <= 34 THEN '15-34'
+                WHEN c.edad >= 35 AND c.edad <= 54 THEN '35-54'
+                WHEN c.edad >= 55 AND c.edad <= 74 THEN '55-74'
+                ELSE '75 o mas'
+                END AS grupo_edad,
+            CASE
+                WHEN c.sexo = 'Varón' THEN 'masculino'
+                WHEN c.sexo = 'Mujer' THEN 'femenino'
+                ELSE c.sexo
+            END AS sexo,
+            c.cantidad
+            FROM censos c
+            WHERE c.anio = 2022
+        ) AS c2
+        
+        LEFT OUTER JOIN muertes_totales_grupo_etario m
+            ON m.grupo_edad = c2.grupo_edad AND m.sexo = c2.sexo
+        
+        GROUP BY c2.grupo_edad,c2.sexo,muertes
+        ORDER BY c2.grupo_edad,c2.sexo,muertes
+""").df()
+
+#grafico normalizado por grupo etario
+fig, ax = plt.subplots(1, 2, figsize=(14, 5))
+
+sns.barplot(data = defuncion_por_grupo_etario_normalizado_por_grupo, y='grupo_edad', x = 'defunciones',hue = 'sexo',orient='h',ax=ax[0],
             palette={'femenino':'#e851cc', 'masculino':'#026cb8'})
 
 
-ax.set_title('Defunciones por grupo etario y sexo en 2022')
-ax.set_xlabel('muertes (cada 1000 habitantes de grupo etario)', fontsize='medium')                       
-ax.set_ylabel('Grupo etario', fontsize='medium')
+ax[0].set_title('Defunciones por grupo etario y sexo en 2022')
+ax[0].set_xlabel('muertes (cada 1000 habitantes de grupo etario)', fontsize='medium')                       
+ax[0].set_ylabel('Grupo etario', fontsize='medium')
 
-plt.figtext(.43, -.1, "FIGURA 8",fontweight="bold")
 #achico los nombres de las provincias
-ax.tick_params(axis = 'y',labelsize = 8)
-ax.legend(title = 'Sexo')
+ax[0].tick_params(axis = 'y',labelsize = 8)
+ax[0].legend(title = 'Sexo')
+
+#grafico normalizado por población total
+sns.barplot(data = defuncion_por_grupo_etario_normalizado_total, y='grupo_edad', x = 'defunciones',hue = 'sexo',orient='h',ax=ax[1],
+            palette={'femenino':'#e851cc', 'masculino':'#026cb8'})
+
+
+ax[1].set_title('Defunciones por grupo etario y sexo en 2022')
+ax[1].set_xlabel('muertes (cada 1000 habitantes totales)', fontsize='medium')                       
+ax[1].set_ylabel('Grupo etario', fontsize='medium')
+
+#achico los nombres de las provincias
+ax[1].tick_params(axis = 'y',labelsize = 8)
+ax[1].legend(title = 'Sexo')
+
+plt.suptitle('Comparativa de Defunciones en Argentina (2022)', fontsize=14, fontweight='bold')
+plt.figtext(0.5, -0.03, "Comparativa de tasas por grupo etario vs. total poblacional", 
+            ha="center", fontweight="bold", fontsize=12)
+
+plt.tight_layout(rect=[0, 0.03, 1, 0.95])
+plt.figtext(.5, -.1, "FIGURA 8",fontweight="bold")
+
+plt.show()
 
 # %% VISUALIZACION PUNTO 5 - Distribucion de departamentos de salud
 

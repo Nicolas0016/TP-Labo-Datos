@@ -44,7 +44,6 @@ def recolectar_datos(censo, anio):
     provincias = []
     for i in provincias_filas:
         id_provincia = int(censo.iloc[i, 1].split()[2])
-        print(id_provincia)
         provincias.append(id_provincia)
 
 
