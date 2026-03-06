@@ -55,25 +55,6 @@ plt.show()
 
 # %% VISUALIZACION PUNTO 2 -     
 
-def percentil(datos, percentil):
-    datos_ordenados = sorted(datos)
-    posicion = (len(datos_ordenados) - 1) * (percentil / 100)
-    i = int(posicion)  # posicion entera
-        
-    return datos_ordenados[i] + (posicion-i) * (datos_ordenados[i + 1] - datos_ordenados[i])
-
-def calcular_percentiles_de_corte(medianas_df):
-    valores = medianas_df['mediana'].tolist()
-    
-    q1 = percentil(valores, 25)
-    q2 = percentil(valores, 50)
-    q3 = percentil(valores, 75)
-    
-    return (
-        int(round(q1)),
-        int(round(q2)),
-        int(round(q3))
-    )
 
 cantidad_defunciones_por_tiempo = dd.query(
     """
@@ -92,29 +73,36 @@ categorias_df = dd.query(
     """    
 ).df()
 
-medianas_de_categorias = []
-for _, row in categorias_df.iterrows():
-    categoria = row['categorias']
-    df = dd.query(
-        f"""
-            SELECT sum(cantidad) as cantidad
-            FROM defunciones
-            WHERE categorias = '{categoria}'
-            GROUP BY anio
-        """
-    ).df()
-    mediana = df['cantidad'].median()
-    medianas_de_categorias.append({'categoria': categoria, 'mediana': mediana})
 
-medianas_df = pd.DataFrame(medianas_de_categorias)
+# Las que tienen más de 50,000 muertes anuales (alta)
+grupo_alta_mortalidad = [
+    'Enfermedades del aparato respiratorio',
+    'Tumores ',
+    'Enfermedades del aparato circulatorio',
+    'COVID-19',
+    'Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte', 
+]
 
-(corte_grupo1,corte_grupo2,corte_grupo3) = calcular_percentiles_de_corte(medianas_df)
+# Las que tienen entre 10,000 y 50,000 (media)
+grupo_media_mortalidad = [
+    'Accidentes y causas externas', # 
+    'Enfermedades del aparato digestivo', # 
+    'Enfermedades infecciosas y parasitarias ',
+    'Enfermedades del sistema genitourinario ',
+    'Enfermedades endocrinas, nutricionales y metabólicas '
+]
 
-grupo1 = medianas_df[medianas_df['mediana'] <= corte_grupo1]['categoria'].tolist()  
-grupo2 = medianas_df[(medianas_df['mediana'] > corte_grupo1) & (medianas_df['mediana'] <= corte_grupo2)]['categoria'].tolist()
-grupo3 = medianas_df[(medianas_df['mediana'] > corte_grupo2) & (medianas_df['mediana'] <= corte_grupo3)]['categoria'].tolist()
-grupo4 = medianas_df[medianas_df['mediana'] > corte_grupo3]['categoria'].tolist()
-
+# Las que tienen menos de 10,000 (baja)
+grupo_baja_mortalidad = [
+    'Enfermedades del sistema nervioso y de los órganos de los sentidos  ',
+    'Afecciones originadas en el periodo perinatal ',
+    'Enfermedades de la piel y del tejido subcutáneo ',
+    'Trastornos mentales',
+    'Malformaciones congénitas, deformidades y anomalías cromosómicas ',
+    'Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan al mecanismo de la inmunidad ',
+    'Enfermedades del sistema osteomuscular y del tejido conjuntivo',
+    'Embarazo, parto y puerperio '
+]
 def graficar_grupo(grupo, titulo):
     
     datos_grupo = cantidad_defunciones_por_tiempo[cantidad_defunciones_por_tiempo['categorias'].isin(grupo)]
@@ -126,23 +114,28 @@ def graficar_grupo(grupo, titulo):
                  hue='categorias', 
                  marker='o', legend=False)
     
-    años_unicos = sorted(datos_grupo['anio'])
+    años_unicos = sorted(datos_grupo['anio'].unique())
     
     ax.set_xticks(años_unicos)
-    ax.set_xticklabels(años_unicos)
+    ax.set_xticklabels(años_unicos, rotation=45)
     
     ax.set_xlabel('Año', fontsize=12)
     ax.set_ylabel('Cantidad de defunciones', fontsize=12)
     
+    # Mejorar la leyenda
+    handles, labels = ax.get_legend_handles_labels()
+    
     ax.set_title(f'{titulo}', fontsize=14, fontweight='bold')
-    plt.figtext(.5, 0, f"FIGURA {int(titulo.split(' ')[1]) + 1}",fontweight="bold")
+    
+    # Texto inferior corregido
+    numero_figura = titulo.split(' ')[1]
+    plt.figtext(.5, -0.1, f"FIGURA {numero_figura}", fontweight="bold", ha='center', fontsize=12)
+    
+    plt.tight_layout()
     plt.show()
-
-graficar_grupo(grupo1, "GRUPO 1")
-graficar_grupo(grupo2, "GRUPO 2")
-graficar_grupo(grupo3, "GRUPO 3")
-graficar_grupo(grupo4, "GRUPO 4")
-
+graficar_grupo(grupo_baja_mortalidad, "GRUPO 1")
+graficar_grupo(grupo_media_mortalidad, "GRUPO 1")
+graficar_grupo(grupo_alta_mortalidad, "GRUPO 1")
 
 # %% VISUALIZACION PUNTO 3 - Tasa de mortalidad por provincia y gráfico a elección
 #Parte 1: Tasa de mortalidad por provincia
