@@ -328,7 +328,7 @@ sns.barplot(data = defuncion_por_grupo_etario_normalizado_por_grupo, y='grupo_ed
 
 
 ax[0].set_title('Defunciones por grupo etario y sexo en 2022')
-ax[0].set_xlabel('muertes (cada 1000 habitantes de grupo etario)', fontsize='medium')                       
+ax[0].set_xlabel('muertes (cada 1000 habitantes totales)', fontsize='medium')                       
 ax[0].set_ylabel('Grupo etario', fontsize='medium')
 
 
@@ -341,14 +341,14 @@ sns.barplot(data = defuncion_por_grupo_etario_normalizado_total, y='grupo_edad',
 
 
 ax[1].set_title('Defunciones por grupo etario y sexo en 2022')
-ax[1].set_xlabel('muertes (cada 1000 habitantes totales)', fontsize='medium')                       
+ax[1].set_xlabel('muertes (cada 1000 habitantes del grupo etario)', fontsize='medium')                       
 ax[1].set_ylabel('Grupo etario', fontsize='medium')
 
 ax[1].tick_params(axis = 'y',labelsize = 8)
 ax[1].legend(title = 'Sexo')
 
 plt.suptitle('Comparativa de Defunciones en Argentina (2022)', fontsize=14, fontweight='bold')
-plt.figtext(0.5, -0.03, "Comparativa de tasas por grupo etario vs. total poblacional", 
+plt.figtext(0.5, -0.03, "Comparativa de tasas total vs. normalizado por grupo etario", 
             ha="center", fontweight="bold", fontsize=12)
 
 plt.tight_layout(rect=[0, 0.03, 1, 0.95])
